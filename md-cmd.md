@@ -46,7 +46,7 @@ $ ls -lh page*html
 ```
 
 
-個別ページのダウントーロ
+個別ページのダウンロード
 
 
 CMD
@@ -72,4 +72,14 @@ $ ls -lh page-detail-*html
 -rw-r--r-- 1 aine aine 278K  9月 19 18:21 page-detail-https---com-reuters-jp--article-health-coronavirus-usa-trump-idJPKBN26931V.html
 -rw-r--r-- 1 aine aine 208K  9月 19 18:21 page-detail-https---com-reuters-jp.html
 ```
+
+
+シングルページアプリケーションでない場合の取得項目の抽出
+
+CMD
+
+```
+./extract-non-spa-page-content.py
+```
+
 

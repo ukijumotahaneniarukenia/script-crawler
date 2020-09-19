@@ -37,6 +37,7 @@ SUB_XPATH_EXPRESSION='SUB_XPATH_EXPRESSION'
 TITLE_NAME='TITLE_NAME'
 
 #取得項目リスト
+#json定義ファイルからいいかんじにしたいな
 EXTRACT_LIST=[
          'EXTRACT_URL_NAME'
         ,'EXTRACT_PAGE_NAME'
@@ -87,7 +88,7 @@ for crawler_target in crawler_target_list:
 
                domain_name = re.findall(r'(?<=//).*?(?=/)', site_url.strip())[0]
 
-               input_file_name = INPUT_PREFIX + link_file_name.strip().replace(domain_name,base_name).replace('/','-').replace('&','-').replace('?','-').replace('^','-').replace(':','-').replace('#','-') + INPUT_SUFFIX
+               input_file_name = INPUT_PREFIX + link_file_name.strip().replace(domain_name,base_name).replace('/','-').replace('&','-').replace('?','-').replace('^','-').replace(':','-').replace('#','-').replace('=','-') + INPUT_SUFFIX
 
                if os.path.exists(input_file_name):
 
@@ -128,6 +129,7 @@ for crawler_target in crawler_target_list:
 
                            main_xpath = target_xpath[MAIN_XPATH_EXPRESSION]
                            sub_xpath = target_xpath[SUB_XPATH_EXPRESSION]
+
 
                            if not len(main_xpath) == 0 :
 

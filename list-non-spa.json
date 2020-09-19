@@ -28,21 +28,21 @@
     "SITE_URL": "https://www.asahi.com/",
     "TITLE_NAME": [
       {
-        "MAIN_XPATH_EXPRESSION": "",
+        "MAIN_XPATH_EXPRESSION": "/html/body/div[4]/div/div[1]/div[2]/div[1]/div/h1",
         "SUB_XPATH_EXPRESSION": ""
       },
       {
-        "MAIN_XPATH_EXPRESSION": "",
+        "MAIN_XPATH_EXPRESSION": "/html/body/div[4]/div/div[1]/div[2]/div[2]/div/h1",
         "SUB_XPATH_EXPRESSION": ""
       }
     ],
     "DATE_TIME": [
       {
-        "MAIN_XPATH_EXPRESSION": "",
+        "MAIN_XPATH_EXPRESSION": "/html/body/div[4]/div/div[1]/div[2]/div[1]/div/div/span/time",
         "SUB_XPATH_EXPRESSION": ""
       },
       {
-        "MAIN_XPATH_EXPRESSION": "",
+        "MAIN_XPATH_EXPRESSION": "/html/body/div[4]/div/div[1]/div[2]/div[2]/div/div/span/time",
         "SUB_XPATH_EXPRESSION": ""
       }
     ]

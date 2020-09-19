@@ -24,7 +24,7 @@ options.add_argument('/usr/local/src/chrome-linux/chrome')
 driver = webdriver.Chrome(options=options)
 
 #crawler_target_url_list = ['https://edition.cnn.com/2020/09/18/politics/ruth-bader-ginsburg-dead/index.html']
-crawler_target_url_list = ['https://jp.reuters.com//article/health-coronavirus-britain-idJPKBN2691EU']
+crawler_target_url_list = ['https://www.asahi.com//articles/ASN9373V6N93UBQU00B.html?iref=comtop_list_api_f02']
 
 for crawler_target_url in crawler_target_url_list:
 
@@ -34,12 +34,12 @@ for crawler_target_url in crawler_target_url_list:
 
     time.sleep(DEFAULT_WAIT_TIME_SECONDS)
 
-    date_time_text = driver.find_element_by_xpath('/html/body/div[1]/div/div[3]/div[2]/div/div/div/div/time[1]').text
+    #date_time_text = driver.find_element_by_xpath('/html/body/div[1]/div/div[3]/div[2]/div/div/div/div/time[1]').text
 
-    print(date_time_text)
+    #print(date_time_text)
 
     #title_text = driver.find_element_by_xpath('/html/body/div[6]/article/div[1]/h1').text
-    title_text = driver.find_element_by_xpath('/html/body/div[1]/div/div[3]/div[2]/div/div/h1').text
+    title_text = driver.find_element_by_xpath('/html/body/div[4]/div/div[1]/div[2]/div[2]/div/h1').text
 
     print(title_text)
 
