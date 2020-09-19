@@ -11,36 +11,67 @@ import time
 
 import re
 
+import requests
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-DEFAULT_WAIT_TIME_SECONDS=10
+DEFAULT_WAIT_TIME_SECONDS=5
+
+SITE_NAME='SITE_NAME'
+SITE_URL='SITE_URL'
+
+LINK_PREFFIX='link-'
+LINK_SUFFIX='.txt'
+
+SOURCE_FILE_NAME='list-spa.json'
+
+source_file = open(SOURCE_FILE_NAME,'r')
+
+crawler_target_list = json.load(source_file)
 
 #ブラウザ起動オプションの設定
 options = webdriver.ChromeOptions()
 options.add_argument('/usr/local/src/chromedriver_linux64/chromedriver')
 options.add_argument('/usr/local/src/chrome-linux/chrome')
 
-driver = webdriver.Chrome(options=options)
+for crawler_target in crawler_target_list:
 
-#crawler_target_url_list = ['https://edition.cnn.com/2020/09/18/politics/ruth-bader-ginsburg-dead/index.html']
-crawler_target_url_list = ['https://www.asahi.com//articles/ASN9373V6N93UBQU00B.html?iref=comtop_list_api_f02']
+    site_name = crawler_target[SITE_NAME]
+    site_url = crawler_target[SITE_URL]
+    base_name = "-".join(re.findall(r'(?<=//).*?(?=/)', site_url.strip())[0].split(".")[::-1])
 
-for crawler_target_url in crawler_target_url_list:
+    link_file_name = LINK_PREFFIX + base_name + LINK_SUFFIX
 
-    print(crawler_target_url)
+    if os.path.exists(link_file_name):
 
-    driver.get(crawler_target_url)
+        if re.search(base_name,link_file_name):
 
-    time.sleep(DEFAULT_WAIT_TIME_SECONDS)
+            link_file_name_list = open(link_file_name,'r')
 
-    #date_time_text = driver.find_element_by_xpath('/html/body/div[1]/div/div[3]/div[2]/div/div/div/div/time[1]').text
+            for link_file_name in list(link_file_name_list)[0:4]:
 
-    #print(date_time_text)
+                crawler_target_url = link_file_name.strip()
 
-    #title_text = driver.find_element_by_xpath('/html/body/div[6]/article/div[1]/h1').text
-    title_text = driver.find_element_by_xpath('/html/body/div[4]/div/div[1]/div[2]/div[2]/div/h1').text
+                response = requests.get(crawler_target_url)
 
-    print(title_text)
+                if response.status_code == 200 :
 
-driver.quit()
+                    driver = webdriver.Chrome(options=options)
+                    driver.get(crawler_target_url)
+
+                    time.sleep(DEFAULT_WAIT_TIME_SECONDS)
+
+                #date_time_text = driver.find_element_by_xpath('/html/body/div[1]/div/div[3]/div[2]/div/div/div/div/time[1]').text
+
+                #print(date_time_text)
+
+                #title_text = driver.find_element_by_xpath('/html/body/div[6]/article/div[1]/h1').text
+                #title_text = driver.find_element_by_xpath('/html/body/div[4]/div/div[1]/div[2]/div[2]/div/h1').text
+
+                #print(title_text)
+
+                    driver.quit()
+                else :
+
+                    continue
