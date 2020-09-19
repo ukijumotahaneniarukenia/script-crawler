@@ -55,18 +55,6 @@ for common_column_name in common_column_list[EXTRACT_COLUMN_LIST] :
 
     OUTPUT_HEADER_LIST.add(common_column_name)
 
-EXTRACT_LIST=[
-         'EXTRACT_URL_NAME'
-        ,'EXTRACT_PAGE_NAME'
-        ,'EXTRACT_SITE_NAME'
-        ,'EXTRACT_SITE_URL'
-        ,'EXTRACT_BASE_NAME'
-        ,'EXTRACT_DATE_TIME'
-        ,'EXTRACT_IS_COMPLETED_DATE_TIME_FLG'
-        ,'EXTRACT_TITLE'
-        ,'EXTRACT_IS_COMPLETED_TITLE_NAME_FLG'
-        ]
-
 DTM = datetime.datetime.today().strftime('%Y-%m-%dT%H-%M-%S')
 DST = os.getcwd() #実行ディレクトリ
 
