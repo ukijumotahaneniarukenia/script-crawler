@@ -85,7 +85,7 @@ for crawler_target in crawler_target_list:
 
     if os.path.exists(link_file_name):
 
-        if re.search(base_name,link_file_name):
+        if re.search(base_name,link_file_name) and ( not site_url ==link_file_name.strip() + "/" ) :
 
             link_file_name_list = open(link_file_name,'r')
 
@@ -129,6 +129,8 @@ for crawler_target in crawler_target_list:
 
                         target_xpath_list = crawler_target[EXTRACT_COLUMN_LIST][site_column_name]
 
+                        extract_sub_list = []
+
                         for target_xpath in target_xpath_list:
 
                             main_xpath = target_xpath[MAIN_XPATH_EXPRESSION]
@@ -142,24 +144,16 @@ for crawler_target in crawler_target_list:
 
                                     if not len(extract_text) == 0:
 
-                                        extract_list.append(extract_text)
-                                        extract_list.append(EXTRACT_IS_COMPLETED)
-
-                                        break
+                                        extract_sub_list.append(extract_text)
+                                        extract_sub_list.append(EXTRACT_IS_COMPLETED)
 
                                     else :
 
-                                        extract_list.append(DEFAULT_NONE_VALUE)
-                                        extract_list.append(EXTRACT_IS_NOT_COMPLETED)
-
-                                        break
+                                        pass
 
                                 except NoSuchElementException:
 
-                                    extract_list.append(DEFAULT_NONE_VALUE)
-                                    extract_list.append(EXTRACT_IS_NOT_COMPLETED)
-
-                                    break
+                                    pass
 
                             if not len(sub_xpath) == 0 :
                                 #複数件への対応
@@ -170,6 +164,16 @@ for crawler_target in crawler_target_list:
                                 except NoSuchElementException:
 
                                     pass
+
+                        if not len(extract_sub_list) == 0 :
+
+                            extract_list.append(extract_sub_list[0])
+                            extract_list.append(extract_sub_list[1])
+
+                        else :
+
+                            extract_list.append(DEFAULT_NONE_VALUE)
+                            extract_list.append(EXTRACT_IS_NOT_COMPLETED)
 
                     driver.quit()
 
