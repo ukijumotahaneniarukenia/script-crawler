@@ -17,15 +17,15 @@ pip3 install --user selenium
 CMD
 
 ```
-$ cat list-non-spa.json | jq -cr '. as $in | $in | length as $cnt | [range(0;$cnt)]|foreach $in[.[]] as $item("";($item|(."SITE_URL"|gsub(".*//";"")|gsub("/.*";"")|split(".")|reverse|join("-")) + "\t" +($item|({"EXTRACT_COLUMN_LIST":(."EXTRACT_COLUMN_LIST"|keys)}|tojson)) ))' | while read base_name column_list;do echo $column_list > "list-column-"$base_name".json";cat "list-column-"$base_name".json"|jq '' |sponge "list-column-"$base_name".json";done
+$ cat list-non-spa.json | jq -cr '. as $in | $in | length as $cnt | [range(0;$cnt)]|foreach $in[.[]] as $item("";($item|(."SITE_URL"|gsub(".*//";"")|gsub("/.*";"")|split(".")|reverse|join("-")) + "\t" +($item|({"EXTRACT_COLUMN_LIST":(."EXTRACT_COLUMN_LIST"|keys)}|tojson))))'| while read base_name column_list;do echo $column_list > "extract-site-column-list-"$base_name".json";cat "extract-site-column-list-"$base_name".json"|jq '' |sponge "extract-site-column-list-"$base_name".json";done
 ```
 
 OUT
 
 ```
-$ ls -lh list-column*json
--rw-r--r-- 1 aine aine 69  9月 19 21:18 list-column-com-asahi-www.json
--rw-r--r-- 1 aine aine 69  9月 19 21:18 list-column-com-reuters-jp.json
+$ ls -lh extract-site-column-list-*json
+-rw-r--r-- 1 aine aine 69  9月 19 21:31 extract-site-column-list-com-asahi-www.json
+-rw-r--r-- 1 aine aine 69  9月 19 21:31 extract-site-column-list-com-reuters-jp.json
 ```
 
 
