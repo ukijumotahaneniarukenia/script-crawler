@@ -24,7 +24,7 @@ options.add_argument('/usr/local/src/chrome-linux/chrome')
 driver = webdriver.Chrome(options=options)
 
 #crawler_target_url_list = ['https://edition.cnn.com/2020/09/18/politics/ruth-bader-ginsburg-dead/index.html']
-crawler_target_url_list = ['https://jp.reuters.com/article/kono-idJPKBN2690PY?taid=5f64b07f1266d20001bb2bee&utm_campaign=trueAnthem:+Trending+Content&utm_medium=trueAnthem&utm_source=twitter']
+crawler_target_url_list = ['https://jp.reuters.com//article/health-coronavirus-britain-idJPKBN2691EU']
 
 for crawler_target_url in crawler_target_url_list:
 
