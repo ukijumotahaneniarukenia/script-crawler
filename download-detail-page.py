@@ -36,7 +36,7 @@ for site_url in source_file :
 
                 domain_name = re.findall(r'(?<=//).*?(?=/)', site_url.strip())[0]
 
-                output_file_name = OUTPUT_PREFIX + url.strip().replace(domain_name,base_name).replace('/','-').replace('&','-').replace('?','-').replace('^','-').replace(':','-').replace('#','-') + OUTPUT_SUFFIX
+                output_file_name = OUTPUT_PREFIX + url.strip().replace(domain_name,base_name).replace('/','-').replace('&','-').replace('?','-').replace('^','-').replace(':','-').replace('#','-').replace('=','-') + OUTPUT_SUFFIX
 
                 #前回分の出力結果ファイルが存在すれば削除
                 if os.path.exists(output_file_name):

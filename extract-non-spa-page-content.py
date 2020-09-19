@@ -36,6 +36,19 @@ SITE_URL='SITE_URL'
 SUB_XPATH_EXPRESSION='SUB_XPATH_EXPRESSION'
 TITLE_NAME='TITLE_NAME'
 
+#取得項目リスト
+EXTRACT_LIST=[
+         'EXTRACT_URL_NAME'
+        ,'EXTRACT_PAGE_NAME'
+        ,'EXTRACT_SITE_NAME'
+        ,'EXTRACT_SITE_URL'
+        ,'EXTRACT_BASE_NAME'
+        ,'EXTRACT_TITLE_NAME'
+        ,'EXTRACT_IS_COMPLETED_TITLE_NAME_FLG'
+        ,'EXTRACT_DATE_TIME'
+        ,'EXTRACT_IS_COMPLETED_DATE_TIME_FLG'
+        ]
+
 DTM = datetime.datetime.today().strftime('%Y-%m-%dT%H-%M-%S')
 DST = os.getcwd() #実行ディレクトリ
 
@@ -55,6 +68,12 @@ for crawler_target in crawler_target_list:
     if os.path.exists(output_file_name):
 
         os.remove(output_file_name)
+
+    #ファイルの新規作成
+    with open(output_file_name,'a') as f:
+
+        f.write("\t".join(EXTRACT_LIST))
+        f.write(ORS)
 
     link_file_name = LINK_PREFFIX + base_name + LINK_SUFFIX
 
