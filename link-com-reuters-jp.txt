@@ -1,4 +1,4 @@
-https://jp.reuters.com//
+https://jp.reuters.com
 https://jp.reuters.com////jp.reuters.com/article/usa-fed-framework-idJPKBN26936J
 https://jp.reuters.com///af.reuters.com
 https://jp.reuters.com///ar.reuters.com
@@ -12,7 +12,7 @@ https://jp.reuters.com///fr.reuters.com
 https://jp.reuters.com///in.reuters.com
 https://jp.reuters.com///info.evidon.com/pub_info/307
 https://jp.reuters.com///it.reuters.com
-https://jp.reuters.com///japan.thomsonreuters.com/trading/eikon/
+https://jp.reuters.com///japan.thomsonreuters.com/trading/eikon
 https://jp.reuters.com///jp.reuters.com
 https://jp.reuters.com///jp.reuters.com/article/australia-china-scholars-idJPKBN2661E1
 https://jp.reuters.com///jp.reuters.com/article/china-vaccine-idJPKBN2670KE
@@ -41,10 +41,10 @@ https://jp.reuters.com///thomsonreuters.com/en/careers.html
 https://jp.reuters.com///twitter.com/ReutersJapan
 https://jp.reuters.com///uk.reuters.com
 https://jp.reuters.com///www.facebook.com/reuters.co.jp
-https://jp.reuters.com///www.linkedin.com/company/10256858/
+https://jp.reuters.com///www.linkedin.com/company/10256858
 https://jp.reuters.com///www.reuters.com
 https://jp.reuters.com///www.reutersagency.com/ja/?utm_source=website&utm_medium=reuters&utm_campaign=site-referral&utm_content=japan&utm_term=0
-https://jp.reuters.com///www.reutersagency.com/ja/about/brand-attribution-guidelines/
+https://jp.reuters.com///www.reutersagency.com/ja/about/brand-attribution-guidelines
 https://jp.reuters.com//article/%E3%80%94%E8%A1%A8%E3%80%95%EF%BC%AE%EF%BC%B9%E5%A4%96%E7%82%BA%E5%B8%82%E5%A0%B4%EF%BC%9D%E5%AF%BE%E3%83%89%E3%83%AB%EF%BC%8F%E5%90%84%E5%9B%BD%E9%80%9A%E8%B2%A8%E7%9B%B8%E5%A0%B418%E6%97%A5-idJPL4N2GF3L0
 https://jp.reuters.com//article/%E3%80%94%E8%A1%A8%E3%80%95%EF%BC%AE%EF%BC%B9%E5%A4%96%E7%82%BA%E5%B8%82%E5%A0%B4%EF%BC%9D%E5%AF%BE%E3%83%89%E3%83%AB%EF%BC%8F%E5%90%84%E5%9B%BD%E9%80%9A%E8%B2%A8%E7%9B%B8%E5%A0%B418%E6%97%A5-idJPL4N2GF3L0?il=0
 https://jp.reuters.com//article/%E3%82%B7%E3%82%AB%E3%82%B4%E6%97%A5%E7%B5%8C%E5%B9%B3%E5%9D%87%E5%85%88%E7%89%A918%E6%97%A5-idJPL4N2GF3J3
@@ -118,12 +118,12 @@ https://jp.reuters.com//blog
 https://jp.reuters.com//breakingviews
 https://jp.reuters.com//focus-360
 https://jp.reuters.com//home
-https://jp.reuters.com//info/copyright/
+https://jp.reuters.com//info/copyright
 https://jp.reuters.com//info/disclaimer
 https://jp.reuters.com//info/faq
-https://jp.reuters.com//info/query/
+https://jp.reuters.com//info/query
 https://jp.reuters.com//investing
-https://jp.reuters.com//investing/currencies 
+https://jp.reuters.com//investing/currencies
 https://jp.reuters.com//investing/currencies/chart
 https://jp.reuters.com//investing/currencies/fx-forum
 https://jp.reuters.com//investing/markets
@@ -176,7 +176,7 @@ https://jp.reuters.com//news/world/security
 https://jp.reuters.com//news/world/uselection
 https://jp.reuters.com//news/world/uspolitics
 https://jp.reuters.com//opinion
-https://jp.reuters.com//prcenter/
+https://jp.reuters.com//prcenter
 https://jp.reuters.com//theWire
 https://jp.reuters.com//tools/mobile
 https://jp.reuters.com//video

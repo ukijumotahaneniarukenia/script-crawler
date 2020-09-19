@@ -52,7 +52,7 @@ for site_url in source_file :
 
         for target_url in target_url_list:
 
-            f.write(target_url)
+            f.write(re.sub('/+$','',target_url).strip())
             f.write(ORS)
 
     target_file.close()
