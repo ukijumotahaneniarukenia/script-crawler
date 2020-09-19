@@ -36,6 +36,9 @@ SITE_URL='SITE_URL'
 SUB_XPATH_EXPRESSION='SUB_XPATH_EXPRESSION'
 TITLE_NAME='TITLE_NAME'
 
+#取得項目共通リスト
+
+
 #取得項目リスト
 #json定義ファイルからいいかんじにしたいな
 EXTRACT_LIST=[
