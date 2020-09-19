@@ -1,12 +1,10 @@
 サイトページだうんろーど
 
+
+ドメイン名は//と/で挟むこと
+
 ```
-echo https://jp.reuters.com/  | xargs -n1 | \
-    while read url;do
-      output_web_page_name = $(echo $url | grep -Po '(?<=//).*?(?=/)' | jq -Rr '(split(".")|reverse|join("-"))+".html"')
-      curl -fsSL "$url" -o "$output_web_page_name";
-      nkf -Lu "$output_web_page_name" | sponge "$output_web_page_name"
-    done
+$ echo https://jp.reuters.com/ https://www.asahi.com/ | xargs -n1 | while read url;do output_web_page_name=$(echo $url | grep -Po '(?<=//).*?(?=/)' | jq -Rr '(split(".")|reverse|join("-"))+".html"');curl -fsSL "$url" -o "$output_web_page_name";nkf -Lu "$output_web_page_name" | sponge "$output_web_page_name";done
 ```
 
 

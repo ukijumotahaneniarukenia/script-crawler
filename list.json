@@ -1,7 +1,7 @@
 [
   {
     "SITE_NAME": "ロイター",
-    "SITE_URL": "https://jp.reuters.com",
+    "SITE_URL": "https://jp.reuters.com/",
     "TITLE_NAME": [
       {
         "MAIN_XPATH_EXPRESSION": "/html/body/div[1]/div/div[3]/div[2]/div/div/h1",
@@ -25,7 +25,7 @@
   },
   {
     "SITE_NAME": "朝日新聞",
-    "SITE_URL": "https://www.asahi.com",
+    "SITE_URL": "https://www.asahi.com/",
     "TITLE_NAME": [
       {
         "MAIN_XPATH_EXPRESSION": "",
