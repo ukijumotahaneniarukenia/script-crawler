@@ -17,8 +17,13 @@ from lxml import html
 
 SOURCE_FILE_NAME='list-non-spa.json'
 
+COMMON_COLUMN_LIST_FILE_NAME = ''
+
 LINK_PREFFIX='link-'
 LINK_SUFFIX='.txt'
+
+COLUMN_LIST_PREFFIX='extract-site-column-list-'
+COLUMN_LIST_SUFFIX='.json'
 
 INPUT_PREFIX = 'page-detail-'
 INPUT_SUFFIX = '.html'
@@ -36,8 +41,9 @@ SITE_URL='SITE_URL'
 SUB_XPATH_EXPRESSION='SUB_XPATH_EXPRESSION'
 TITLE_NAME='TITLE_NAME'
 
-#取得項目共通リスト
+EXTRACT_COLUMN_LIST='EXTRACT_COLUMN_LIST'
 
+#取得項目共通リスト
 
 #取得項目リスト
 #json定義ファイルからいいかんじにしたいな
@@ -126,7 +132,14 @@ for crawler_target in crawler_target_list:
 
                        target_dom = html.fromstring(target_file_content)
 
-                       target_xpath_list = crawler_target[TITLE_NAME]
+
+
+                       #site_column_list_file = open(COLUMN_LIST_PREFFIX + base_name + COLUMN_LIST_SUFFIX,'r')
+
+                       #site_column_list = json.load(site_column_list_file)
+
+
+                       target_xpath_list = crawler_target[EXTRACT_COLUMN_LIST][TITLE_NAME]
 
                        for target_xpath in target_xpath_list:
 
@@ -160,7 +173,7 @@ for crawler_target in crawler_target_list:
 
                                pass
 
-                       target_xpath_list = crawler_target[DATE_TIME]
+                       target_xpath_list = crawler_target[EXTRACT_COLUMN_LIST][DATE_TIME]
 
                        for target_xpath in target_xpath_list:
 
