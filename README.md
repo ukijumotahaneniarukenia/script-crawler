@@ -7,6 +7,9 @@ Qt等でウェブブラウザ機能を持つアプリを立ち上げる
 
 - https://www.youtube.com/watch?v=j1FQ0IsLpEg&list=LLSY1WsXXQAPCUNSm7SocZcQ&index=2
 
+- https://stackoverflow.com/questions/52656526/how-to-insert-a-web-browser-in-python-qt-designer
+
+
 ユーザーがURLを指定する
 
 指定したURLに遷移する
