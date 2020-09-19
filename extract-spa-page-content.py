@@ -24,7 +24,7 @@ SITE_NAME='SITE_NAME'
 SITE_URL='SITE_URL'
 
 LINK_PREFFIX='link-'
-LINK_SUFFIX='.txt'
+LINK_SUFFIX='.txt.min'
 
 OUTPUT_PREFIX = 'page-content-spa-'
 OUTPUT_SUFFIX = '.tsv'
@@ -91,7 +91,7 @@ for crawler_target in crawler_target_list:
 
             cnt = 0
 
-            for link_file_name in list(link_file_name_list)[0:4]:
+            for link_file_name in link_file_name_list:
 
                 crawler_target_url = link_file_name.strip()
 
