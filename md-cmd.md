@@ -12,6 +12,26 @@ pip3 install --user bs4
 pip3 install --user selenium
 ```
 
+サイト別カラムリストの一覧の作成
+
+CMD
+
+```
+$ cat list-non-spa.json | jq -cr '. as $in | $in | length as $cnt | [range(0;$cnt)]|foreach $in[.[]] as $item("";($item|(."SITE_URL"|gsub(".*//";"")|gsub("/.*";"")|split(".")|reverse|join("-")) + "\t" +($item|({"EXTRACT_COLUMN_LIST":(."EXTRACT_COLUMN_LIST"|keys)}|tojson)) ))' | while read base_name column_list;do echo $column_list > "list-column-"$base_name".json";cat "list-column-"$base_name".json"|jq '' |sponge "list-column-"$base_name".json";done
+```
+
+OUT
+
+```
+$ ls -lh list-column*json
+-rw-r--r-- 1 aine aine 69  9月 19 21:18 list-column-com-asahi-www.json
+-rw-r--r-- 1 aine aine 69  9月 19 21:18 list-column-com-reuters-jp.json
+```
+
+
+
+
+
 ベースファイル名リストの作成
 
 CMD
