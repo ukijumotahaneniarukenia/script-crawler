@@ -7,6 +7,10 @@ $ echo https://jp.reuters.com/ | while read url;do curl -fsSL "$url" -o $(echo $
 
 
 ```
+$ pip3 install --user lxml
+
+$ pip3 install --user bs4
+
 pip3 install --user selenium
 
 ```

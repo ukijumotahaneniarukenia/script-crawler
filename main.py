@@ -109,6 +109,8 @@ def crawl(execute_args):
 
     driver.quit()
 
+    crawler_target_file.close()
+
 def main():
 
     try:
