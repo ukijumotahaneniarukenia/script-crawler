@@ -45,6 +45,21 @@ $ ls -lh page*html
 -rw-r--r-- 1 aine aine 207K  9月 19 15:02 page-com-reuters-jp.html
 ```
 
+リンクページの作成
+
+CMD
+
+```
+./link-create.py
+```
+
+OUT
+
+```
+$ ls -lh link*txt
+-rw-r--r-- 1 aine aine 53K  9月 19 15:36 link-com-asahi-www.txt
+-rw-r--r-- 1 aine aine 12K  9月 19 15:36 link-com-reuters-jp.txt
+```
 
 個別ページのダウンロード
 
