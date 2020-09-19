@@ -49,6 +49,13 @@ for crawler_target in crawler_target_list:
     site_url = crawler_target[SITE_URL]
     base_name = "-".join(re.findall(r'(?<=//).*?(?=/)', site_url.strip())[0].split(".")[::-1])
 
+    output_file_name = OUTPUT_PREFIX + base_name + OUTPUT_SUFFIX
+
+    #前回分の出力結果ファイルが存在すれば削除
+    if os.path.exists(output_file_name):
+
+        os.remove(output_file_name)
+
     link_file_name = LINK_PREFFIX + base_name + LINK_SUFFIX
 
     if os.path.exists(link_file_name):
@@ -168,14 +175,7 @@ for crawler_target in crawler_target_list:
 
                        continue
 
-                   #前回分の出力結果ファイルが存在すれば削除
-                   #if os.path.exists(output_file_name):
+                   with open(output_file_name,'a') as f:
 
-                   #    os.remove(output_file_name)
-
-                   #with open(output_file_name,'a') as f:
-
-                   #    f.write(response.text)
-                   #    f.write(ORS)
-
-                   print("\t".join(extract_list))
+                       f.write("\t".join(extract_list))
+                       f.write(ORS)
