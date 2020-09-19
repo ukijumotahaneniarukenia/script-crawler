@@ -17,13 +17,12 @@ from lxml import html
 
 SOURCE_FILE_NAME='list-non-spa.json'
 
-COMMON_COLUMN_LIST_FILE_NAME = ''
-
 LINK_PREFFIX='link-'
 LINK_SUFFIX='.txt'
 
-COLUMN_LIST_PREFFIX='extract-site-column-list-'
-COLUMN_LIST_SUFFIX='.json'
+COMMON_COLUMN_LIST_FILE_NAME = 'extract-common-column-list.json'
+SITE_COLUMN_LIST_PREFFIX='extract-site-column-list-'
+SITE_COLUMN_LIST_SUFFIX='.json'
 
 INPUT_PREFIX = 'page-detail-'
 INPUT_SUFFIX = '.html'
@@ -46,6 +45,16 @@ EXTRACT_IS_NOT_COMPLETED = '0'
 
 #取得項目リスト
 #json定義ファイルからいいかんじにしたいな
+
+common_column_list_file = open(COMMON_COLUMN_LIST_FILE_NAME,'r')
+
+common_column_list = json.load(common_column_list_file)
+
+OUTPUT_HEADER_LIST=set()
+for common_column_name in common_column_list[EXTRACT_COLUMN_LIST] :
+
+    OUTPUT_HEADER_LIST.add(common_column_name)
+
 EXTRACT_LIST=[
          'EXTRACT_URL_NAME'
         ,'EXTRACT_PAGE_NAME'
@@ -78,12 +87,6 @@ for crawler_target in crawler_target_list:
 
         os.remove(output_file_name)
 
-    #ファイルの新規作成
-    with open(output_file_name,'a') as f:
-
-        f.write("\t".join(EXTRACT_LIST))
-        f.write(ORS)
-
     link_file_name = LINK_PREFFIX + base_name + LINK_SUFFIX
 
     if os.path.exists(link_file_name):
@@ -91,6 +94,8 @@ for crawler_target in crawler_target_list:
         if re.search(base_name,link_file_name):
 
             link_file_name_list = open(link_file_name,'r')
+
+            cnt = 0
 
             for link_file_name in link_file_name_list:
 
@@ -104,6 +109,8 @@ for crawler_target in crawler_target_list:
 
                    if re.search(base_name,input_file_name) and ( not site_url ==link_file_name.strip() + "/" ):
                        #エントリページ以外を処理対象とする
+
+                       cnt = cnt + 1
 
                        EXTRACT_URL_NAME = link_file_name.strip()
                        EXTRACT_PAGE_NAME = input_file_name
@@ -123,11 +130,14 @@ for crawler_target in crawler_target_list:
 
                        target_dom = html.fromstring(target_file_content)
 
-                       site_column_list_file = open(COLUMN_LIST_PREFFIX + base_name + COLUMN_LIST_SUFFIX,'r')
+                       site_column_list_file = open(SITE_COLUMN_LIST_PREFFIX + base_name + SITE_COLUMN_LIST_SUFFIX,'r')
 
                        site_column_list = json.load(site_column_list_file)
 
                        for site_column_name in site_column_list[EXTRACT_COLUMN_LIST] :
+
+                           OUTPUT_HEADER_LIST.add(site_column_name)
+                           OUTPUT_HEADER_LIST.add(site_column_name + '_IS_EXTRACT_COMPLETED_FLG' )
 
                            target_xpath_list = crawler_target[EXTRACT_COLUMN_LIST][site_column_name]
 
@@ -166,7 +176,15 @@ for crawler_target in crawler_target_list:
 
                        continue
 
-                   with open(output_file_name,'a') as f:
+                   if cnt == 1:
+                       #ファイルの新規作成
+                       with open(output_file_name,'a') as f:
 
-                       f.write("\t".join(extract_list))
-                       f.write(ORS)
+                           f.write(re.sub('[0-9]+_','','\t'.join(sorted(OUTPUT_HEADER_LIST))))
+                           f.write('\t'.join(extract_list))
+                           f.write(ORS)
+                   else :
+
+                       with open(output_file_name,'a') as f:
+                           f.write('\t'.join(extract_list))
+                           f.write(ORS)
