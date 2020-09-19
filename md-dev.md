@@ -12,6 +12,8 @@ echo https://jp.reuters.com/  | xargs -n1 | \
 
 
 ```
+pip3 install --user requests
+
 pip3 install --user lxml
 
 pip3 install --user bs4
