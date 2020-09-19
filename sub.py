@@ -40,11 +40,13 @@ for anchor_tag in anchor_tag_list:
 
     url_list.append(MAIN_URL + sub_url)
 
+target_url_list = sorted(set(url_list))
+
 with open(OUTPUT_FILE_NAME, mode='a') as f:
 
-    for url in url_list:
+    for target_url in target_url_list:
 
-        f.write(url)
+        f.write(target_url)
         f.write(ORS)
 
 target_file.close()
