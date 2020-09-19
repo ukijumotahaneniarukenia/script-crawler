@@ -34,20 +34,15 @@ OFS = '\t'
 ORS = '\n'
 
 #取得項目の定義
-DATE_TIME='DATE_TIME'
 MAIN_XPATH_EXPRESSION='MAIN_XPATH_EXPRESSION'
+SUB_XPATH_EXPRESSION='SUB_XPATH_EXPRESSION'
+EXTRACT_COLUMN_LIST='EXTRACT_COLUMN_LIST'
 SITE_NAME='SITE_NAME'
 SITE_URL='SITE_URL'
-SUB_XPATH_EXPRESSION='SUB_XPATH_EXPRESSION'
-TITLE_NAME='TITLE_NAME'
 
 DEFAULT_NONE_VALUE = 'ないよーん'
 EXTRACT_IS_COMPLETED = '1'
 EXTRACT_IS_NOT_COMPLETED = '0'
-
-EXTRACT_COLUMN_LIST='EXTRACT_COLUMN_LIST'
-
-#取得項目共通リスト
 
 #取得項目リスト
 #json定義ファイルからいいかんじにしたいな
@@ -57,10 +52,10 @@ EXTRACT_LIST=[
         ,'EXTRACT_SITE_NAME'
         ,'EXTRACT_SITE_URL'
         ,'EXTRACT_BASE_NAME'
-        ,'EXTRACT_TITLE'
-        ,'EXTRACT_IS_COMPLETED_TITLE_NAME_FLG'
         ,'EXTRACT_DATE_TIME'
         ,'EXTRACT_IS_COMPLETED_DATE_TIME_FLG'
+        ,'EXTRACT_TITLE'
+        ,'EXTRACT_IS_COMPLETED_TITLE_NAME_FLG'
         ]
 
 DTM = datetime.datetime.today().strftime('%Y-%m-%dT%H-%M-%S')
@@ -108,24 +103,16 @@ for crawler_target in crawler_target_list:
                    extract_list = []
 
                    if re.search(base_name,input_file_name) and ( not site_url ==link_file_name.strip() + "/" ):
-                       #トップエントリ以外を処理対象とする
-
-                       #取得項目値の格納用の変数
-                       extract_text='-'
-                       EXTRACT_DATE_TIME='-'
-                       EXTRACT_IS_COMPLETED_TITLE_NAME_FLG='0'
-                       EXTRACT_IS_COMPLETED_DATE_TIME_FLG='0'
+                       #エントリページ以外を処理対象とする
 
                        EXTRACT_URL_NAME = link_file_name.strip()
-                       extract_list.append(EXTRACT_URL_NAME)
-
                        EXTRACT_PAGE_NAME = input_file_name
-                       extract_list.append(EXTRACT_PAGE_NAME)
-
                        EXTRACT_SITE_NAME = crawler_target[SITE_NAME]
                        EXTRACT_SITE_URL = crawler_target[SITE_URL]
                        EXTRACT_BASE_NAME = base_name
 
+                       extract_list.append(EXTRACT_URL_NAME)
+                       extract_list.append(EXTRACT_PAGE_NAME)
                        extract_list.append(EXTRACT_SITE_NAME)
                        extract_list.append(EXTRACT_SITE_URL)
                        extract_list.append(EXTRACT_BASE_NAME)
@@ -170,6 +157,8 @@ for crawler_target in crawler_target_list:
                                if not len(sub_xpath) == 0 :
                                    #複数件への対応
                                    pass
+
+                       site_column_list_file.close()
 
                        target_file.close()
 
