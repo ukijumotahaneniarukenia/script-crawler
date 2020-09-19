@@ -169,6 +169,7 @@ for crawler_target in crawler_target_list:
                        with open(output_file_name,'a') as f:
 
                            f.write(re.sub('[0-9]+_','','\t'.join(sorted(OUTPUT_HEADER_LIST))))
+                           f.write(ORS)
                            f.write('\t'.join(extract_list))
                            f.write(ORS)
                    else :
