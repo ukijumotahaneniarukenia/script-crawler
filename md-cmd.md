@@ -1,3 +1,17 @@
+事前準備
+
+CMD
+
+```
+pip3 install --user requests
+
+pip3 install --user lxml
+
+pip3 install --user bs4
+
+pip3 install --user selenium
+```
+
 ベースファイル名リストの作成
 
 CMD
