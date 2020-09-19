@@ -1,0 +1,50 @@
+[
+  {
+    "SITE_NAME": "ロイター",
+    "SITE_URL": "https://jp.reuters.com",
+    "TITLE_NAME": [
+      {
+        "MAIN_XPATH_EXPRESSION": "",
+        "SUB_XPATH_EXPRESSION": ""
+      },
+      {
+        "MAIN_XPATH_EXPRESSION": "",
+        "SUB_XPATH_EXPRESSION": ""
+      }
+    ],
+    "DATE_TIME": [
+      {
+        "MAIN_XPATH_EXPRESSION": "",
+        "SUB_XPATH_EXPRESSION": ""
+      },
+      {
+        "MAIN_XPATH_EXPRESSION": "",
+        "SUB_XPATH_EXPRESSION": ""
+      }
+    ]
+  },
+  {
+    "SITE_NAME": "朝日新聞",
+    "SITE_URL": "https://www.asahi.com",
+    "TITLE_NAME": [
+      {
+        "MAIN_XPATH_EXPRESSION": "",
+        "SUB_XPATH_EXPRESSION": ""
+      },
+      {
+        "MAIN_XPATH_EXPRESSION": "",
+        "SUB_XPATH_EXPRESSION": ""
+      }
+    ],
+    "DATE_TIME": [
+      {
+        "MAIN_XPATH_EXPRESSION": "",
+        "SUB_XPATH_EXPRESSION": ""
+      },
+      {
+        "MAIN_XPATH_EXPRESSION": "",
+        "SUB_XPATH_EXPRESSION": ""
+      }
+    ]
+  }
+]
