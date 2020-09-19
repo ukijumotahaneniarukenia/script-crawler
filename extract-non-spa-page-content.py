@@ -41,6 +41,10 @@ SITE_URL='SITE_URL'
 SUB_XPATH_EXPRESSION='SUB_XPATH_EXPRESSION'
 TITLE_NAME='TITLE_NAME'
 
+DEFAULT_NONE_VALUE = 'ないよーん'
+EXTRACT_IS_COMPLETED = '1'
+EXTRACT_IS_NOT_COMPLETED = '0'
+
 EXTRACT_COLUMN_LIST='EXTRACT_COLUMN_LIST'
 
 #取得項目共通リスト
@@ -53,7 +57,7 @@ EXTRACT_LIST=[
         ,'EXTRACT_SITE_NAME'
         ,'EXTRACT_SITE_URL'
         ,'EXTRACT_BASE_NAME'
-        ,'EXTRACT_TITLE_NAME'
+        ,'EXTRACT_TITLE'
         ,'EXTRACT_IS_COMPLETED_TITLE_NAME_FLG'
         ,'EXTRACT_DATE_TIME'
         ,'EXTRACT_IS_COMPLETED_DATE_TIME_FLG'
@@ -107,7 +111,7 @@ for crawler_target in crawler_target_list:
                        #トップエントリ以外を処理対象とする
 
                        #取得項目値の格納用の変数
-                       EXTRACT_TITLE_NAME='-'
+                       extract_text='-'
                        EXTRACT_DATE_TIME='-'
                        EXTRACT_IS_COMPLETED_TITLE_NAME_FLG='0'
                        EXTRACT_IS_COMPLETED_DATE_TIME_FLG='0'
@@ -132,79 +136,40 @@ for crawler_target in crawler_target_list:
 
                        target_dom = html.fromstring(target_file_content)
 
+                       site_column_list_file = open(COLUMN_LIST_PREFFIX + base_name + COLUMN_LIST_SUFFIX,'r')
 
+                       site_column_list = json.load(site_column_list_file)
 
-                       #site_column_list_file = open(COLUMN_LIST_PREFFIX + base_name + COLUMN_LIST_SUFFIX,'r')
+                       for site_column_name in site_column_list[EXTRACT_COLUMN_LIST] :
 
-                       #site_column_list = json.load(site_column_list_file)
+                           target_xpath_list = crawler_target[EXTRACT_COLUMN_LIST][site_column_name]
 
+                           for target_xpath in target_xpath_list:
 
-                       target_xpath_list = crawler_target[EXTRACT_COLUMN_LIST][TITLE_NAME]
+                               main_xpath = target_xpath[MAIN_XPATH_EXPRESSION]
+                               sub_xpath = target_xpath[SUB_XPATH_EXPRESSION]
 
-                       for target_xpath in target_xpath_list:
+                               if not len(main_xpath) == 0 :
 
-                           main_xpath = target_xpath[MAIN_XPATH_EXPRESSION]
-                           sub_xpath = target_xpath[SUB_XPATH_EXPRESSION]
+                                   result_list = target_dom.xpath(main_xpath)
 
+                                   if not len(result_list) == 0:
 
-                           if not len(main_xpath) == 0 :
+                                       extract_text = result_list[0].text
 
-                               result_list = target_dom.xpath(main_xpath)
+                                       if extract_text is not None :
 
-                               if not len(result_list) == 0:
+                                           extract_list.append(extract_text)
+                                           extract_list.append(EXTRACT_IS_COMPLETED)
 
-                                   extract_title_name = result_list[0].text
+                                       else :
 
-                                   if extract_title_name is not None :
+                                           extract_list.append(DEFAULT_NONE_VALUE)
+                                           extract_list.append(EXTRACT_IS_NOT_COMPLETED)
 
-                                       EXTRACT_TITLE_NAME = extract_title_name
-                                       EXTRACT_IS_COMPLETED_TITLE_NAME_FLG = '1'
-
-                                       extract_list.append(EXTRACT_TITLE_NAME)
-                                       extract_list.append(EXTRACT_IS_COMPLETED_TITLE_NAME_FLG)
-
-                                   else :
-
-                                       extract_list.append(EXTRACT_TITLE_NAME)
-                                       extract_list.append(EXTRACT_IS_COMPLETED_TITLE_NAME_FLG)
-
-                           if not len(sub_xpath) == 0 :
-                               #複数件への対応
-
-                               pass
-
-                       target_xpath_list = crawler_target[EXTRACT_COLUMN_LIST][DATE_TIME]
-
-                       for target_xpath in target_xpath_list:
-
-                           main_xpath = target_xpath[MAIN_XPATH_EXPRESSION]
-                           sub_xpath = target_xpath[SUB_XPATH_EXPRESSION]
-
-                           if not len(main_xpath) == 0 :
-
-                               result_list = target_dom.xpath(main_xpath)
-
-                               if not len(result_list) == 0:
-
-                                   extract_date_time = result_list[0].text
-
-                                   if extract_date_time is not None :
-
-                                       EXTRACT_DATE_TIME = extract_date_time
-                                       EXTRACT_IS_COMPLETED_DATE_TIME_FLG = '1'
-
-                                       extract_list.append(EXTRACT_DATE_TIME)
-                                       extract_list.append(EXTRACT_IS_COMPLETED_DATE_TIME_FLG)
-
-                                   else :
-
-                                       extract_list.append(EXTRACT_DATE_TIME)
-                                       extract_list.append(EXTRACT_IS_COMPLETED_DATE_TIME_FLG)
-
-                           if not len(sub_xpath) == 0 :
-                               #複数件への対応
-
-                               pass
+                               if not len(sub_xpath) == 0 :
+                                   #複数件への対応
+                                   pass
 
                        target_file.close()
 
