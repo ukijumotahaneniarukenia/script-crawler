@@ -88,7 +88,7 @@
     </property>
    </widget>
   </widget>
-  <widget class="QWebView" name="webView">
+  <widget class="QWebView" name="webView" native="true">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -97,7 +97,7 @@
      <height>701</height>
     </rect>
    </property>
-   <property name="url">
+   <property name="url" stdset="0">
     <url>
      <string>about:blank</string>
     </url>

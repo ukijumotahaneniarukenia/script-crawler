@@ -12,23 +12,6 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_Form(object):
-
-    def back(self):
-
-        print('back')
-
-    def forward(self):
-
-        print('forward')
-
-    def reload(self):
-
-        print('reload')
-
-    def goAddress(self):
-
-        print('goAddress')
-
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(1052, 885)
@@ -38,11 +21,6 @@ class Ui_Form(object):
         self.backButton = QtWidgets.QPushButton(self.groupBox)
         self.backButton.setGeometry(QtCore.QRect(10, 50, 51, 51))
         self.backButton.setObjectName("backButton")
-
-        self.backButton.clicked.connect(self.back)
-
-
-
         self.inputUrlArea = QtWidgets.QLineEdit(self.groupBox)
         self.inputUrlArea.setGeometry(QtCore.QRect(170, 60, 721, 41))
         self.inputUrlArea.setObjectName("inputUrlArea")
@@ -57,7 +35,7 @@ class Ui_Form(object):
         self.goButton.setObjectName("goButton")
         self.webView = QtWebKitWidgets.QWebView(Form)
         self.webView.setGeometry(QtCore.QRect(30, 160, 951, 701))
-        self.webView.setUrl(QtCore.QUrl("about:blank"))
+        self.webView.setProperty("url", QtCore.QUrl("about:blank"))
         self.webView.setObjectName("webView")
 
         self.retranslateUi(Form)
@@ -74,12 +52,8 @@ class Ui_Form(object):
         self.refreshButton.setText(_translate("Form", "Refresh"))
         self.forwardButton.setText(_translate("Form", "＞"))
         self.goButton.setText(_translate("Form", "Go"))
-#from PyQt5 import QtWebKitWidgets
-from PyQt5.QtGui import *
-from PyQt5.QtCore import *
-from PyQt5.QtWebEngineWidgets import *
-from PyQt5.QtWidgets import *
-from PyQt5.QtWebKitWidgets import QWebPage
+from PyQt5 import *
+
 
 if __name__ == "__main__":
     import sys
