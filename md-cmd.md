@@ -118,3 +118,21 @@ CMD
 ```
 
 
+
+
+Qtデザイナーをインストール
+
+```
+
+```
+
+Uiファイルをpythonファイルに変換
+
+```
+$ which pyuic5
+/usr/local/bin/pyuic5
+aine ukijumotahaneniarukenia doc-ubuntu-18-04-vim 02:40:45 ~/script-crawler$
+$ pyuic5 -x mybrowser.ui -o mybrowser.py
+```
+
+
