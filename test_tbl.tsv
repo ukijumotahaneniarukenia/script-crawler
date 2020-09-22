@@ -1,0 +1,7 @@
+_id	_key	DATE_TIME	EXTRACT_BASE_NAME	EXTRACT_SITE_NAME	EXTRACT_SITE_URL	EXTRACT_URL_NAME	ID	TITLE_NAME
+UInt32	UInt32	LongText	LongText	LongText	LongText	LongText	UInt32	LongText
+1	1	2020年9月19日 / 06:47 / 18時間前更新	com-reuters-jp	ロイター	https://jp.reuters.com/	https://jp.reuters.com////jp.reuters.com/article/usa-fed-framework-idJPKBN26936J	1	米ＦＲＢ新戦略、国民に浸透せず　2重の責務も誤解＝調査
+2	2	2020年9月18日	com-reuters-jp	ロイター	https://jp.reuters.com/	https://jp.reuters.com//article/health-coronavirus-britain-idJPKBN2691EU	2	英、コロナ第2波不可避　新たな措置実施も＝ジョンソン首相
+3	3	2020年9月18日	com-reuters-jp	ロイター	https://jp.reuters.com/	https://jp.reuters.com//article/health-coronavirus-britain-veteran-idJPKBN2690II	3	医療支援の英退役軍人、自伝「明日はきっと良い日に」執筆
+4	4	2020年9月19日	com-reuters-jp	ロイター	https://jp.reuters.com/	https://jp.reuters.com//article/health-coronavirus-usa-canada-idJPKBN2692T1	4	米、加・メキシコとのコロナ渡航制限継続　来月21日まで
+5	5	2020年9月19日	com-reuters-jp	ロイター	https://jp.reuters.com/	https://jp.reuters.com//article/health-coronavirus-usa-trump-idJPKBN26931V	5	トランプ氏、来年4月までに全国民分のコロナワクチン確保へ
