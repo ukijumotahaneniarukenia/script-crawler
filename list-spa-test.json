@@ -7,7 +7,7 @@
     "EXTRACT_COLUMN_LIST": {
       "TITLE_NAME": [
         {
-          "MAIN_XPATH_EXPRESSION": "/html/body/div[1]/div/article/div/div/div[2]/header/h1",
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[1]/div/div/div/div[1]/h1",
           "SUB_XPATH_EXPRESSION": ""
         },
         {
@@ -17,7 +17,7 @@
       ],
       "DATE_TIME": [
         {
-          "MAIN_XPATH_EXPRESSION": "/html/body/div[1]/div/article/div/div/div[2]/header/div/span[2]/span",
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[1]/div/div/div/div[1]/div[3]/span",
           "SUB_XPATH_EXPRESSION": ""
         },
         {

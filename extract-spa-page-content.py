@@ -57,7 +57,7 @@ for common_column_name in common_column_list[EXTRACT_COLUMN_LIST] :
 
     OUTPUT_HEADER_LIST.add(common_column_name)
 
-SOURCE_FILE_NAME='list-spa.json'
+SOURCE_FILE_NAME='list-spa-test.json'
 
 source_file = open(SOURCE_FILE_NAME,'r')
 
@@ -83,120 +83,126 @@ for crawler_target in crawler_target_list:
 
     link_file_name = LINK_PREFFIX + base_name + LINK_SUFFIX
 
-    if os.path.exists(link_file_name):
+    if not os.path.exists(link_file_name):
 
-        if re.search(base_name,link_file_name) :
+        continue
 
-            link_file_name_list = open(link_file_name,'r')
+    if not re.search(base_name,link_file_name) :
 
-            cnt = 0
+        continue
 
-            for link_file_name_entry in link_file_name_list:
+    link_file_name_list = open(link_file_name,'r')
 
-                if not site_url == link_file_name_entry.strip() + "/" :
+    cnt = 0
 
-                    crawler_target_url = link_file_name_entry.strip()
+    for link_file_name_entry in link_file_name_list:
 
-                    response = requests.get(crawler_target_url)
+        if site_url == link_file_name_entry.strip() + "/" :
 
-                    if response.status_code == 200 :
+            continue
 
-                        extract_list = []
+        crawler_target_url = link_file_name_entry.strip()
 
-                        cnt = cnt + 1
+        response = requests.get(crawler_target_url)
 
-                        EXTRACT_URL_NAME = link_file_name_entry.strip()
-                        EXTRACT_SITE_NAME = crawler_target[SITE_NAME]
-                        EXTRACT_SITE_URL = crawler_target[SITE_URL]
-                        EXTRACT_BASE_NAME = base_name
+        if response.status_code == 200 :
 
-                        extract_list.append(EXTRACT_URL_NAME)
-                        extract_list.append(EXTRACT_SITE_NAME)
-                        extract_list.append(EXTRACT_SITE_URL)
-                        extract_list.append(EXTRACT_BASE_NAME)
+            extract_list = []
 
-                        site_column_list_file = open(SITE_COLUMN_LIST_PREFFIX + base_name + SITE_COLUMN_LIST_SUFFIX,'r')
+            cnt = cnt + 1
 
-                        site_column_list = json.load(site_column_list_file)
+            EXTRACT_URL_NAME = link_file_name_entry.strip()
+            EXTRACT_SITE_NAME = crawler_target[SITE_NAME]
+            EXTRACT_SITE_URL = crawler_target[SITE_URL]
+            EXTRACT_BASE_NAME = base_name
 
-                        driver = webdriver.Chrome(options=options)
-                        driver.get(crawler_target_url)
+            extract_list.append(EXTRACT_URL_NAME)
+            extract_list.append(EXTRACT_SITE_NAME)
+            extract_list.append(EXTRACT_SITE_URL)
+            extract_list.append(EXTRACT_BASE_NAME)
 
-                        time.sleep(DEFAULT_WAIT_TIME_SECONDS)
+            site_column_list_file = open(SITE_COLUMN_LIST_PREFFIX + base_name + SITE_COLUMN_LIST_SUFFIX,'r')
 
-                        for site_column_name in site_column_list[EXTRACT_COLUMN_LIST] :
+            site_column_list = json.load(site_column_list_file)
 
-                            OUTPUT_HEADER_LIST.add(site_column_name)
-                            OUTPUT_HEADER_LIST.add(site_column_name + '_IS_EXTRACT_COMPLETED_FLG' )
+            driver = webdriver.Chrome(options=options)
+            driver.get(crawler_target_url)
 
-                            target_xpath_list = crawler_target[EXTRACT_COLUMN_LIST][site_column_name]
+            time.sleep(DEFAULT_WAIT_TIME_SECONDS)
 
-                            extract_sub_list = []
+            for site_column_name in site_column_list[EXTRACT_COLUMN_LIST] :
 
-                            for target_xpath in target_xpath_list:
+                OUTPUT_HEADER_LIST.add(site_column_name)
+                OUTPUT_HEADER_LIST.add(site_column_name + '_IS_EXTRACT_COMPLETED_FLG' )
 
-                                main_xpath = target_xpath[MAIN_XPATH_EXPRESSION]
-                                sub_xpath = target_xpath[SUB_XPATH_EXPRESSION]
+                target_xpath_list = crawler_target[EXTRACT_COLUMN_LIST][site_column_name]
 
-                                if not len(main_xpath) == 0 :
+                extract_sub_list = []
 
-                                    try:
+                for target_xpath in target_xpath_list:
 
-                                        extract_text = driver.find_element_by_xpath(main_xpath).text
+                    main_xpath = target_xpath[MAIN_XPATH_EXPRESSION]
+                    sub_xpath = target_xpath[SUB_XPATH_EXPRESSION]
 
-                                        if not len(extract_text) == 0:
+                    if not len(main_xpath) == 0 :
 
-                                            extract_sub_list.append(extract_text)
-                                            extract_sub_list.append(EXTRACT_IS_COMPLETED)
+                        try:
 
-                                        else :
+                            extract_text = driver.find_element_by_xpath(main_xpath).text
 
-                                            pass
+                            if not len(extract_text) == 0:
 
-                                    except NoSuchElementException:
-
-                                        pass
-
-                                if not len(sub_xpath) == 0 :
-                                    #複数件への対応
-                                    try:
-
-                                        content_text = driver.find_element_by_xpath(sub_xpath).text
-
-                                    except NoSuchElementException:
-
-                                        pass
-
-                            if not len(extract_sub_list) == 0 :
-
-                                extract_list.append(extract_sub_list[0])
-                                extract_list.append(extract_sub_list[1])
+                                extract_sub_list.append(extract_text)
+                                extract_sub_list.append(EXTRACT_IS_COMPLETED)
 
                             else :
 
-                                extract_list.append(DEFAULT_NONE_VALUE)
-                                extract_list.append(EXTRACT_IS_NOT_COMPLETED)
+                                pass
 
-                        driver.quit()
+                        except NoSuchElementException:
 
-                        site_column_list_file.close()
+                            pass
 
-                    else :
+                    if not len(sub_xpath) == 0 :
+                        #複数件への対応
+                        try:
 
-                        continue
+                            content_text = driver.find_element_by_xpath(sub_xpath).text
 
-                    if cnt == 1:
-                        #ファイルの新規作成
-                        with open(output_file_name,'a') as f:
+                        except NoSuchElementException:
 
-                            f.write(re.sub('[0-9]+_','','\t'.join(sorted(OUTPUT_HEADER_LIST))))
-                            f.write(ORS)
-                            f.write('\t'.join(extract_list))
-                            f.write(ORS)
-                    else :
+                            pass
 
-                        with open(output_file_name,'a') as f:
-                            f.write('\t'.join(extract_list))
-                            f.write(ORS)
+                if not len(extract_sub_list) == 0 :
 
-            link_file_name_list.close()
+                    extract_list.append(extract_sub_list[0])
+                    extract_list.append(extract_sub_list[1])
+
+                else :
+
+                    extract_list.append(DEFAULT_NONE_VALUE)
+                    extract_list.append(EXTRACT_IS_NOT_COMPLETED)
+
+            driver.quit()
+
+            site_column_list_file.close()
+
+        else :
+
+            continue
+
+        if cnt == 1:
+            #ファイルの新規作成
+            with open(output_file_name,'a') as f:
+
+                f.write(re.sub('[0-9]+_','','\t'.join(sorted(OUTPUT_HEADER_LIST))))
+                f.write(ORS)
+                f.write('\t'.join(extract_list))
+                f.write(ORS)
+        else :
+
+            with open(output_file_name,'a') as f:
+                f.write('\t'.join(extract_list))
+                f.write(ORS)
+
+    link_file_name_list.close()
