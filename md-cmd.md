@@ -29,15 +29,12 @@ $ ls -lh extract-site-column-list-*json
 ```
 
 
-
-
-
 ベースファイル名リストの作成
 
 CMD
 
 ```
-$ cat list.json | jq -r 'map(."SITE_URL")|join("\n")'>base-file-name-list.txt
+$ cat list-non-spa.json | jq -r 'map(."SITE_URL")|join("\n")'>base-file-name-list.txt
 ```
 
 OUT
@@ -47,7 +44,6 @@ $ cat base-file-name-list.txt
 https://jp.reuters.com/
 https://www.asahi.com/
 ```
-
 
 エントリページのダウンロード
 
@@ -83,7 +79,6 @@ $ ls -lh link*txt
 
 個別ページのダウンロード
 
-
 CMD
 
 ```
@@ -115,55 +110,4 @@ CMD
 
 ```
 ./extract-non-spa-page-content.py
-```
-
-
-
-
-Qtデザイナーをインストール
-
-```
-
-```
-
-Uiファイルをpythonファイルに変換
-
-```
-$ which pyuic5
-/usr/local/bin/pyuic5
-aine ukijumotahaneniarukenia doc-ubuntu-18-04-vim 02:40:45 ~/script-crawler$
-$ pyuic5 -x mybrowser.ui -o mybrowser.py
-```
-
-インポート文を変更
-
-PRE
-
-```
-from PyQt5 import QtWebKitWidgets
-```
-
-POST
-
-
-```
-from PyQt5 import *
-```
-
-
-実行
-
-
-waylandということはX周りでエラー
-
-```
-
-$ python3 mybrowser.py
-qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
-This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
-
-Available platform plugins are: eglfs, linuxfb, minimal, minimalegl, offscreen, vnc, wayland-egl, wayland, wayland-xcomposite-egl, wayland-xcomposite-glx, webgl, xcb.
-
-Aborted (core dumped)
-
 ```
