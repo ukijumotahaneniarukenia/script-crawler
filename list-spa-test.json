@@ -1,0 +1,30 @@
+[
+  {
+    "SITE_NAME": "AINOW",
+    "SITE_URL": "https://ainow.ai/new/page/",
+		"MIN_PAGE_NUMBER":1,
+		"MAX_PAGE_NUMBER":3,
+    "EXTRACT_COLUMN_LIST": {
+      "TITLE_NAME": [
+        {
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[1]/div/article/div/div/div[2]/header/h1",
+          "SUB_XPATH_EXPRESSION": ""
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "",
+          "SUB_XPATH_EXPRESSION": ""
+        }
+      ],
+      "DATE_TIME": [
+        {
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[1]/div/article/div/div/div[2]/header/div/span[2]/span",
+          "SUB_XPATH_EXPRESSION": ""
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "",
+          "SUB_XPATH_EXPRESSION": ""
+        }
+      ]
+    }
+  }
+]
