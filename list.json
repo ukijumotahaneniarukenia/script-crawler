@@ -1,5 +1,47 @@
 [
   {
+    "SITE_NAME": "Qiita 自然言語処理",
+    "SITE_URL": "https://qiita.com/tags/%E8%87%AA%E7%84%B6%E8%A8%80%E8%AA%9E%E5%87%A6%E7%90%86?page=",
+    "MIN_PAGE_NUMBER": 1,
+    "MAX_PAGE_NUMBER": 7,
+    "EXTRACT_COLUMN_LIST": {
+      "TITLE_NAME": [
+        {
+          "TITLE_NAME_PATTERN": [
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[3]/div[5]/div/div[1]/div/div[1]/div/div[1]/h1",
+          "SUB_XPATH_EXPRESSION": ""
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "",
+          "SUB_XPATH_EXPRESSION": ""
+        }
+      ],
+      "DATE_TIME": [
+        {
+          "DATE_TIME_PATTERN": [
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[3]/div[5]/div/div[1]/div/div[1]/div/div[1]/div[1]/div/div[2]/span/time",
+          "SUB_XPATH_EXPRESSION": ""
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "",
+          "SUB_XPATH_EXPRESSION": ""
+        }
+      ]
+    }
+  },
+  {
     "SITE_NAME": "朝日新聞",
     "SITE_URL": "https://www.asahi.com/",
     "MIN_PAGE_NUMBER": 1,
