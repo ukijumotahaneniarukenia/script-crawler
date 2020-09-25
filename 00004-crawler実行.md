@@ -1,5 +1,3 @@
-```
-
 事前準備
 
 ```
@@ -27,6 +25,8 @@ $ cat list.json | jq -r 'map(."SITE_URL")|join("\n")'>base-file-name-list.txt
 
 
 
+
+```
 $ time ./download-detail-page-spa.py
 
 
