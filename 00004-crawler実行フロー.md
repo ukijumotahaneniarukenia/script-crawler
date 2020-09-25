@@ -1,10 +1,11 @@
 ```
 
-$ ./download-detail-page-spa.py
+$ time ./download-detail-page-spa.py
 
 
-$ ./link-create.py
+$ time ./link-create.py
 
 
+$ time ./extract-page-content.py
 
 ```

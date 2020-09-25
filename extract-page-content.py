@@ -29,7 +29,7 @@ LINK_SUFFIX='.txt.min'
 OUTPUT_PREFIX = 'page-content-'
 OUTPUT_SUFFIX = '.tsv'
 
-COMMON_COLUMN_LIST_FILE_NAME = 'extract-spa-common-column-list.json'
+COMMON_COLUMN_LIST_FILE_NAME = 'extract-common-column-list.json'
 SITE_COLUMN_LIST_PREFFIX='extract-site-column-list-'
 SITE_COLUMN_LIST_SUFFIX='.json'
 
