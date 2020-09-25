@@ -63,6 +63,10 @@ for site_url in source_file :
             #https://www.it-swarm-ja.tech/ja/python/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE%E5%86%85%E3%81%A7%E5%A4%89%E6%95%B0%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95%E3%81%AF%EF%BC%9F/940649158/
             duplicate_pattern = r"" + re.escape(site_url.strip()) + r""
 
+            if sub_url is None :
+
+                continue
+
             duplicate_result = re.findall(duplicate_pattern, sub_url)
 
             if len(duplicate_result) == 0 :
