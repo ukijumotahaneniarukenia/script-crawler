@@ -420,7 +420,7 @@ PRE
 
 
 ```
-$ curl -fsSL https://raw.githubusercontent.com/ukijumotahaneniarukenia/script-crawler/master/page-content-spa-com-reuters-jp.tsv -o test.tsv
+$ curl -fsSL https://raw.githubusercontent.com/ukijumotahaneniarukenia/script-crawler/master/page-content-com-reuters-jp.tsv -o test.tsv
 
 $ cat test.tsv | awk -v FS='\t' 'END{print NR,NF}'
 6 8

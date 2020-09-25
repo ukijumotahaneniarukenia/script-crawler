@@ -26,7 +26,7 @@ SITE_URL='SITE_URL'
 LINK_PREFFIX='link-'
 LINK_SUFFIX='.txt.min'
 
-OUTPUT_PREFIX = 'page-content-spa-'
+OUTPUT_PREFIX = 'page-content-'
 OUTPUT_SUFFIX = '.tsv'
 
 COMMON_COLUMN_LIST_FILE_NAME = 'extract-spa-common-column-list.json'
@@ -140,6 +140,11 @@ for crawler_target in crawler_target_list:
                 extract_sub_list = []
 
                 for target_xpath in target_xpath_list:
+
+                    if not any(key in target_xpath for key in  {MAIN_XPATH_EXPRESSION,SUB_XPATH_EXPRESSION}) :
+
+                        continue
+
 
                     main_xpath = target_xpath[MAIN_XPATH_EXPRESSION]
                     sub_xpath = target_xpath[SUB_XPATH_EXPRESSION]
