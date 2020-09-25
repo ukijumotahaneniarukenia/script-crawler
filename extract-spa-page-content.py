@@ -57,7 +57,7 @@ for common_column_name in common_column_list[EXTRACT_COLUMN_LIST] :
 
     OUTPUT_HEADER_LIST.add(common_column_name)
 
-SOURCE_FILE_NAME='list-spa-test.json'
+SOURCE_FILE_NAME='list.json'
 
 source_file = open(SOURCE_FILE_NAME,'r')
 

@@ -16,7 +16,7 @@ from selenium.common.exceptions import NoSuchElementException
 
 DEFAULT_WAIT_TIME_SECONDS=5
 
-SOURCE_FILE_NAME='list-spa-test.json'
+SOURCE_FILE_NAME='list.json'
 
 OUTPUT_PREFIX = 'page-detail-'
 OUTPUT_SUFFIX = '.html'
