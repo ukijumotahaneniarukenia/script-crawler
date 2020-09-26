@@ -1,0 +1,6 @@
+{
+  "EXTRACT_COLUMN_LIST": [
+    "DATE_TIME",
+    "TITLE_NAME"
+  ]
+}

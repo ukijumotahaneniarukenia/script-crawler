@@ -17,7 +17,6 @@ https://aizine.ai/ai-glossary
 https://aizine.ai/ai-glossary/page/2
 https://aizine.ai/ai-glossary/page/3
 https://aizine.ai/ai-glossary/page/5
-https://aizine.ai/ai-lover-app-0731
 https://aizine.ai/ai-meaning0217
 https://aizine.ai/ai-merit-demerit0619
 https://aizine.ai/ai-paint-0208
@@ -73,6 +72,7 @@ https://aizine.ai/lifestyle
 https://aizine.ai/microchip-human0711
 https://aizine.ai/microtip-0821
 https://aizine.ai/news
+https://aizine.ai/ocr-application1014
 https://aizine.ai/other
 https://aizine.ai/partner
 https://aizine.ai/privacypolicy

@@ -1,5 +1,48 @@
 [
   {
+    "SITE_NAME": "The Effective Perler 正規表現",
+    "SITE_URL": "https://www.effectiveperlprogramming.com/category/book/chapters/regular-expressions/page/",
+    "MIN_PAGE_NUMBER": 1,
+    "MAX_PAGE_NUMBER": 7,
+    "DOM_STRUCTURE_PATTERN": "PAGER",
+    "EXTRACT_COLUMN_LIST": {
+      "TITLE_NAME": [
+        {
+          "TITLE_NAME_PATTERN": [
+            ".*",
+            "",
+            ""
+          ]
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[2]/div[2]/div[2]/h2",
+          "SUB_XPATH_EXPRESSION": ""
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "",
+          "SUB_XPATH_EXPRESSION": ""
+        }
+      ],
+      "DATE_TIME": [
+        {
+          "DATE_TIME_PATTERN": [
+            ".*",
+            "",
+            ""
+          ]
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[2]/div[2]/div[2]/div[1]/span[1]",
+          "SUB_XPATH_EXPRESSION": ""
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "",
+          "SUB_XPATH_EXPRESSION": ""
+        }
+      ]
+    }
+  },
+  {
     "SITE_NAME": "AI TREND 全人類がわかるデータサイエンス 基礎編",
     "SITE_URL": "https://ai-trend.jp/basic-study/#basic",
     "MIN_PAGE_NUMBER": 1,
