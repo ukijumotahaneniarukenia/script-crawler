@@ -15,8 +15,8 @@
           ]
         },
         {
-          "MAIN_XPATH_EXPRESSION": "/html/body/div[8]/div/div[2]/div[2]/div[1]/div",
-          "SUB_XPATH_EXPRESSION": "/div/div[2]/h2/a"
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[8]/div/div[1]/main/div/article/header/div/h1",
+          "SUB_XPATH_EXPRESSION": ""
         },
         {
           "MAIN_XPATH_EXPRESSION": "",
@@ -32,11 +32,11 @@
           ]
         },
         {
-          "MAIN_XPATH_EXPRESSION": "/html/body/div[8]/div/div[2]/div[2]/div[1]/div",
-          "SUB_XPATH_EXPRESSION": "/div/div[1]/div/div[2]/a/time"
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[8]/div/div[1]/main/div/article/header/div/div[2]/span[1]/em/time",
+          "SUB_XPATH_EXPRESSION": ""
         },
         {
-          "MAIN_XPATH_EXPRESSION": "",
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[8]/div/div[1]/main/div/article/header/div/div[2]/span[1]/time",
           "SUB_XPATH_EXPRESSION": ""
         }
       ]
