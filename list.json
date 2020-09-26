@@ -31,11 +31,11 @@
           ]
         },
         {
-          "MAIN_XPATH_EXPRESSION": "/html/body/div[1]/div[5]/div/div[1]/div/div[1]/div/div[1]/div[1]/div/div[2]/span/time",
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[1]/div[5]/div/div[1]/div/div[1]/div/div[1]/div[1]/div/div[2]/time",
           "SUB_XPATH_EXPRESSION": ""
         },
         {
-          "MAIN_XPATH_EXPRESSION": "/html/body/div[3]/div[5]/div/div[1]/div/div[1]/div/div[1]/div[1]/div/div[2]/span/time",
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[3]/div[5]/div/div[1]/div/div[1]/div/div[1]/div[1]/div/div[2]/time",
           "SUB_XPATH_EXPRESSION": ""
         }
       ]

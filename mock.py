@@ -19,4 +19,7 @@ options.add_argument('/usr/local/src/chrome-linux/chrome')
 
 driver = webdriver.Chrome(options=options)
 
+if not len(sys.argv[1:]) == 1:
+    sys.exit(0)
 
+driver.get(sys.argv[1])

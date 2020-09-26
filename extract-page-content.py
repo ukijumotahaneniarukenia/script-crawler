@@ -24,7 +24,7 @@ SITE_NAME='SITE_NAME'
 SITE_URL='SITE_URL'
 
 LINK_PREFFIX='link-'
-LINK_SUFFIX='.txt.min'
+LINK_SUFFIX='.txt.target'
 
 OUTPUT_PREFIX = 'page-content-'
 OUTPUT_SUFFIX = '.tsv'
