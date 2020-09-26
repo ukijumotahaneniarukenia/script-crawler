@@ -1,5 +1,48 @@
 [
   {
+    "SITE_NAME": "AIZINE 用語集",
+    "SITE_URL": "https://aizine.ai/ai-glossary/page/",
+    "MIN_PAGE_NUMBER": 1,
+    "MAX_PAGE_NUMBER": 3,
+    "DOM_STRUCTURE_PATTERN": "PAGER",
+    "EXTRACT_COLUMN_LIST": {
+      "TITLE_NAME": [
+        {
+          "TITLE_NAME_PATTERN": [
+            ".*",
+            "",
+            ""
+          ]
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[1]/div[2]/div/main/article/div/header/div[1]/h1",
+          "SUB_XPATH_EXPRESSION": ""
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "",
+          "SUB_XPATH_EXPRESSION": ""
+        }
+      ],
+      "DATE_TIME": [
+        {
+          "DATE_TIME_PATTERN": [
+            ".*",
+            "",
+            ""
+          ]
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[1]/div[2]/div/main/article/div/header/div[1]/div/span/time",
+          "SUB_XPATH_EXPRESSION": ""
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "",
+          "SUB_XPATH_EXPRESSION": ""
+        }
+      ]
+    }
+  },
+  {
     "SITE_NAME": "DEV.TO React",
     "SITE_URL": "https://dev.to/t/react/",
     "MIN_PAGE_NUMBER": 1,

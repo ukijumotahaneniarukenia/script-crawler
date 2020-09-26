@@ -108,13 +108,16 @@ for crawler_target in crawler_target_list:
 
         crawler_target_url = link_file_name_entry.strip()
 
-        check_file = open(check_file_name,'r')
+        if os.path.exists(check_file_name):
+        #前回分のチェックファイルが存在すれば実施
 
-        check_list = json.load(check_file)
+            check_file = open(check_file_name,'r')
 
-        if crawler_target_url in check_list :
+            check_list = json.load(check_file)
 
-            continue
+            if crawler_target_url in check_list :
+
+                continue
 
         response = requests.get(crawler_target_url)
 

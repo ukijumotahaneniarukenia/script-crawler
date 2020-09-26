@@ -1,0 +1,21 @@
+EXTRACT_URL_NAME	EXTRACT_SITE_NAME	EXTRACT_SITE_URL	EXTRACT_BASE_NAME	DATE_TIME	DATE_TIME_IS_EXTRACT_COMPLETED_FLG	TITLE_NAME	TITLE_NAME_IS_EXTRACT_COMPLETED_FLG
+https://aizine.ai/glosarry-bert	AIZINE 用語集	https://aizine.ai/ai-glossary/page/	ai-aizine	2020.05.24	1	注目の自然言語処理モデルBERTを簡単入門しよう！	1
+https://aizine.ai/glossary-bag-of-words	AIZINE 用語集	https://aizine.ai/ai-glossary/page/	ai-aizine	2020.05.27	1	自然言語処理の初めの一歩！bag of words（BoW）を楽々入門	1
+https://aizine.ai/glossary-bagging	AIZINE 用語集	https://aizine.ai/ai-glossary/page/	ai-aizine	2020.05.28	1	知ったかぶり解消！機械学習アルゴリズムのバギングとは？	1
+https://aizine.ai/glossary-collaborative-filtering	AIZINE 用語集	https://aizine.ai/ai-glossary/page/	ai-aizine	2020.06.16	1	協調フィルタリングとは？レコメンドエンジンを支えるAI技術の基本	1
+https://aizine.ai/glossary-ensemble	AIZINE 用語集	https://aizine.ai/ai-glossary/page/	ai-aizine	2020.04.18	1	AI・機械学習やるなら必須！アンサンブル学習とは？【入門編】	1
+https://aizine.ai/glossary-gradient-boosting	AIZINE 用語集	https://aizine.ai/ai-glossary/page/	ai-aizine	2020.06.15	1	Kaggle上位入賞者が使いこなす勾配ブースティングを理解しよう	1
+https://aizine.ai/glossary-gridsearch	AIZINE 用語集	https://aizine.ai/ai-glossary/page/	ai-aizine	2020.05.28	1	グリッドサーチ（GridSearch）入門！Scikit-Learnで使ってみよう	1
+https://aizine.ai/glossary-loss-function	AIZINE 用語集	https://aizine.ai/ai-glossary/page/	ai-aizine	2020.06.27	1	機械学習によく使われる損失関数の種類を整理してみた	1
+https://aizine.ai/glossary-lstm	AIZINE 用語集	https://aizine.ai/ai-glossary/page/	ai-aizine	2020.04.15	1	3分で入門！時系列データ分析でよく使うLSTMとは？	1
+https://aizine.ai/glossary-mlp	AIZINE 用語集	https://aizine.ai/ai-glossary/page/	ai-aizine	2020.05.22	1	ニューラルネットワークの基本！MLP(多層パーセプトロン)を入門	1
+https://aizine.ai/glossary-partial-dependence-plot	AIZINE 用語集	https://aizine.ai/ai-glossary/page/	ai-aizine	2020.06.17	1	機械学習を学ぶなら知っておきたい！partial dependence plotとは	1
+https://aizine.ai/glossary-pattern-recognition-2	AIZINE 用語集	https://aizine.ai/ai-glossary/page/	ai-aizine	2020.05.23	1	機械学習を極めるなら理解しておきたい！パターン認識とは	1
+https://aizine.ai/glossary-permutation-importance	AIZINE 用語集	https://aizine.ai/ai-glossary/page/	ai-aizine	2020.06.19	1	Permutation Importanceを入門！特徴量重要度を把握する手法を理解	1
+https://aizine.ai/glossary-q-learning	AIZINE 用語集	https://aizine.ai/ai-glossary/page/	ai-aizine	2020.07.02	1	強化学習の手法の一つQ学習とは？要点と基本を簡単理解しよう	1
+https://aizine.ai/glossary-random-forest	AIZINE 用語集	https://aizine.ai/ai-glossary/page/	ai-aizine	2020.04.20	1	ランダムフォレスト（Random Forest）超入門！初心者向けに解説	1
+https://aizine.ai/glossary-random-search	AIZINE 用語集	https://aizine.ai/ai-glossary/page/	ai-aizine	2020.06.30	1	やさしいランダムサーチ入門！Scikit-Learnで使ってみよう	1
+https://aizine.ai/glossary-regularization	AIZINE 用語集	https://aizine.ai/ai-glossary/page/	ai-aizine	2020.06.28	1	正則化とは？過剰適合、オーバフィッティング対策超入門	1
+https://aizine.ai/glossary-robustness	AIZINE 用語集	https://aizine.ai/ai-glossary/page/	ai-aizine	2020.05.26	1	3分で理解！頑健性（ロバストネス/robustness/ロバスト性）とは	1
+https://aizine.ai/glossary-svm	AIZINE 用語集	https://aizine.ai/ai-glossary/page/	ai-aizine	2020.07.01	1	機械学習で有名なサポートベクターマシン(SVM)を解説してみた	1
+https://aizine.ai/glossary-vgg	AIZINE 用語集	https://aizine.ai/ai-glossary/page/	ai-aizine	2020.04.16	1	VGGネットワーク（VGGNet）とは？要点を爆速rikai入門！	1
