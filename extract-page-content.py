@@ -23,8 +23,8 @@ DEFAULT_WAIT_TIME_SECONDS=5
 SITE_NAME='SITE_NAME'
 SITE_URL='SITE_URL'
 
-CHECK_PREFFIX='link-'
-CHECK_SUFFIX='.txt.target'
+CHECK_PREFFIX='page-content-'
+CHECK_SUFFIX='-no-need-access-url.json'
 
 LINK_PREFFIX='link-'
 LINK_SUFFIX='.txt.target'
@@ -78,6 +78,7 @@ for crawler_target in crawler_target_list:
     site_url = crawler_target[SITE_URL]
     base_name = "-".join(re.findall(r'(?<=//).*?(?=/)', site_url.strip())[0].split(".")[::-1])
 
+    check_file_name = CHECK_PREFFIX + base_name + CHECK_SUFFIX
     output_file_name = OUTPUT_PREFIX + base_name + OUTPUT_SUFFIX
 
     #前回分の出力結果ファイルが存在すれば削除
@@ -106,6 +107,14 @@ for crawler_target in crawler_target_list:
             continue
 
         crawler_target_url = link_file_name_entry.strip()
+
+        check_file = open(check_file_name,'r')
+
+        check_list = json.load(check_file)
+
+        if crawler_target_url in check_list :
+
+            continue
 
         response = requests.get(crawler_target_url)
 

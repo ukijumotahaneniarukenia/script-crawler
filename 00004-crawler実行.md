@@ -79,7 +79,7 @@ $ cat page-content-to-dev.tsv.fail.tsv | awk -v FS='\t' '$0=$1' | tail -n+2 | so
 
 
 ```
-$ ls page-content-to-dev.tsv.fail-url.txt page-content-to-dev.tsv.success-url.txt | xargs cat | sort | uniq | jq -R '' | jq -s '' >page-content-to-dev.tsv.no-need-access-url.json
+$ ls page-content-to-dev.tsv.fail-url.txt page-content-to-dev.tsv.success-url.txt | xargs cat | sort | uniq | jq -R '' | jq -s '' >page-content-to-dev-no-need-access-url.json
 ```
 
 ないよーん
