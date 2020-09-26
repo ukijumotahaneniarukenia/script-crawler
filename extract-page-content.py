@@ -67,7 +67,7 @@ crawler_target_list = json.load(source_file)
 options = webdriver.ChromeOptions()
 options.add_argument('/usr/local/src/chromedriver_linux64/chromedriver')
 options.add_argument('/usr/local/src/chrome-linux/chrome')
-options.add_argument('--headless')
+#options.add_argument('--headless')
 
 for crawler_target in crawler_target_list:
 
@@ -140,12 +140,13 @@ for crawler_target in crawler_target_list:
 
                 extract_sub_list = []
 
+                pre_check_pattern_key_list  = list(map(lambda entry : list(entry.keys())[0],target_xpath_list))
+
                 for target_xpath in target_xpath_list:
 
                     if not any(key in target_xpath for key in  {MAIN_XPATH_EXPRESSION,SUB_XPATH_EXPRESSION}) :
 
                         continue
-
 
                     main_xpath = target_xpath[MAIN_XPATH_EXPRESSION]
                     sub_xpath = target_xpath[SUB_XPATH_EXPRESSION]
@@ -156,14 +157,40 @@ for crawler_target in crawler_target_list:
 
                             extract_text = driver.find_element_by_xpath(main_xpath).text
 
-                            if not len(extract_text) == 0:
+                            for pre_check_pattern_key in pre_check_pattern_key_list:
 
-                                extract_sub_list.append(extract_text)
-                                extract_sub_list.append(EXTRACT_IS_COMPLETED)
+                                match_result = re.findall(r'.*_PATTERN', pre_check_pattern_key)
 
-                            else :
+                                if not len(match_result) == 0 :
 
-                                pass
+                                    check_pattern_entry  = list(filter(lambda entry : not len(re.findall(r'.*_PATTERN', list(entry.keys())[0])) == 0,target_xpath_list))[0]
+
+                                    for check_pattern_key,check_pattern_value_list in check_pattern_entry.items():
+
+                                        for check_pattern_value in check_pattern_value_list:
+
+                                            if len(check_pattern_value) == 0:
+
+                                                continue
+
+                                            check_pattern_regexp = r"" + check_pattern_value + r""
+
+                                            valid_pattern_list = re.findall(check_pattern_regexp, extract_text)
+
+                                            if not len(valid_pattern_list) == 0:
+
+                                                extract_sub_list.append(extract_text)
+                                                extract_sub_list.append(EXTRACT_IS_COMPLETED)
+
+                                            else :
+                                                #unmatch
+
+                                                pass
+
+                                else :
+                                    #unmatch
+
+                                    pass
 
                         except NoSuchElementException:
 

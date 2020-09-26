@@ -8,13 +8,13 @@
       "TITLE_NAME": [
         {
           "TITLE_NAME_PATTERN": [
-            "",
+            ".*",
             "",
             ""
           ]
         },
         {
-          "MAIN_XPATH_EXPRESSION": "/html/body/div[1]/div[5]/div/div[1]/div/div[2]/div/div[1]/h1",
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[1]/div[5]/div/div[1]/div/div[1]/div/div[1]/h1",
           "SUB_XPATH_EXPRESSION": ""
         },
         {
@@ -25,13 +25,13 @@
       "DATE_TIME": [
         {
           "DATE_TIME_PATTERN": [
-            "",
+            ".*",
             "",
             ""
           ]
         },
         {
-          "MAIN_XPATH_EXPRESSION": "/html/body/div[1]/div[5]/div/div[1]/div/div[2]/div/div[1]/div[1]/div/div[2]/span/time",
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[1]/div[5]/div/div[1]/div/div[1]/div/div[1]/div[1]/div/div[2]/span/time",
           "SUB_XPATH_EXPRESSION": ""
         },
         {
@@ -50,7 +50,7 @@
       "TITLE_NAME": [
         {
           "TITLE_NAME_PATTERN": [
-            "",
+            ".*",
             "",
             ""
           ]
@@ -67,7 +67,7 @@
       "DATE_TIME": [
         {
           "DATE_TIME_PATTERN": [
-            "",
+            ".*",
             "",
             ""
           ]
@@ -92,7 +92,7 @@
       "TITLE_NAME": [
         {
           "TITLE_NAME_PATTERN": [
-            "",
+            ".*",
             "",
             ""
           ]
@@ -109,7 +109,7 @@
       "DATE_TIME": [
         {
           "DATE_TIME_PATTERN": [
-            "",
+            ".*",
             "",
             ""
           ]
@@ -134,7 +134,7 @@
       "TITLE_NAME": [
         {
           "TITLE_NAME_PATTERN": [
-            "",
+            ".*",
             "",
             ""
           ]
@@ -151,7 +151,7 @@
       "DATE_TIME": [
         {
           "DATE_TIME_PATTERN": [
-            "",
+            ".*",
             "",
             ""
           ]
