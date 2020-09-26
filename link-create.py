@@ -71,7 +71,7 @@ for site_url in source_file :
 
             if len(duplicate_result) == 0 :
 
-                url_list.append(site_url.strip() + sub_url)
+                url_list.append(site_url.strip().replace('#','') + sub_url)
 
             else :
 

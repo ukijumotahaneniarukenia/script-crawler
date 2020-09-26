@@ -1,5 +1,48 @@
 [
   {
+    "SITE_NAME": "AI TREND 全人類がわかるデータサイエンス 基礎編",
+    "SITE_URL": "https://ai-trend.jp/basic-study/#basic",
+    "MIN_PAGE_NUMBER": 1,
+    "MAX_PAGE_NUMBER": 1,
+    "DOM_STRUCTURE_PATTERN": "PAGER",
+    "EXTRACT_COLUMN_LIST": {
+      "TITLE_NAME": [
+        {
+          "TITLE_NAME_PATTERN": [
+            ".*",
+            "",
+            ""
+          ]
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "/html/body/article/div[1]/section[1]/div/div[2]/h1",
+          "SUB_XPATH_EXPRESSION": ""
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "",
+          "SUB_XPATH_EXPRESSION": ""
+        }
+      ],
+      "DATE_TIME": [
+        {
+          "DATE_TIME_PATTERN": [
+            ".*",
+            "",
+            ""
+          ]
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "/html/body/article/div[1]/section[1]/div/div[2]/div[1]/p[2]",
+          "SUB_XPATH_EXPRESSION": ""
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "/html/body/article/div[1]/section[1]/div/div[2]/div[1]/p[1]",
+          "SUB_XPATH_EXPRESSION": ""
+        }
+      ]
+    }
+  },
+  {
     "SITE_NAME": "AIZINE 用語集",
     "SITE_URL": "https://aizine.ai/ai-glossary/page/",
     "MIN_PAGE_NUMBER": 1,
