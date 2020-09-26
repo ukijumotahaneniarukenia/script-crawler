@@ -6,13 +6,22 @@ cat base-file-name-list.txt | grep -Po '(?<=//).*?(?=/)' | ruby -F'\.' -anle 'pu
 
     echo $base_name
 
+    COLUMN_CNT=
+
+    if [ -f extract-common-column-list.json -a -f extract-site-column-list-$base_name.json ];then
+
+      COLUMN_CNT=$(cat extract-common-column-list.json extract-site-column-list-$base_name.json | jq 'add' | jq -s '(.[0]|length)+((.[1]|length)*2)')
+
+    fi
+
+
     if [ -f page-content-$base_name.tsv ];then
 
       #項目数が正しいデータ行のみ抽出
-      cat page-content-$base_name.tsv | awk -v FS='\t' 'NF==8{for(i=1;i<=NF;i++){printf $i"\t"}printf "\n"}' | sed -r 's/\t$//' >page-content-$base_name.success.tsv
+      cat page-content-$base_name.tsv | awk -v FS='\t' -v CNT=$COLUMN_CNT 'NF==CNT{for(i=1;i<=NF;i++){printf $i"\t"}printf "\n"}' | sed -r 's/\t$//' >page-content-$base_name.success.tsv
 
       #項目数が正しくないデータ行のみ抽出
-      cat page-content-$base_name.tsv | awk -v FS='\t' 'NF!=8{for(i=1;i<=NF;i++){printf $i"\t"}printf "\n"}' | sed -r 's/\t$//' >page-content-$base_name.fail.tsv
+      cat page-content-$base_name.tsv | awk -v FS='\t' -v CNT=$COLUMN_CNT 'NF!=CNT{for(i=1;i<=NF;i++){printf $i"\t"}printf "\n"}' | sed -r 's/\t$//' >page-content-$base_name.fail.tsv
 
       if [ -f page-content-$base_name.success.tsv -a -s page-content-$base_name.success.tsv ];then
 
@@ -31,7 +40,7 @@ cat base-file-name-list.txt | grep -Po '(?<=//).*?(?=/)' | ruby -F'\.' -anle 'pu
       if [ -f page-content-$base_name.success-url.txt -o -f page-content-$base_name.fail-url.txt ];then
 
         #上記２つのファイルをマージ
-        ls page-content-$base_name*-url.txt | xargs cat | sort | uniq | jq -R '' | jq -s '' >page-content-$base_names-no-need-access-url.json
+        ls page-content-$base_name*-url.txt | xargs cat | sort | uniq | jq -R '' | jq -s '' >page-content-$base_name-no-need-access-url.json
 
       fi
 
