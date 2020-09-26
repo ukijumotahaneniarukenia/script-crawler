@@ -50,3 +50,12 @@ $ ./mock.py 'https://qiita.com/yamaru/items/527ca7d814534beca56a'
 ```
 
 起動してxpath確認してlist.jsonにパターン追加
+
+
+下スクロールの場合
+
+```
+
+$ ./mock-scroll.py 'https://dev.to/t/react'
+
+```
