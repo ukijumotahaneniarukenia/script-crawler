@@ -33,7 +33,7 @@ $ cat base-file-name-list.txt | ruby -F'(?<=//)' -anle 'scheme=$F[0];domain=$F[1
 ページのダウンロード
 
 ```
-$ time ./download-detail-page-spa.py
+$ time ./download-detail-page.py
 ```
 
 リンクの作成
