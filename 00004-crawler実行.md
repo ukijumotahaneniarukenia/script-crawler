@@ -36,3 +36,17 @@ $ time ./link-create.py
 $ time ./extract-page-content.py
 
 ```
+
+
+ないよーん
+
+これが現れた場合は
+
+```
+
+$ ./mock.py 'https://qiita.com/yamaru/items/527ca7d814534beca56a'
+
+
+```
+
+起動してxpath確認してlist.jsonにパターン追加
