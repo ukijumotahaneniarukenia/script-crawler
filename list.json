@@ -19,7 +19,7 @@
           "SUB_XPATH_EXPRESSION": ""
         },
         {
-          "MAIN_XPATH_EXPRESSION": "",
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[13]/div[1]/div[3]/div[1]/div[7]/div[2]/table[1]/tbody/tr[1]/td",
           "SUB_XPATH_EXPRESSION": ""
         }
       ],
@@ -36,7 +36,7 @@
           "SUB_XPATH_EXPRESSION": ""
         },
         {
-          "MAIN_XPATH_EXPRESSION": "",
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[13]/div[1]/div[3]/div[1]/div[7]/div[2]/table[1]/tbody/tr[2]/td/span",
           "SUB_XPATH_EXPRESSION": ""
         }
       ],
@@ -49,12 +49,12 @@
           ]
         },
         {
-          "MAIN_XPATH_EXPRESSION": "/html/body/div[13]/div[1]/div[3]/div[1]/div[12]/div[2]/table[1]/tbody/tr[7]/td",
-          "SUB_XPATH_EXPRESSION": "/p"
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[13]/div[1]/div[3]/div[1]/div[12]/div[2]/table[1]/tbody/tr[7]/td/p",
+          "SUB_XPATH_EXPRESSION": "."
         },
         {
-          "MAIN_XPATH_EXPRESSION": "",
-          "SUB_XPATH_EXPRESSION": ""
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[13]/div[1]/div[3]/div[1]/div[7]/div[2]/table[1]/tbody/tr[7]/td/p",
+          "SUB_XPATH_EXPRESSION": "."
         }
       ],
       "VIA_TRAFIC": [
@@ -66,12 +66,12 @@
           ]
         },
         {
-          "MAIN_XPATH_EXPRESSION": "/html/body/div[13]/div[1]/div[3]/div[1]/div[12]/div[2]/table[1]/tbody/tr[6]/td",
-          "SUB_XPATH_EXPRESSION": "/p"
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[13]/div[1]/div[3]/div[1]/div[12]/div[2]/table[1]/tbody/tr[6]/td/p",
+          "SUB_XPATH_EXPRESSION": "."
         },
         {
-          "MAIN_XPATH_EXPRESSION": "",
-          "SUB_XPATH_EXPRESSION": ""
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[13]/div[1]/div[3]/div[1]/div[7]/div[2]/table[1]/tbody/tr[6]/td/p",
+          "SUB_XPATH_EXPRESSION": "."
         }
       ],
       "STAR": [
@@ -104,7 +104,7 @@
           "SUB_XPATH_EXPRESSION": ""
         },
         {
-          "MAIN_XPATH_EXPRESSION": "",
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[13]/div[1]/div[3]/div[1]/div[7]/div[2]/table[1]/tbody/tr[8]/td/div/span[2]/em",
           "SUB_XPATH_EXPRESSION": ""
         }
       ],
@@ -121,7 +121,7 @@
           "SUB_XPATH_EXPRESSION": ""
         },
         {
-          "MAIN_XPATH_EXPRESSION": "",
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[13]/div[1]/div[3]/div[1]/div[7]/div[2]/table[1]/tbody/tr[8]/td/div/span[1]/em",
           "SUB_XPATH_EXPRESSION": ""
         }
       ]

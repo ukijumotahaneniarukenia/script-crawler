@@ -166,7 +166,11 @@ for crawler_target in crawler_target_list:
                     main_xpath = target_xpath[MAIN_XPATH_EXPRESSION]
                     sub_xpath = target_xpath[SUB_XPATH_EXPRESSION]
 
-                    if not len(main_xpath) == 0 :
+                    print(site_column_name)
+
+                    if not len(main_xpath) == 0 and len(sub_xpath) == 0 :
+
+                        print("aaaaaaaaaaaaaaaaaaaa")
 
                         try:
 
@@ -210,6 +214,32 @@ for crawler_target in crawler_target_list:
                         except NoSuchElementException:
 
                             pass
+
+                    elif not len(main_xpath) == 0 and not len(sub_xpath) == 0 :
+
+                        print("bbbbbbbbbbbbbbbbbbbb")
+
+                        extract_sub_tag_list = driver.find_elements_by_xpath(main_xpath)
+
+                        extract_sub_text_list = []
+                        for sub_tag in extract_sub_tag_list :
+
+                            extract_text = sub_tag.find_element_by_xpath(sub_xpath).text
+
+                            extract_sub_text_list.append(extract_text.replace('\n','\\n'))
+
+                        if not len(extract_sub_text_list) == 0:
+
+                            extract_sub_list.append('\\n'.join(extract_sub_text_list))
+                            extract_sub_list.append(EXTRACT_IS_COMPLETED)
+
+                        else :
+
+                            pass
+
+                    else :
+
+                        pass
 
                     if not len(sub_xpath) == 0 :
                         #複数件への対応
