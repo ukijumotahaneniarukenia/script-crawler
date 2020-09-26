@@ -1,5 +1,133 @@
 [
   {
+    "SITE_NAME": "食べログ 神奈川 焼き肉",
+    "SITE_URL": "https://tabelog.com/kanagawa/rstLst/yakiniku/",
+    "MIN_PAGE_NUMBER": 1,
+    "MAX_PAGE_NUMBER": 3,
+    "DOM_STRUCTURE_PATTERN": "PAGER",
+    "EXTRACT_COLUMN_LIST": {
+      "SHOP_NAME": [
+        {
+          "SHOP_NAME_PATTERN": [
+            ".*",
+            "",
+            ""
+          ]
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[13]/div[1]/div[3]/div[1]/div[12]/div[2]/table[1]/tbody/tr[1]/td",
+          "SUB_XPATH_EXPRESSION": ""
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "",
+          "SUB_XPATH_EXPRESSION": ""
+        }
+      ],
+      "GENRE_NAME": [
+        {
+          "GENRE_NAME_PATTERN": [
+            ".*",
+            "",
+            ""
+          ]
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[13]/div[1]/div[3]/div[1]/div[12]/div[2]/table[1]/tbody/tr[2]/td/span",
+          "SUB_XPATH_EXPRESSION": ""
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "",
+          "SUB_XPATH_EXPRESSION": ""
+        }
+      ],
+      "DATE_TIME": [
+        {
+          "DATE_TIME_PATTERN": [
+            ".*",
+            "",
+            ""
+          ]
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[13]/div[1]/div[3]/div[1]/div[12]/div[2]/table[1]/tbody/tr[7]/td",
+          "SUB_XPATH_EXPRESSION": "/p"
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "",
+          "SUB_XPATH_EXPRESSION": ""
+        }
+      ],
+      "VIA_TRAFIC": [
+        {
+          "VIA_TRAFIC_PATTERN": [
+            ".*",
+            "",
+            ""
+          ]
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[13]/div[1]/div[3]/div[1]/div[12]/div[2]/table[1]/tbody/tr[6]/td",
+          "SUB_XPATH_EXPRESSION": "/p"
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "",
+          "SUB_XPATH_EXPRESSION": ""
+        }
+      ],
+      "STAR": [
+        {
+          "STAR_PATTERN": [
+            ".*",
+            "",
+            ""
+          ]
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[13]/div[1]/div[1]/div[1]/section/div[2]/div[2]/ul/li[1]/div/p/b/span",
+          "SUB_XPATH_EXPRESSION": ""
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "",
+          "SUB_XPATH_EXPRESSION": ""
+        }
+      ],
+      "LUNCH_PRICE": [
+        {
+          "LUNCH_PRICE_PATTERN": [
+            ".*",
+            "",
+            ""
+          ]
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[13]/div[1]/div[3]/div[1]/div[12]/div[2]/table[1]/tbody/tr[9]/td/div/span[2]/em",
+          "SUB_XPATH_EXPRESSION": ""
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "",
+          "SUB_XPATH_EXPRESSION": ""
+        }
+      ],
+      "DINNER_PRICE": [
+        {
+          "DINNER_PRICE_PATTERN": [
+            ".*",
+            "",
+            ""
+          ]
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "/html/body/div[13]/div[1]/div[3]/div[1]/div[12]/div[2]/table[1]/tbody/tr[9]/td/div/span[1]/em",
+          "SUB_XPATH_EXPRESSION": ""
+        },
+        {
+          "MAIN_XPATH_EXPRESSION": "",
+          "SUB_XPATH_EXPRESSION": ""
+        }
+      ]
+    }
+  },
+  {
     "SITE_NAME": "The Effective Perler 正規表現",
     "SITE_URL": "https://www.effectiveperlprogramming.com/category/book/chapters/regular-expressions/page/",
     "MIN_PAGE_NUMBER": 1,

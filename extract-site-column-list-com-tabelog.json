@@ -1,0 +1,11 @@
+{
+  "EXTRACT_COLUMN_LIST": [
+    "DATE_TIME",
+    "DINNER_PRICE",
+    "GENRE_NAME",
+    "LUNCH_PRICE",
+    "SHOP_NAME",
+    "STAR",
+    "VIA_TRAFIC"
+  ]
+}
