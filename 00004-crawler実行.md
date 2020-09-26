@@ -49,6 +49,17 @@ $ time ./link-create.py
 $ time ./extract-page-content.py
 ```
 
+項目数が正しいデータ行のみ抽出
+
+```
+$ cat page-content-to-dev.tsv | awk -v FS='\t' 'NF==8{for(i=1;i<=NF;i++){printf $i"\t"}printf "\n"}' | sed -r 's/\t$//' >page-content-to-dev.tsv.success.tsv
+```
+
+項目数が正しくないデータ行のみ抽出
+
+```
+$ cat page-content-to-dev.tsv | awk -v FS='\t' 'NF!=8{for(i=1;i<=NF;i++){printf $i"\t"}printf "\n"}' | sed -r 's/\t$//' >page-content-to-dev.tsv.fail.tsv
+```
 
 ないよーん
 
