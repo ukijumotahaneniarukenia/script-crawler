@@ -166,7 +166,7 @@ for crawler_target in crawler_target_list:
                     main_xpath = target_xpath[MAIN_XPATH_EXPRESSION]
                     sub_xpath = target_xpath[SUB_XPATH_EXPRESSION]
 
-                    if not len(main_xpath) == 0 :
+                    if not len(main_xpath) == 0 and len(sub_xpath) == 0 :
 
                         try:
 
@@ -210,6 +210,16 @@ for crawler_target in crawler_target_list:
                         except NoSuchElementException:
 
                             pass
+
+                    elif not len(main_xpath) == 0 and len(sub_xpath) == 0 :
+
+                        pass
+
+
+                    else :
+
+                        pass
+
 
                     if not len(sub_xpath) == 0 :
                         #複数件への対応
