@@ -26,3 +26,26 @@ htmlファイルをはじめとするキャッシュファイル等をアプリ�
 seleniumで指定した項目を抜き出す
 
 リンクの再帰処理が必要な気がする
+
+
+こういうの便利
+
+```
+$ echo 'https://tabelog.com/kanagawa/rstLst/?vs=1&sa=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C&sk=%25E7%2584%25BC%25E8%2582%2589&lid=top_navi1&vac_net=&svd=20200926&svt=1900&svps=2&hfc=1&Cat=RC&LstCat=RC13&LstCatD=RC1301&LstCatSD=RC130101&cat_sk=%E7%84%BC%E8%82%89' | jq -R 'split("&")'
+[
+  "https://tabelog.com/kanagawa/rstLst/?vs=1",
+  "sa=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C",
+  "sk=%25E7%2584%25BC%25E8%2582%2589",
+  "lid=top_navi1",
+  "vac_net=",
+  "svd=20200926",
+  "svt=1900",
+  "svps=2",
+  "hfc=1",
+  "Cat=RC",
+  "LstCat=RC13",
+  "LstCatD=RC1301",
+  "LstCatSD=RC130101",
+  "cat_sk=%E7%84%BC%E8%82%89"
+]
+```
