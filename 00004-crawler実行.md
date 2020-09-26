@@ -23,30 +23,41 @@ $ cat list.json | jq -cr '. as $in | $in | length as $cnt | [range(0;$cnt)]|fore
 $ cat list.json | jq -r 'map(."SITE_URL")|join("\n")'>base-file-name-list.txt
 ```
 
-
+ベースファイル名リストの正規化
 
 
 ```
+$ cat base-file-name-list.txt | ruby -F'(?<=//)' -anle 'scheme=$F[0];domain=$F[1].split("/")[0]+"/";puts "#{scheme + domain}"' | sort | uniq | sponge base-file-name-list.txt
+```
+
+
+ページのダウンロード
+
+```
 $ time ./download-detail-page-spa.py
+```
 
+リンクの作成
 
+```
 $ time ./link-create.py
+```
 
 
+取得項目の抽出
+```
 $ time ./extract-page-content.py
-
 ```
 
 
 ないよーん
 
-これが現れた場合は
+これが現れる場合はアプリで起動したブラウザ上でのXPATHを正しく指定できていないため
+
+ユーザーが意図して起動する場合と少し異なる
 
 ```
-
 $ ./mock.py 'https://qiita.com/yamaru/items/527ca7d814534beca56a'
-
-
 ```
 
 起動してxpath確認してlist.jsonにパターン追加

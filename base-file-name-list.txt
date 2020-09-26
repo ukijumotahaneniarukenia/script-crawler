@@ -1,4 +1,5 @@
-https://www.asahi.com/
-https://jp.reuters.com/news/archive/technologyNews?view=page&pageSize=10&page=
-https://ainow.ai/new/page/
+https://ainow.ai/
+https://dev.to/
+https://jp.reuters.com/
 https://qiita.com/
+https://www.asahi.com/
