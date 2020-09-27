@@ -7,10 +7,10 @@ crawler_target_url = 'https://ukijumotahaneniarukenia.site/'
 
 local_file_url = '/home/aine/PycharmProjects/pythonProject/test.html'
 
+
 # https://docs.python.org/ja/3/library/xml.etree.elementtree.html
 
 def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
-
     print("=" * 80)
 
     print(xpath_list)
@@ -27,27 +27,30 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
 
             print(prev_target_element_tag, target_element_tag, str(target_idx), xpath_list[-1], sep='\t')
 
-            #ここに同一階層の同一タグを管理する
+            # ここに同一階層の同一タグを管理する
 
+            same_hierarchy_list = html.xpath(xpath_list[-1] + '/' + target_element_tag)
 
+            print(same_hierarchy_list)
 
+            if len(same_hierarchy_list) > 1:
 
+                for idx in range(0, len(same_hierarchy_list)):
+                    print("bbbbbbbbb")
+                    xpath = prev_xpath + '/' + target_element_tag + '[' + str(idx + 1) + ']'
+                    xpath_list.append(xpath)
+                    print(xpath)
 
-            if prev_target_element_tag == target_element_tag:
-                print("bbbbbbbbb")
-                xpath = prev_xpath + '/' + target_element_tag + '[' + str(target_idx + 1) + ']'
-                print(xpath)
             else:
                 print("aaaaaaaaa")
                 xpath = prev_xpath + '/' + target_element_tag
+                xpath_list.append(xpath)
                 print(xpath)
 
-            xpath_list.append(xpath)
 
             if len(target_children_list[target_idx].getchildren()) != 0:
-
                 # ここで何を状態管理して変更するか考える
-                print('='*40 + "cccccccccc" + '='*40 )
+                print('=' * 40 + "cccccccccc" + '=' * 40)
                 print("target_children_list[target_idx]    :" + target_children_list[target_idx].tag)
                 print("prev_target_element_tag             :" + prev_target_element_tag)
                 print("prev_xpath                          :" + prev_xpath)
@@ -55,7 +58,9 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
 
                 # prev_xpath = xpath
                 # prev_target_element_tag = target_element_tag
-                NNN(target_children_list[target_idx], target_children_list[target_idx].tag, prev_xpath + '/' + target_children_list[target_idx].tag, xpath_list)
+                NNN(html, target_children_list[target_idx], target_children_list[target_idx].tag,
+                    prev_xpath + '/' + target_children_list[target_idx].tag, xpath_list)
+
 
 with open(local_file_url, 'r') as f:
     data = f.read()
@@ -64,27 +69,27 @@ with open(local_file_url, 'r') as f:
 
     html = lxml.html.fromstring(data)
 
-    a = html.xpath('/html/body/ul/li[2]/ul/li')
-    a = html.xpath('/html/body/ul')
+    # a = html.xpath('/html/body/ul/li[2]/ul/li')
+    # a = html.xpath('/html/body/ul')
     # a = html.xpath('/html/body/ul/li')
     # a = html.xpath('/html/body/ul/li[1]')
     # a = html.xpath('/html/body/ul/li[2]')
     # a = html.xpath('/html/body/ul/li[3]')
 
-    for e in a:
-        print(e.tag)
-        print(e.text.strip())
+    # for e in a:
+    #     print(e.tag)
+    #     print(e.text.strip())
 
     xpath_list = list()
     prev_target_element_tag = doc.tag
     prev_xpath = '/' + prev_target_element_tag
     xpath_list.append(prev_xpath)
 
-    #元ネタは持ち回る必要がある
+    # 元ネタは持ち回る必要がある
     NNN(html, doc, prev_target_element_tag, prev_xpath, xpath_list)
     # print(xpath_list)
 
-#Output
+# Output
 # /home/aine/PycharmProjects/pythonProject/venv/bin/python /home/aine/PycharmProjects/pythonProject/main.py
 # ================================================================================
 # ['/html']
