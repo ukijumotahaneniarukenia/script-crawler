@@ -11,7 +11,7 @@ local_file_url = '/home/aine/PycharmProjects/pythonProject/test.html'
 # https://docs.python.org/ja/3/library/xml.etree.elementtree.html
 
 def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
-    print("=" * 80)
+    print("＠" * 80)
 
     print(xpath_list)
 
@@ -32,25 +32,34 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
             same_hierarchy_list = html.xpath(xpath_list[-1] + '/' + target_element_tag)
 
             print(same_hierarchy_list)
+            print('same_hierarchy_list :' + str(len(same_hierarchy_list)))
 
             if len(same_hierarchy_list) > 1:
 
                 for idx in range(0, len(same_hierarchy_list)):
-                    print("bbbbbbbbb")
+                    print('=' * 40 + "b" * 10 + '=' * 40)
                     xpath = prev_xpath + '/' + target_element_tag + '[' + str(idx + 1) + ']'
                     xpath_list.append(xpath)
                     print(xpath)
+                    # ここで何を状態管理して変更するか考える
+                    print('=' * 40 + "d" * 10 + '=' * 40)
+                    print("target_children_list[target_idx]    :" + html.xpath(xpath)[0].tag)
+                    print("prev_target_element_tag             :" + prev_target_element_tag)
+                    print("prev_xpath                          :" + xpath)
+                    print("xpath_list                          :" + ','.join(xpath_list))
+
+                    NNN(html, html.xpath(xpath)[0], html.xpath(xpath)[0].tag,
+                        xpath, xpath_list)
 
             else:
-                print("aaaaaaaaa")
+                print('=' * 40 + "a" * 10 + '=' * 40)
                 xpath = prev_xpath + '/' + target_element_tag
                 xpath_list.append(xpath)
                 print(xpath)
 
-
             if len(target_children_list[target_idx].getchildren()) != 0:
                 # ここで何を状態管理して変更するか考える
-                print('=' * 40 + "cccccccccc" + '=' * 40)
+                print('=' * 40 + "c" * 10 + '=' * 40)
                 print("target_children_list[target_idx]    :" + target_children_list[target_idx].tag)
                 print("prev_target_element_tag             :" + prev_target_element_tag)
                 print("prev_xpath                          :" + prev_xpath)
@@ -73,6 +82,8 @@ with open(local_file_url, 'r') as f:
     # a = html.xpath('/html/body/ul')
     # a = html.xpath('/html/body/ul/li')
     # a = html.xpath('/html/body/ul/li[1]')
+    # a = html.xpath('/html/body/ul/li[2]/ul/li')
+    # a = html.xpath('/html/body/ul/li[2]/ul')
     # a = html.xpath('/html/body/ul/li[2]')
     # a = html.xpath('/html/body/ul/li[3]')
 
