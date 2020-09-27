@@ -63,7 +63,6 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
                     for idx in range(0, len(same_hierarchy_list)):
                         print('=' * 40 + "b" * 10 + '=' * 40)
                         current_xpath = prev_xpath + '/' + target_element_tag + '[' + str(idx + 1) + ']'
-                        xpath_list.append(current_xpath)
 
                         # ここで何を状態管理して変更するか考える
                         print('=' * 40 + "c" * 10 + '=' * 40)
@@ -73,16 +72,26 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
                         print("prev_xpath".ljust(30) + ':' + xpath_list[-1])
                         print("xpath_list".ljust(30) + ':' + ','.join(xpath_list))
 
+                        xpath_list.append(current_xpath)
+
                         NNN(html, html.xpath(current_xpath)[0], html.xpath(xpath_list[-1])[0].tag,
                             xpath_list[-1], xpath_list)
 
                 elif len(same_hierarchy_list) == 1:
 
                     print('=' * 40 + "d" * 10 + '=' * 40)
-                    # print(same_hierarchy_list[0].tag)
                     current_xpath = xpath_list[-1] + '/' + target_element_tag
+
+                    print("current_element".ljust(30) + ':' + html.xpath(current_xpath)[0].tag)
+                    print("prev_target_element_tag".ljust(30) + ':' + prev_target_element_tag)
+                    print("current_xpath".ljust(30) + ':' + current_xpath)
+                    print("prev_xpath".ljust(30) + ':' + xpath_list[-1])
+                    print("xpath_list".ljust(30) + ':' + ','.join(xpath_list))
+
                     xpath_list.append(current_xpath)
-                    print(current_xpath)
+
+                    NNN(html, html.xpath(current_xpath)[0], html.xpath(xpath_list[-1])[0].tag,
+                        xpath_list[-1], xpath_list)
 
                 else:
 
@@ -91,8 +100,6 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
                     xpath = prev_xpath + '/' + target_element_tag
                     xpath_list.append(xpath)
                     print(xpath)
-                    # NNN(html, html.xpath(xpath)[0], html.xpath(xpath)[0].tag,
-                    #     xpath, xpath_list)
 
 
 with open(local_file_url, 'r') as f:
