@@ -1,5 +1,6 @@
 from urllib import request
 from lxml import etree
+import lxml.html
 import re
 
 crawler_target_url = 'https://ukijumotahaneniarukenia.site/'
@@ -8,7 +9,7 @@ local_file_url = '/home/aine/PycharmProjects/pythonProject/test.html'
 
 # https://docs.python.org/ja/3/library/xml.etree.elementtree.html
 
-def NNN(target_element, prev_target_element_tag, prev_xpath, xpath_list):
+def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
 
     print("=" * 80)
 
@@ -24,7 +25,13 @@ def NNN(target_element, prev_target_element_tag, prev_xpath, xpath_list):
 
             target_element_tag = target_children_list[target_idx].tag
 
-            print(prev_target_element_tag, target_element_tag, sep='\t')
+            print(prev_target_element_tag, target_element_tag, str(target_idx), xpath_list[-1], sep='\t')
+
+            #ここに同一階層の同一タグを管理する
+
+
+
+
 
             if prev_target_element_tag == target_element_tag:
                 print("bbbbbbbbb")
@@ -55,11 +62,26 @@ with open(local_file_url, 'r') as f:
 
     doc = etree.HTML(data)
 
+    html = lxml.html.fromstring(data)
+
+    a = html.xpath('/html/body/ul/li[2]/ul/li')
+    a = html.xpath('/html/body/ul')
+    # a = html.xpath('/html/body/ul/li')
+    # a = html.xpath('/html/body/ul/li[1]')
+    # a = html.xpath('/html/body/ul/li[2]')
+    # a = html.xpath('/html/body/ul/li[3]')
+
+    for e in a:
+        print(e.tag)
+        print(e.text.strip())
+
     xpath_list = list()
     prev_target_element_tag = doc.tag
     prev_xpath = '/' + prev_target_element_tag
     xpath_list.append(prev_xpath)
-    NNN(doc, prev_target_element_tag, prev_xpath, xpath_list)
+
+    #元ネタは持ち回る必要がある
+    NNN(html, doc, prev_target_element_tag, prev_xpath, xpath_list)
     # print(xpath_list)
 
 #Output
