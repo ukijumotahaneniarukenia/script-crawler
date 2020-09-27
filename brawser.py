@@ -73,7 +73,7 @@ class MainWindow(QMainWindow):
 
         #デフォルトURLページのスキーマに合わせてデフォルトのスキーマアイコンを配置
         self.httpsicon = QLabel()
-        self.httpsicon.setPixmap( QPixmap( os.path.join('icons','icon-lock.svg') ) )
+        self.httpsicon.setPixmap( QPixmap( os.path.join('icons','icon-unlock.svg') ) )
         navtb.addWidget(self.httpsicon)
 
         #URL入力バーを配置
