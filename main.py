@@ -11,6 +11,7 @@ local_file_url = '/home/aine/PycharmProjects/pythonProject/test.html'
 # https://docs.python.org/ja/3/library/xml.etree.elementtree.html
 
 def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
+
     print("＠" * 80)
 
     print(xpath_list)
@@ -25,50 +26,73 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
 
             target_element_tag = target_children_list[target_idx].tag
 
-            print(prev_target_element_tag, target_element_tag, str(target_idx), xpath_list[-1], sep='\t')
+            if target_element.tag == 'html':
+                # 初回
+                print("初回")
 
-            # ここに同一階層の同一タグを管理する
+                print(prev_target_element_tag, target_element_tag, str(target_idx), prev_xpath, sep='\t')
 
-            same_hierarchy_list = html.xpath(xpath_list[-1] + '/' + target_element_tag)
+                current_xpath = prev_xpath + '/' + target_element_tag
+                xpath_list.append(current_xpath)
+                print(current_xpath)
 
-            print(same_hierarchy_list)
-            print('same_hierarchy_list :' + str(len(same_hierarchy_list)))
+                # ここで何を状態管理して変更するか考える
+                print('=' * 40 + "a" * 10 + '=' * 40)
+                print("current_element".ljust(30) + ':' + html.xpath(prev_xpath + '/' + target_element_tag)[0].tag)
+                print("prev_target_element_tag".ljust(30) + ':' + prev_target_element_tag)
+                print("current_xpath".ljust(30) + ':' + current_xpath)
+                print("prev_xpath".ljust(30) + ':' + prev_xpath)
+                print("xpath_list".ljust(30) + ':' + ','.join(xpath_list))
 
-            if len(same_hierarchy_list) > 1:
-
-                for idx in range(0, len(same_hierarchy_list)):
-                    print('=' * 40 + "b" * 10 + '=' * 40)
-                    xpath = prev_xpath + '/' + target_element_tag + '[' + str(idx + 1) + ']'
-                    xpath_list.append(xpath)
-                    print(xpath)
-                    # ここで何を状態管理して変更するか考える
-                    print('=' * 40 + "d" * 10 + '=' * 40)
-                    print("target_children_list[target_idx]    :" + html.xpath(xpath)[0].tag)
-                    print("prev_target_element_tag             :" + prev_target_element_tag)
-                    print("prev_xpath                          :" + xpath)
-                    print("xpath_list                          :" + ','.join(xpath_list))
-
-                    NNN(html, html.xpath(xpath)[0], html.xpath(xpath)[0].tag,
-                        xpath, xpath_list)
+                NNN(html, html.xpath(current_xpath)[0], html.xpath(prev_xpath)[0].tag,
+                    prev_xpath, xpath_list)
 
             else:
-                print('=' * 40 + "a" * 10 + '=' * 40)
-                xpath = prev_xpath + '/' + target_element_tag
-                xpath_list.append(xpath)
-                print(xpath)
+                # ２回目以降
+                print("２回目以降")
 
-            if len(target_children_list[target_idx].getchildren()) != 0:
-                # ここで何を状態管理して変更するか考える
-                print('=' * 40 + "c" * 10 + '=' * 40)
-                print("target_children_list[target_idx]    :" + target_children_list[target_idx].tag)
-                print("prev_target_element_tag             :" + prev_target_element_tag)
-                print("prev_xpath                          :" + prev_xpath)
-                print("xpath_list                          :" + ','.join(xpath_list))
+                print(prev_target_element_tag, target_element_tag, str(target_idx), xpath_list[-1], sep='\t')
 
-                # prev_xpath = xpath
-                # prev_target_element_tag = target_element_tag
-                NNN(html, target_children_list[target_idx], target_children_list[target_idx].tag,
-                    prev_xpath + '/' + target_children_list[target_idx].tag, xpath_list)
+                # ここに同一階層の同一タグを管理する
+                same_hierarchy_list = html.xpath(xpath_list[-1] + '/' + target_element_tag)
+
+                print('same_hierarchy_list :' + str(len(same_hierarchy_list)))
+
+                if len(same_hierarchy_list) > 1:
+
+                    for idx in range(0, len(same_hierarchy_list)):
+                        print('=' * 40 + "b" * 10 + '=' * 40)
+                        current_xpath = prev_xpath + '/' + target_element_tag + '[' + str(idx + 1) + ']'
+                        xpath_list.append(current_xpath)
+
+                        # ここで何を状態管理して変更するか考える
+                        print('=' * 40 + "c" * 10 + '=' * 40)
+                        print("current_element".ljust(30) + ':' + html.xpath(current_xpath)[0].tag)
+                        print("prev_target_element_tag".ljust(30) + ':' + prev_target_element_tag)
+                        print("current_xpath".ljust(30) + ':' + current_xpath)
+                        print("prev_xpath".ljust(30) + ':' + xpath_list[-1])
+                        print("xpath_list".ljust(30) + ':' + ','.join(xpath_list))
+
+                        NNN(html, html.xpath(current_xpath)[0], html.xpath(xpath_list[-1])[0].tag,
+                            xpath_list[-1], xpath_list)
+
+                elif len(same_hierarchy_list) == 1:
+
+                    print('=' * 40 + "d" * 10 + '=' * 40)
+                    # print(same_hierarchy_list[0].tag)
+                    current_xpath = xpath_list[-1] + '/' + target_element_tag
+                    xpath_list.append(current_xpath)
+                    print(current_xpath)
+
+                else:
+
+                    print('=' * 40 + "e" * 10 + '=' * 40)
+                    # print(same_hierarchy_list[0].tag)
+                    xpath = prev_xpath + '/' + target_element_tag
+                    xpath_list.append(xpath)
+                    print(xpath)
+                    # NNN(html, html.xpath(xpath)[0], html.xpath(xpath)[0].tag,
+                    #     xpath, xpath_list)
 
 
 with open(local_file_url, 'r') as f:
