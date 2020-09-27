@@ -7,6 +7,7 @@ import os
 
 import sys
 
+import time
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -32,6 +33,23 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("%s" % title)
 
     def update_urlbar(self, q):
+
+
+        #ブラウザ起動オプションの設定
+        options = webdriver.ChromeOptions()
+        options.add_argument('/usr/local/src/chromedriver_linux64/chromedriver')
+        options.add_argument('/usr/local/src/chrome-linux/chrome')
+
+        driver = webdriver.Chrome(options=options)
+
+        crawl_target_url = q.toString()
+
+        print(crawl_target_url)
+
+        driver.get(q.toString())
+
+        time.sleep(DEFAULT_WAIT_TIME_SECONDS)
+
 
         #pass
 
