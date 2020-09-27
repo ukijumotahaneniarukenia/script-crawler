@@ -7,6 +7,14 @@ import os
 
 import sys
 
+
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+from selenium.common.exceptions import NoSuchElementException
+
+DEFAULT_WAIT_TIME_SECONDS = 5
+
 class MainWindow(QMainWindow):
 
     def navigate_home(self):
@@ -25,11 +33,15 @@ class MainWindow(QMainWindow):
 
     def update_urlbar(self, q):
 
-        if q.scheme() == 'https':
-            self.httpsicon.setPixmap( QPixmap( os.path.join('icons','icon-lock.svg') ) )
+        #pass
 
-        else:
-            self.httpsicon.setPixmap( QPixmap( os.path.join('icons','icon-unlock.svg') ) )
+        #if q.scheme() == 'https':
+        #    #アイコンの大きさを指定したい
+        #    self.httpsicon.setPixmap( QPixmap( os.path.join('icons','icon-lock.svg') ) )
+
+        #else:
+        #    #アイコンの大きさを指定したい
+        #    self.httpsicon.setPixmap( QPixmap( os.path.join('icons','icon-unlock.svg') ) )
 
         self.urlbar.setText( q.toString() )
         self.urlbar.setCursorPosition(0)
@@ -71,10 +83,11 @@ class MainWindow(QMainWindow):
         home_btn.triggered.connect( self.navigate_home )
         navtb.addAction(home_btn)
 
-        #デフォルトURLページのスキーマに合わせてデフォルトのスキーマアイコンを配置
-        self.httpsicon = QLabel()
-        self.httpsicon.setPixmap( QPixmap( os.path.join('icons','icon-unlock.svg') ) )
-        navtb.addWidget(self.httpsicon)
+        ##デフォルトURLページのスキーマに合わせてデフォルトのスキーマアイコンを配置
+        #アイコンの大きさを指定したい
+        #self.httpsicon = QLabel()
+        #self.httpsicon.setPixmap( QPixmap( os.path.join('icons','icon-unlock.svg') ) )
+        #navtb.addWidget(self.httpsicon)
 
         #URL入力バーを配置
         self.urlbar = QLineEdit()
