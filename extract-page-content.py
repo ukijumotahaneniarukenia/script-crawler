@@ -166,11 +166,7 @@ for crawler_target in crawler_target_list:
                     main_xpath = target_xpath[MAIN_XPATH_EXPRESSION]
                     sub_xpath = target_xpath[SUB_XPATH_EXPRESSION]
 
-                    print(site_column_name)
-
                     if not len(main_xpath) == 0 and len(sub_xpath) == 0 :
-
-                        print("aaaaaaaaaaaaaaaaaaaa")
 
                         try:
 
@@ -217,39 +213,66 @@ for crawler_target in crawler_target_list:
 
                     elif not len(main_xpath) == 0 and not len(sub_xpath) == 0 :
 
-                        print("bbbbbbbbbbbbbbbbbbbb")
+                        try:
 
-                        extract_sub_tag_list = driver.find_elements_by_xpath(main_xpath)
+                            extract_sub_tag_list = driver.find_elements_by_xpath(main_xpath)
 
-                        extract_sub_text_list = []
-                        for sub_tag in extract_sub_tag_list :
+                            extract_sub_text_list = []
 
-                            extract_text = sub_tag.find_element_by_xpath(sub_xpath).text
+                            for sub_tag in extract_sub_tag_list :
 
-                            extract_sub_text_list.append(extract_text.replace('\n','\\n'))
+                                extract_text = sub_tag.find_element_by_xpath(sub_xpath).text
 
-                        if not len(extract_sub_text_list) == 0:
+                                for pre_check_pattern_key in pre_check_pattern_key_list:
 
-                            extract_sub_list.append('\\n'.join(extract_sub_text_list))
-                            extract_sub_list.append(EXTRACT_IS_COMPLETED)
+                                    match_result = re.findall(r'.*_PATTERN', pre_check_pattern_key)
 
-                        else :
+                                    if not len(match_result) == 0 :
+
+                                        check_pattern_entry  = list(filter(lambda entry : not len(re.findall(r'.*_PATTERN', list(entry.keys())[0])) == 0,target_xpath_list))[0]
+
+                                        for check_pattern_key,check_pattern_value_list in check_pattern_entry.items():
+
+                                            for check_pattern_value in check_pattern_value_list:
+
+                                                if len(check_pattern_value) == 0:
+
+                                                    continue
+
+                                                check_pattern_regexp = r"" + check_pattern_value + r""
+
+                                                valid_pattern_list = re.findall(check_pattern_regexp, extract_text)
+
+                                                if not len(valid_pattern_list) == 0:
+
+                                                    extract_sub_text_list.append(extract_text.replace('\n','\\n'))
+
+                                                else :
+                                                    #unmatch
+
+                                                    pass
+
+                                    else :
+                                        #unmatch
+
+                                        pass
+
+                            if not len(extract_sub_text_list) == 0:
+
+                                extract_sub_list.append('\\n'.join(extract_sub_text_list))
+                                extract_sub_list.append(EXTRACT_IS_COMPLETED)
+
+                            else :
+
+                                pass
+
+                        except NoSuchElementException:
 
                             pass
 
                     else :
 
                         pass
-
-                    if not len(sub_xpath) == 0 :
-                        #複数件への対応
-                        try:
-
-                            content_text = driver.find_element_by_xpath(sub_xpath).text
-
-                        except NoSuchElementException:
-
-                            pass
 
                 if not len(extract_sub_list) == 0 :
 
