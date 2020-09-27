@@ -75,8 +75,8 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
 
                         xpath_list.append(current_xpath)
 
-                        # NNN(html, html.xpath(current_xpath)[0], html.xpath(xpath_list[-1])[0].tag,
-                        #     xpath_list[-1], xpath_list)
+                        NNN(html, html.xpath(current_xpath)[0], html.xpath(xpath_list[-1])[0].tag,
+                            current_xpath, xpath_list)
 
                 elif len(same_hierarchy_list) == 1:
 
@@ -91,9 +91,8 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
 
                     xpath_list.append(current_xpath)
 
-                    # NNN(html, html.xpath(current_xpath)[0], html.xpath(xpath_list[-1])[0].tag,
-                    #     xpath_list[-1], xpath_list)
-
+                    NNN(html, html.xpath(current_xpath)[0], html.xpath(xpath_list[-1])[0].tag,
+                        current_xpath, xpath_list)
                 else:
 
                     print('=' * 40 + "e" * 10 + '=' * 40)
@@ -111,24 +110,28 @@ with open(local_file_url, 'r') as f:
 
     html = lxml.html.fromstring(data)
 
-    # a = html.xpath('/html/head/meta')
-    # a = html.xpath('/html/head/link')
-    # a = html.xpath('/html/head/title')
-    # a = html.xpath('/html/head/script')
-    # a = html.xpath('/html/body/ul/li[2]/ul/li')
-    # a = html.xpath('/html/body/ul')
-    # a = html.xpath('/html/body/ul/li')
-    # a = html.xpath('/html/body/ul/li[1]')
-    # a = html.xpath('/html/body/ul/li[2]/ul/li')
-    # a = html.xpath('/html/body/ul/li[2]/ul')
-    # a = html.xpath('/html/body/ul/li[2]')
-    # a = html.xpath('/html/body/ul/li[3]')
+    # a = html.xpath("/html")
+    # a = html.xpath("/html/head")
+    # a = html.xpath("/html/head/meta")
+    # a = html.xpath("/html/head/title")
+    # a = html.xpath("/html/head/link")
+    # a = html.xpath("/html/head/script")
+    # a = html.xpath("/html/body")
+    # a = html.xpath("/html/body/ul")
+    # a = html.xpath("/html/body/ul/li[1]")
+    # a = html.xpath("/html/body/ul/li[2]")
+    # a = html.xpath("/html/body/ul/li[2]/ul")
+    # a = html.xpath("/html/body/ul/li[2]/ul/li[1]")
+    # a = html.xpath("/html/body/ul/li[2]/ul/li[2]")
+    # a = html.xpath("/html/body/ul/li[2]/ul/li")
+    # a = html.xpath("/html/body/ul/li[3]")
+    # a = html.xpath("/html/body/ul/li")
 
-    # print(len(a))
+    print(len(a))
 
-    # for e in a:
-    #     print(e.tag)
-        # print(e.text.strip())
+    for e in a:
+        print(e.tag)
+        print(e.text.strip())
 
     xpath_list = list()
     prev_target_element_tag = doc.tag
@@ -136,5 +139,5 @@ with open(local_file_url, 'r') as f:
     xpath_list.append(prev_xpath)
 
     # 元ネタは持ち回る必要がある
-    NNN(html, doc, prev_target_element_tag, prev_xpath, xpath_list)
+    # NNN(html, doc, prev_target_element_tag, prev_xpath, xpath_list)
     # print(xpath_list)
