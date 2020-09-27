@@ -42,6 +42,10 @@ class MainWindow(QMainWindow):
 
         driver = webdriver.Chrome(options=options)
 
+        crawl_target_url = q.toString()
+
+        print(crawl_target_url)
+
         driver.get(q.toString())
 
         time.sleep(DEFAULT_WAIT_TIME_SECONDS)
