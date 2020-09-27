@@ -102,81 +102,186 @@ with open(local_file_url, 'r') as f:
 
 # Output
 # /home/aine/PycharmProjects/pythonProject/venv/bin/python /home/aine/PycharmProjects/pythonProject/main.py
-# ================================================================================
+# ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠
 # ['/html']
-# html	head
-# aaaaaaaaa
+# html	head	0	/html
+# [<Element head at 0x7f2708cc02c0>]
+# same_hierarchy_list :1
+# ========================================aaaaaaaaaa========================================
 # /html/head
 # ========================================cccccccccc========================================
 # target_children_list[target_idx]    :head
 # prev_target_element_tag             :html
 # prev_xpath                          :/html
 # xpath_list                          :/html,/html/head
-# ================================================================================
+# ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠
 # ['/html', '/html/head']
-# head	meta
-# aaaaaaaaa
+# head	meta	0	/html/head
+# [<Element meta at 0x7f2708cc0310>]
+# same_hierarchy_list :1
+# ========================================aaaaaaaaaa========================================
 # /html/head/meta
-# head	title
-# aaaaaaaaa
+# head	title	1	/html/head/meta
+# []
+# same_hierarchy_list :0
+# ========================================aaaaaaaaaa========================================
 # /html/head/title
-# head	link
-# aaaaaaaaa
+# head	link	2	/html/head/title
+# []
+# same_hierarchy_list :0
+# ========================================aaaaaaaaaa========================================
 # /html/head/link
-# head	script
-# aaaaaaaaa
+# head	script	3	/html/head/link
+# []
+# same_hierarchy_list :0
+# ========================================aaaaaaaaaa========================================
 # /html/head/script
-# html	body
-# aaaaaaaaa
+# html	body	1	/html/head/script
+# []
+# same_hierarchy_list :0
+# ========================================aaaaaaaaaa========================================
 # /html/body
 # ========================================cccccccccc========================================
 # target_children_list[target_idx]    :body
 # prev_target_element_tag             :html
 # prev_xpath                          :/html
 # xpath_list                          :/html,/html/head,/html/head/meta,/html/head/title,/html/head/link,/html/head/script,/html/body
-# ================================================================================
+# ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠
 # ['/html', '/html/head', '/html/head/meta', '/html/head/title', '/html/head/link', '/html/head/script', '/html/body']
-# body	ul
-# aaaaaaaaa
+# body	ul	0	/html/body
+# [<Element ul at 0x7f2708cc0360>]
+# same_hierarchy_list :1
+# ========================================aaaaaaaaaa========================================
 # /html/body/ul
 # ========================================cccccccccc========================================
 # target_children_list[target_idx]    :ul
 # prev_target_element_tag             :body
 # prev_xpath                          :/html/body
 # xpath_list                          :/html,/html/head,/html/head/meta,/html/head/title,/html/head/link,/html/head/script,/html/body,/html/body/ul
-# ================================================================================
+# ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠
 # ['/html', '/html/head', '/html/head/meta', '/html/head/title', '/html/head/link', '/html/head/script', '/html/body', '/html/body/ul']
-# ul	li
-# aaaaaaaaa
-# /html/body/ul/li
-# ul	li
-# aaaaaaaaa
+# ul	li	0	/html/body/ul
+# [<Element li at 0x7f2708cc0400>, <Element li at 0x7f2708cc0450>, <Element li at 0x7f2708cc04a0>]
+# same_hierarchy_list :3
+# ========================================bbbbbbbbbb========================================
+# /html/body/ul/li[1]
+# ========================================dddddddddd========================================
+# target_children_list[target_idx]    :li
+# prev_target_element_tag             :ul
+# prev_xpath                          :/html/body/ul/li[1]
+# xpath_list                          :/html,/html/head,/html/head/meta,/html/head/title,/html/head/link,/html/head/script,/html/body,/html/body/ul,/html/body/ul/li[1]
+# ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠
+# ['/html', '/html/head', '/html/head/meta', '/html/head/title', '/html/head/link', '/html/head/script', '/html/body', '/html/body/ul', '/html/body/ul/li[1]']
+# ========================================bbbbbbbbbb========================================
+# /html/body/ul/li[2]
+# ========================================dddddddddd========================================
+# target_children_list[target_idx]    :li
+# prev_target_element_tag             :ul
+# prev_xpath                          :/html/body/ul/li[2]
+# xpath_list                          :/html,/html/head,/html/head/meta,/html/head/title,/html/head/link,/html/head/script,/html/body,/html/body/ul,/html/body/ul/li[1],/html/body/ul/li[2]
+# ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠
+# ['/html', '/html/head', '/html/head/meta', '/html/head/title', '/html/head/link', '/html/head/script', '/html/body', '/html/body/ul', '/html/body/ul/li[1]', '/html/body/ul/li[2]']
+# li	ul	0	/html/body/ul/li[2]
+# [<Element ul at 0x7f2708cc04f0>]
+# same_hierarchy_list :1
+# ========================================aaaaaaaaaa========================================
+# /html/body/ul/li[2]/ul
+# ========================================cccccccccc========================================
+# target_children_list[target_idx]    :ul
+# prev_target_element_tag             :li
+# prev_xpath                          :/html/body/ul/li[2]
+# xpath_list                          :/html,/html/head,/html/head/meta,/html/head/title,/html/head/link,/html/head/script,/html/body,/html/body/ul,/html/body/ul/li[1],/html/body/ul/li[2],/html/body/ul/li[2]/ul
+# ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠
+# ['/html', '/html/head', '/html/head/meta', '/html/head/title', '/html/head/link', '/html/head/script', '/html/body', '/html/body/ul', '/html/body/ul/li[1]', '/html/body/ul/li[2]', '/html/body/ul/li[2]/ul']
+# ul	li	0	/html/body/ul/li[2]/ul
+# [<Element li at 0x7f2708cc0590>, <Element li at 0x7f2708cc05e0>]
+# same_hierarchy_list :2
+# ========================================bbbbbbbbbb========================================
+# /html/body/ul/li[2]/ul/li[1]
+# ========================================dddddddddd========================================
+# target_children_list[target_idx]    :li
+# prev_target_element_tag             :ul
+# prev_xpath                          :/html/body/ul/li[2]/ul/li[1]
+# xpath_list                          :/html,/html/head,/html/head/meta,/html/head/title,/html/head/link,/html/head/script,/html/body,/html/body/ul,/html/body/ul/li[1],/html/body/ul/li[2],/html/body/ul/li[2]/ul,/html/body/ul/li[2]/ul/li[1]
+# ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠
+# ['/html', '/html/head', '/html/head/meta', '/html/head/title', '/html/head/link', '/html/head/script', '/html/body', '/html/body/ul', '/html/body/ul/li[1]', '/html/body/ul/li[2]', '/html/body/ul/li[2]/ul', '/html/body/ul/li[2]/ul/li[1]']
+# ========================================bbbbbbbbbb========================================
+# /html/body/ul/li[2]/ul/li[2]
+# ========================================dddddddddd========================================
+# target_children_list[target_idx]    :li
+# prev_target_element_tag             :ul
+# prev_xpath                          :/html/body/ul/li[2]/ul/li[2]
+# xpath_list                          :/html,/html/head,/html/head/meta,/html/head/title,/html/head/link,/html/head/script,/html/body,/html/body/ul,/html/body/ul/li[1],/html/body/ul/li[2],/html/body/ul/li[2]/ul,/html/body/ul/li[2]/ul/li[1],/html/body/ul/li[2]/ul/li[2]
+# ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠
+# ['/html', '/html/head', '/html/head/meta', '/html/head/title', '/html/head/link', '/html/head/script', '/html/body', '/html/body/ul', '/html/body/ul/li[1]', '/html/body/ul/li[2]', '/html/body/ul/li[2]/ul', '/html/body/ul/li[2]/ul/li[1]', '/html/body/ul/li[2]/ul/li[2]']
+# ul	li	1	/html/body/ul/li[2]/ul/li[2]
+# []
+# same_hierarchy_list :0
+# ========================================aaaaaaaaaa========================================
+# /html/body/ul/li[2]/ul/li
+# ========================================bbbbbbbbbb========================================
+# /html/body/ul/li[3]
+# ========================================dddddddddd========================================
+# target_children_list[target_idx]    :li
+# prev_target_element_tag             :ul
+# prev_xpath                          :/html/body/ul/li[3]
+# xpath_list                          :/html,/html/head,/html/head/meta,/html/head/title,/html/head/link,/html/head/script,/html/body,/html/body/ul,/html/body/ul/li[1],/html/body/ul/li[2],/html/body/ul/li[2]/ul,/html/body/ul/li[2]/ul/li[1],/html/body/ul/li[2]/ul/li[2],/html/body/ul/li[2]/ul/li,/html/body/ul/li[3]
+# ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠
+# ['/html', '/html/head', '/html/head/meta', '/html/head/title', '/html/head/link', '/html/head/script', '/html/body', '/html/body/ul', '/html/body/ul/li[1]', '/html/body/ul/li[2]', '/html/body/ul/li[2]/ul', '/html/body/ul/li[2]/ul/li[1]', '/html/body/ul/li[2]/ul/li[2]', '/html/body/ul/li[2]/ul/li', '/html/body/ul/li[3]']
+# ul	li	1	/html/body/ul/li[3]
+# []
+# same_hierarchy_list :0
+# ========================================aaaaaaaaaa========================================
 # /html/body/ul/li
 # ========================================cccccccccc========================================
 # target_children_list[target_idx]    :li
 # prev_target_element_tag             :ul
 # prev_xpath                          :/html/body/ul
-# xpath_list                          :/html,/html/head,/html/head/meta,/html/head/title,/html/head/link,/html/head/script,/html/body,/html/body/ul,/html/body/ul/li,/html/body/ul/li
-# ================================================================================
-# ['/html', '/html/head', '/html/head/meta', '/html/head/title', '/html/head/link', '/html/head/script', '/html/body', '/html/body/ul', '/html/body/ul/li', '/html/body/ul/li']
-# li	ul
-# aaaaaaaaa
+# xpath_list                          :/html,/html/head,/html/head/meta,/html/head/title,/html/head/link,/html/head/script,/html/body,/html/body/ul,/html/body/ul/li[1],/html/body/ul/li[2],/html/body/ul/li[2]/ul,/html/body/ul/li[2]/ul/li[1],/html/body/ul/li[2]/ul/li[2],/html/body/ul/li[2]/ul/li,/html/body/ul/li[3],/html/body/ul/li
+# ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠
+# ['/html', '/html/head', '/html/head/meta', '/html/head/title', '/html/head/link', '/html/head/script', '/html/body', '/html/body/ul', '/html/body/ul/li[1]', '/html/body/ul/li[2]', '/html/body/ul/li[2]/ul', '/html/body/ul/li[2]/ul/li[1]', '/html/body/ul/li[2]/ul/li[2]', '/html/body/ul/li[2]/ul/li', '/html/body/ul/li[3]', '/html/body/ul/li']
+# li	ul	0	/html/body/ul/li
+# [<Element ul at 0x7f2708cc05e0>]
+# same_hierarchy_list :1
+# ========================================aaaaaaaaaa========================================
 # /html/body/ul/li/ul
 # ========================================cccccccccc========================================
 # target_children_list[target_idx]    :ul
 # prev_target_element_tag             :li
 # prev_xpath                          :/html/body/ul/li
-# xpath_list                          :/html,/html/head,/html/head/meta,/html/head/title,/html/head/link,/html/head/script,/html/body,/html/body/ul,/html/body/ul/li,/html/body/ul/li,/html/body/ul/li/ul
-# ================================================================================
-# ['/html', '/html/head', '/html/head/meta', '/html/head/title', '/html/head/link', '/html/head/script', '/html/body', '/html/body/ul', '/html/body/ul/li', '/html/body/ul/li', '/html/body/ul/li/ul']
-# ul	li
-# aaaaaaaaa
+# xpath_list                          :/html,/html/head,/html/head/meta,/html/head/title,/html/head/link,/html/head/script,/html/body,/html/body/ul,/html/body/ul/li[1],/html/body/ul/li[2],/html/body/ul/li[2]/ul,/html/body/ul/li[2]/ul/li[1],/html/body/ul/li[2]/ul/li[2],/html/body/ul/li[2]/ul/li,/html/body/ul/li[3],/html/body/ul/li,/html/body/ul/li/ul
+# ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠
+# ['/html', '/html/head', '/html/head/meta', '/html/head/title', '/html/head/link', '/html/head/script', '/html/body', '/html/body/ul', '/html/body/ul/li[1]', '/html/body/ul/li[2]', '/html/body/ul/li[2]/ul', '/html/body/ul/li[2]/ul/li[1]', '/html/body/ul/li[2]/ul/li[2]', '/html/body/ul/li[2]/ul/li', '/html/body/ul/li[3]', '/html/body/ul/li', '/html/body/ul/li/ul']
+# ul	li	0	/html/body/ul/li/ul
+# [<Element li at 0x7f2708cc07c0>, <Element li at 0x7f2708cc0810>]
+# same_hierarchy_list :2
+# ========================================bbbbbbbbbb========================================
+# /html/body/ul/li/ul/li[1]
+# ========================================dddddddddd========================================
+# target_children_list[target_idx]    :li
+# prev_target_element_tag             :ul
+# prev_xpath                          :/html/body/ul/li/ul/li[1]
+# xpath_list                          :/html,/html/head,/html/head/meta,/html/head/title,/html/head/link,/html/head/script,/html/body,/html/body/ul,/html/body/ul/li[1],/html/body/ul/li[2],/html/body/ul/li[2]/ul,/html/body/ul/li[2]/ul/li[1],/html/body/ul/li[2]/ul/li[2],/html/body/ul/li[2]/ul/li,/html/body/ul/li[3],/html/body/ul/li,/html/body/ul/li/ul,/html/body/ul/li/ul/li[1]
+# ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠
+# ['/html', '/html/head', '/html/head/meta', '/html/head/title', '/html/head/link', '/html/head/script', '/html/body', '/html/body/ul', '/html/body/ul/li[1]', '/html/body/ul/li[2]', '/html/body/ul/li[2]/ul', '/html/body/ul/li[2]/ul/li[1]', '/html/body/ul/li[2]/ul/li[2]', '/html/body/ul/li[2]/ul/li', '/html/body/ul/li[3]', '/html/body/ul/li', '/html/body/ul/li/ul', '/html/body/ul/li/ul/li[1]']
+# ========================================bbbbbbbbbb========================================
+# /html/body/ul/li/ul/li[2]
+# ========================================dddddddddd========================================
+# target_children_list[target_idx]    :li
+# prev_target_element_tag             :ul
+# prev_xpath                          :/html/body/ul/li/ul/li[2]
+# xpath_list                          :/html,/html/head,/html/head/meta,/html/head/title,/html/head/link,/html/head/script,/html/body,/html/body/ul,/html/body/ul/li[1],/html/body/ul/li[2],/html/body/ul/li[2]/ul,/html/body/ul/li[2]/ul/li[1],/html/body/ul/li[2]/ul/li[2],/html/body/ul/li[2]/ul/li,/html/body/ul/li[3],/html/body/ul/li,/html/body/ul/li/ul,/html/body/ul/li/ul/li[1],/html/body/ul/li/ul/li[2]
+# ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠
+# ['/html', '/html/head', '/html/head/meta', '/html/head/title', '/html/head/link', '/html/head/script', '/html/body', '/html/body/ul', '/html/body/ul/li[1]', '/html/body/ul/li[2]', '/html/body/ul/li[2]/ul', '/html/body/ul/li[2]/ul/li[1]', '/html/body/ul/li[2]/ul/li[2]', '/html/body/ul/li[2]/ul/li', '/html/body/ul/li[3]', '/html/body/ul/li', '/html/body/ul/li/ul', '/html/body/ul/li/ul/li[1]', '/html/body/ul/li/ul/li[2]']
+# ul	li	1	/html/body/ul/li/ul/li[2]
+# []
+# same_hierarchy_list :0
+# ========================================aaaaaaaaaa========================================
 # /html/body/ul/li/ul/li
-# ul	li
-# aaaaaaaaa
-# /html/body/ul/li/ul/li
-# ul	li
-# aaaaaaaaa
+# ul	li	2	/html/body/ul/li/ul/li
+# []
+# same_hierarchy_list :0
+# ========================================aaaaaaaaaa========================================
 # /html/body/ul/li
 #
 # Process finished with exit code 0
