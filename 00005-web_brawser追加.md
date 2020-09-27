@@ -83,3 +83,16 @@ pip3 install PyQtWebEngine
 
 strip --remove-section=.note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5
 ```
+
+
+
+HTTP
+- http://www.html-tidy.org/
+
+
+HTTPS
+
+- https://ukijumotahaneniarukenia.site/
+
+
+

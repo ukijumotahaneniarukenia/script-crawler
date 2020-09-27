@@ -12,18 +12,40 @@ class MainWindow(QMainWindow):
     def navigate_home(self):
         self.browser.setUrl( QUrl("http://www.google.com") )
 
+    def navigate_to_url(self):
+        q = QUrl( self.urlbar.text() )
+        if q.scheme() == "":
+            q.setScheme("http")
+
+        self.browser.setUrl(q)
+
+    def update_title(self):
+        title = self.browser.page().title()
+        self.setWindowTitle("%s" % title)
+
+    def update_urlbar(self, q):
+
+        if q.scheme() == 'https':
+            self.httpsicon.setPixmap( QPixmap( os.path.join('icons','icon-lock.svg') ) )
+
+        else:
+            self.httpsicon.setPixmap( QPixmap( os.path.join('icons','icon-unlock.svg') ) )
+
+        self.urlbar.setText( q.toString() )
+        self.urlbar.setCursorPosition(0)
+
     def __init__(self, *args, **kwargs):
         super(MainWindow,self).__init__(*args, **kwargs)
-
-        self.browser = QWebEngineView()
-        self.browser.setUrl(QUrl("http://www.google.com"))
-
-        self.setCentralWidget(self.browser)
 
         #ナビゲーションバーの配置
         navtb = QToolBar("Navigation")
         navtb.setIconSize( QSize(32,32) )
         self.addToolBar(navtb)
+
+        self.browser = QWebEngineView()
+        self.browser.setUrl(QUrl("http://www.google.com"))
+
+        self.setCentralWidget(self.browser)
 
         #戻るボタンを配置
         back_btn = QAction( QIcon(os.path.join('icons','icon-back.svg')), "Back", self)
@@ -48,6 +70,26 @@ class MainWindow(QMainWindow):
         home_btn.setStatusTip("Go home")
         home_btn.triggered.connect( self.navigate_home )
         navtb.addAction(home_btn)
+
+        #デフォルトURLページのスキーマに合わせてデフォルトのスキーマアイコンを配置
+        self.httpsicon = QLabel()
+        self.httpsicon.setPixmap( QPixmap( os.path.join('icons','icon-lock.svg') ) )
+        navtb.addWidget(self.httpsicon)
+
+        #URL入力バーを配置
+        self.urlbar = QLineEdit()
+        self.urlbar.returnPressed.connect( self.navigate_to_url )
+        navtb.addWidget(self.urlbar)
+
+        #ローディング中止ボタンを配置
+        stop_btn = QAction( QIcon(os.path.join('icons','icon-stop.svg')), "Stop", self)
+        stop_btn.setStatusTip("Stop loading current page")
+        stop_btn.triggered.connect( self.browser.stop )
+        navtb.addAction(stop_btn)
+
+        #URL入力バーの状態が変更された際のイベントハンドラを定義
+        self.browser.urlChanged.connect(self.update_urlbar)
+        self.browser.loadFinished.connect(self.update_title)
 
         self.show()
 
