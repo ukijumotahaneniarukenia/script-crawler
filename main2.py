@@ -14,22 +14,18 @@ def debug_log(msg):
 
 # https://docs.python.org/ja/3/library/xml.etree.elementtree.html
 
-def NNN(html, target_element, xpath_list):
+def NNN(html, target_element, prev_xpath ,xpath_list):
 
     if len(target_element) == 0 :
-        pass
+        return xpath_list
     else :
         for child in target_element[0].getchildren() :
 
-            #print(xpath_list[-1])
+            xpath = prev_xpath + '/' + child.tag
 
-            xpath = xpath_list[-1] + '/' + child.tag
+            xpath_list.append(xpath)
 
-            print(xpath)
-
-            print(html.xpath(xpath))
-
-            #NNN(html,html.xpath(xpath)[0],target_element_list)
+            return xpath_list.extend(NNN(html, html.xpath(xpath), prev_xpath, xpath_list))
 
 
 with open(local_file_url, 'r') as f:
@@ -50,4 +46,4 @@ with open(local_file_url, 'r') as f:
     xpath_list.append(prev_xpath)
 
     # 元ネタは持ち回る必要がある
-    NNN(html, [doc], xpath_list)
+    NNN(html, [doc], prev_xpath ,xpath_list)
