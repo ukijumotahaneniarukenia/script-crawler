@@ -14,19 +14,41 @@ def debug_log(msg):
 
 # https://docs.python.org/ja/3/library/xml.etree.elementtree.html
 
-def NNN(html, target_element, prev_xpath ,xpath_list):
+def NNN(html, prev_xpath ,xpath_list):
 
-    if len(target_element) == 0 :
+    print(xpath_list)
+    print(html.xpath(prev_xpath))
+    if len(html.xpath(prev_xpath)) == 0:
+
         return xpath_list
-    else :
-        for child in target_element[0].getchildren() :
 
-            xpath = prev_xpath + '/' + child.tag
+    elif len(html.xpath(prev_xpath)[0].getchildren()) == 0:
 
-            xpath_list.append(xpath)
+        return xpath_list
 
-            return xpath_list.extend(NNN(html, html.xpath(xpath), prev_xpath, xpath_list))
+    else:
 
+        for child in html.xpath(prev_xpath)[0].getchildren():
+
+            same_hierarchy_list = html.xpath(prev_xpath)
+
+            if len(same_hierarchy_list) > 1 :
+
+                for idx in range(0, len(same_hierarchy_list)):
+
+                    current_xpath = prev_xpath + '/' + child.tag + '[' + str(idx + 1) + ']'
+
+                    xpath_list.append(current_xpath)
+
+                    return xpath_list.extend(NNN(html, current_xpath, xpath_list))
+
+            else:
+
+                current_xpath = prev_xpath + '/' + child.tag
+
+                xpath_list.append(current_xpath)
+
+                return xpath_list.extend(NNN(html, current_xpath, xpath_list))
 
 with open(local_file_url, 'r') as f:
     data = f.read()
@@ -46,4 +68,4 @@ with open(local_file_url, 'r') as f:
     xpath_list.append(prev_xpath)
 
     # 元ネタは持ち回る必要がある
-    NNN(html, [doc], prev_xpath ,xpath_list)
+    NNN(html, prev_xpath, xpath_list)
