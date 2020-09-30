@@ -28,13 +28,11 @@ def NNN(html, prev_xpath ,xpath_list):
 
     else:
 
-        for child in html.xpath(prev_xpath)[0].getchildren():
+　　　　　same_hierarchy_list = html.xpath(prev_xpath)[0].getchildren()
 
-            same_hierarchy_list = html.xpath(prev_xpath)
+　　　　　if len(same_hierarchy_list) > 1 :
 
-            if len(same_hierarchy_list) > 1 :
-
-                for idx in range(0, len(same_hierarchy_list)):
+　　　　　　　　　 for idx in range(0,len(same_hierarchy_list)):
 
                     current_xpath = prev_xpath + '/' + child.tag + '[' + str(idx + 1) + ']'
 
@@ -42,9 +40,9 @@ def NNN(html, prev_xpath ,xpath_list):
 
                     NNN(html, current_xpath, xpath_list)
 
-            else:
+         else:
 
-                current_xpath = prev_xpath + '/' + child.tag
+                current_xpath = prev_xpath + '/' + html.xpath(prev_xpath)[0].tag
 
                 xpath_list.append(current_xpath)
 
