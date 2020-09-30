@@ -3,7 +3,7 @@ from lxml import etree
 import lxml.html
 import re
 
-local_file_url = '/home/aine/script-crawler/sample.html'
+local_file_url = '/home/aine/script-crawler/test.html'
 
 is_debug = 0
 
@@ -21,10 +21,12 @@ def NNN(html, prev_xpath ,xpath_list):
     if len(html.xpath(prev_xpath)) == 0:
 
         return xpath_list
+        # pass
 
     elif len(html.xpath(prev_xpath)[0].getchildren()) == 0:
 
         return xpath_list
+        # pass
 
     else:
 
@@ -40,7 +42,8 @@ def NNN(html, prev_xpath ,xpath_list):
 
                     xpath_list.append(current_xpath)
 
-                    return xpath_list.extend(NNN(html, current_xpath, xpath_list))
+                    # return xpath_list.extend(NNN(html, current_xpath, xpath_list))
+                    NNN(html, current_xpath, xpath_list)
 
             else:
 
@@ -48,7 +51,9 @@ def NNN(html, prev_xpath ,xpath_list):
 
                 xpath_list.append(current_xpath)
 
-                return xpath_list.extend(NNN(html, current_xpath, xpath_list))
+                # return xpath_list.extend(NNN(html, current_xpath, xpath_list))
+                NNN(html, current_xpath, xpath_list)
+
 
 with open(local_file_url, 'r') as f:
     data = f.read()
