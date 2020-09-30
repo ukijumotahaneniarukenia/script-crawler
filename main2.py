@@ -21,12 +21,10 @@ def NNN(html, prev_xpath ,xpath_list):
     if len(html.xpath(prev_xpath)) == 0:
 
         return xpath_list
-        # pass
 
     elif len(html.xpath(prev_xpath)[0].getchildren()) == 0:
 
         return xpath_list
-        # pass
 
     else:
 
@@ -42,7 +40,6 @@ def NNN(html, prev_xpath ,xpath_list):
 
                     xpath_list.append(current_xpath)
 
-                    # return xpath_list.extend(NNN(html, current_xpath, xpath_list))
                     NNN(html, current_xpath, xpath_list)
 
             else:
@@ -51,7 +48,6 @@ def NNN(html, prev_xpath ,xpath_list):
 
                 xpath_list.append(current_xpath)
 
-                # return xpath_list.extend(NNN(html, current_xpath, xpath_list))
                 NNN(html, current_xpath, xpath_list)
 
 
@@ -63,8 +59,9 @@ with open(local_file_url, 'r') as f:
     html = lxml.html.fromstring(data)
 
     #a = html.xpath('/html/head/title')
+    a = html.xpath('/html/body/ul') # [<Element li at 0x7f71c6b95d60>, <Element li at 0x7f71c6b95ef0>, <Element li at 0x7f71c6bb9090>]
 
-    #print(a[0].getchildren())
+    print(a[0].getchildren())
 
     xpath_list = list()
     prev_target_element_tag = doc.tag
@@ -73,4 +70,4 @@ with open(local_file_url, 'r') as f:
     xpath_list.append(prev_xpath)
 
     # 元ネタは持ち回る必要がある
-    NNN(html, prev_xpath, xpath_list)
+    # NNN(html, prev_xpath, xpath_list)
