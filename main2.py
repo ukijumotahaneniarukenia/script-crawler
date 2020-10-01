@@ -42,7 +42,7 @@ def NNN(html, prev_xpath ,xpath_list):
 
          else:
 
-                current_xpath = prev_xpath + '/' + html.xpath(prev_xpath)[0].tag
+                current_xpath = prev_xpath
 
                 xpath_list.append(current_xpath)
 
