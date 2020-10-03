@@ -46,3 +46,12 @@ real	0m3.477s
 user	0m3.464s
 sys	0m0.172s
 ```
+
+CMD
+
+
+JSONファイルに変換
+
+```
+$ cat pacakage-meta-info-all.json | jq 'map(with_entries(.key|=(gsub("\\.";"_")|gsub("^_+";""))))' | sponge pacakage-meta-info-all.json
+```
