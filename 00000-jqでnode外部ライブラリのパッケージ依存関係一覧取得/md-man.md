@@ -39,3 +39,10 @@ CMD
 ```
 $ time bash create-pacakage-meta-info-tsv.sh
 ```
+
+```
+$ time bash create-pacakage-meta-info-all-tsv.sh
+real	0m3.477s
+user	0m3.464s
+sys	0m0.172s
+```
