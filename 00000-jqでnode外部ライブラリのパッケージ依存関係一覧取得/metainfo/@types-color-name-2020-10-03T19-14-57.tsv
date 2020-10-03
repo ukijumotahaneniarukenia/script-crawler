@@ -1,3 +1,0 @@
-.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
-@types/color-name	1.1.0	TypeScript definitions for color-name	MIT	https://www.github.com/DefinitelyTyped/DefinitelyTyped.git						926f76f7e66f49cc59ad880bb15b030abbf0b66d	https://registry.npmjs.org/@types/color-name/-/color-name-1.1.0.tgz	2017-07-25T15:22:38.705Z
-@types/color-name	1.1.1	TypeScript definitions for color-name	MIT	https://github.com/DefinitelyTyped/DefinitelyTyped.git						1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0	https://registry.npmjs.org/@types/color-name/-/color-name-1.1.1.tgz	2019-02-13T16:38:27.838Z

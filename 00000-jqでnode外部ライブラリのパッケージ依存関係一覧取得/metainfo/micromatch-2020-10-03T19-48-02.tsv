@@ -1,2 +1,0 @@
-.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
-micromatch	0.1.0	Like minimatch, but smaller and faster.		git://github.com/jonschlinkert/micromatch.git	Jon Schlinkert		https://github.com/jonschlinkert	1.4.9		f58fc1198dc1ba5b97cc2e301d28f0f3ee05ca2f	https://registry.npmjs.org/micromatch/-/micromatch-0.1.0.tgz	2014-11-25T08:34:18.841Z

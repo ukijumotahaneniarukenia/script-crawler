@@ -1,2 +1,0 @@
-.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
-boolbase	1.0.0	two functions: One that returns true, one that returns false	ISC	https://github.com/fb55/boolbase	Felix Boehm	me@feedic.com		1.4.2		68dff5fbe60c51eb37725ea9e3ed310dcc1e776e	https://registry.npmjs.org/boolbase/-/boolbase-1.0.0.tgz	2014-02-15T14:44:50.620Z

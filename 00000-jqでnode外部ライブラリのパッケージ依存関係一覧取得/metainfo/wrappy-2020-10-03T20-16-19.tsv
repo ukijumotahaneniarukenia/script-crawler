@@ -1,4 +1,0 @@
-.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
-wrappy	1.0.0	Callback wrapping utility	ISC	https://github.com/npm/wrappy	Isaac Z. Schlueter	i@izs.me	http://blog.izs.me/	2.0.0	0.10.31	8aae4fc6b4cd6be32a4553985bcf32b3ee131e4e	https://registry.npmjs.org/wrappy/-/wrappy-1.0.0.tgz	2014-09-18T22:59:23.410Z
-wrappy	1.0.1	Callback wrapping utility	ISC	https://github.com/npm/wrappy	Isaac Z. Schlueter	i@izs.me	http://blog.izs.me/	2.0.0	0.10.31	1e65969965ccbc2db4548c6b84a6f2c5aedd4739	https://registry.npmjs.org/wrappy/-/wrappy-1.0.1.tgz	2014-09-18T23:13:15.838Z
-wrappy	1.0.2	Callback wrapping utility	ISC	git+https://github.com/npm/wrappy.git	Isaac Z. Schlueter	i@izs.me	http://blog.izs.me/	3.9.1	5.10.1	b5243d8f3ec1aa35f1364605bc0d1036e30ab69f	https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz	2016-05-17T23:30:52.415Z

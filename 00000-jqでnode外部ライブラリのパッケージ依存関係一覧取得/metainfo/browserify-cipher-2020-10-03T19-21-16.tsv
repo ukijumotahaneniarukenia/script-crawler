@@ -1,3 +1,0 @@
-.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
-browserify-cipher	1.0.0	ciphers for the browser	MIT	git+ssh://git@github.com/crypto-browserify/browserify-cipher.git	Calvin Metcalf	calvin.metcalf@gmail.com		2.14.4	4.1.1	9988244874bf5ed4e28da95666dcd66ac8fc363a	https://registry.npmjs.org/browserify-cipher/-/browserify-cipher-1.0.0.tgz	2015-09-27T18:37:38.639Z
-browserify-cipher	1.0.1	ciphers for the browser	MIT	git+ssh://git@github.com/crypto-browserify/browserify-cipher.git	Calvin Metcalf	calvin.metcalf@gmail.com		5.8.0	8.11.1	8d6474c1b870bfdabcd3bcfcc1934a10e94f15f0	https://registry.npmjs.org/browserify-cipher/-/browserify-cipher-1.0.1.tgz	2018-04-11T12:05:37.638Z

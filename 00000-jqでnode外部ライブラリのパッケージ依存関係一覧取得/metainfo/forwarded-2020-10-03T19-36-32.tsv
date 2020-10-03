@@ -1,4 +1,0 @@
-.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
-forwarded	0.1.0	Parse HTTP X-Forwarded-For header	MIT	https://github.com/jshttp/forwarded				1.4.21		19ef9874c4ae1c297bcf078fde63a09b66a84363	https://registry.npmjs.org/forwarded/-/forwarded-0.1.0.tgz	2014-09-21T19:23:28.870Z
-forwarded	0.1.1	Parse HTTP X-Forwarded-For header	MIT	git+https://github.com/jshttp/forwarded.git				3.10.10	6.11.1	8a4e30c640b05395399a3549c730257728048961	https://registry.npmjs.org/forwarded/-/forwarded-0.1.1.tgz	2017-09-10T23:15:48.834Z
-forwarded	0.1.2	Parse HTTP X-Forwarded-For header	MIT	git+https://github.com/jshttp/forwarded.git				3.10.10	6.11.1	98c23dab1175657b8c0573e8ceccd91b0ff18c84	https://registry.npmjs.org/forwarded/-/forwarded-0.1.2.tgz	2017-09-15T02:17:54.232Z

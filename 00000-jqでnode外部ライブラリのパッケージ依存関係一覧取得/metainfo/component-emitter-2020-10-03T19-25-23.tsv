@@ -1,6 +1,0 @@
-.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
-component-emitter	1.1.2	Event emitter		https://github.com/component/emitter.git				1.3.24		296594f2753daa63996d2af08d15a95116c9aec3	https://registry.npmjs.org/component-emitter/-/component-emitter-1.1.2.tgz	2014-02-11T02:15:29.076Z
-component-emitter	1.1.3	Event emitter		https://github.com/component/emitter.git				1.4.9		2bf887a4a9fc856eafcabcd82a43eb42a57eec6f	https://registry.npmjs.org/component-emitter/-/component-emitter-1.1.3.tgz	2014-06-20T06:24:49.737Z
-component-emitter	1.2.0	Event emitter	MIT	https://github.com/component/emitter.git				2.5.1	1.2.0	ccd113a86388d06482d03de3fc7df98526ba8efe	https://registry.npmjs.org/component-emitter/-/component-emitter-1.2.0.tgz	2015-02-12T18:37:13.945Z
-component-emitter	1.2.1	Event emitter	MIT	git+https://github.com/component/emitter.git				2.10.1	0.12.4	137918d6d78283f7df7a6b7c5a63e140e69425e6	https://registry.npmjs.org/component-emitter/-/component-emitter-1.2.1.tgz	2016-04-18T18:55:09.978Z
-component-emitter	1.3.0	Event emitter	MIT	git+https://github.com/component/emitter.git				5.6.0	8.10.0	16e4070fba8ae29b679f2215853ee181ab2eabc0	https://registry.npmjs.org/component-emitter/-/component-emitter-1.3.0.tgz	2019-04-15T20:48:08.367Z

@@ -1,3 +1,0 @@
-.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
-buffer-json	1.0.0	Restore a Buffer from JSON (use with JSON.parse) or serialize a Buffer to JSON.	MIT	git+https://github.com/jprichardson/buffer-json.git	JP Richardson			2.10.1	2.1.0	39f5ca5e00cc44ed8463ae422265ff083ef17b3f	https://registry.npmjs.org/buffer-json/-/buffer-json-1.0.0.tgz	2015-06-18T21:57:07.209Z
-buffer-json	2.0.0	JSON.stringify & JSON.parse which can encode/decode buffers.	MIT	git+https://github.com/jprichardson/buffer-json.git	JP Richardson			6.1.0	10.5.0	f73e13b1e42f196fe2fd67d001c7d7107edd7c23	https://registry.npmjs.org/buffer-json/-/buffer-json-2.0.0.tgz	2019-02-25T15:58:57.535Z

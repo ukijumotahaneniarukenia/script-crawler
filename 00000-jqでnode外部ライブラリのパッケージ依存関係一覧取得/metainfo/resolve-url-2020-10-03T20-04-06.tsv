@@ -1,4 +1,0 @@
-.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
-resolve-url	0.1.0	Like Node.js’ `path.resolve`/`url.resolve` for the browser.	MIT	git://github.com/lydell/resolve-url	Simon Lydell			1.4.3		f7d376cb5784b0b0fbf54d822b3d516666358fca	https://registry.npmjs.org/resolve-url/-/resolve-url-0.1.0.tgz	2014-02-23T20:21:23.452Z
-resolve-url	0.2.0	Like Node.js’ `path.resolve`/`url.resolve` for the browser.	MIT	git://github.com/lydell/resolve-url	Simon Lydell			1.4.4		9479e58d94ea036d13f550d6ca14c3938cebbf67	https://registry.npmjs.org/resolve-url/-/resolve-url-0.2.0.tgz	2014-02-24T20:38:15.897Z
-resolve-url	0.2.1	Like Node.js’ `path.resolve`/`url.resolve` for the browser.	MIT	git://github.com/lydell/resolve-url	Simon Lydell			1.4.4		2c637fe77c893afd2a663fe21aa9080068e2052a	https://registry.npmjs.org/resolve-url/-/resolve-url-0.2.1.tgz	2014-02-25T18:48:50.732Z

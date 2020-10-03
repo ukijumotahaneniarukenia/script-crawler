@@ -1,3 +1,0 @@
-.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
-@types/anymatch	1.3.0	TypeScript definitions for anymatch	MIT	https://www.github.com/DefinitelyTyped/DefinitelyTyped.git						d1d55958d1fccc5527d4aba29fc9c4b942f563ff	https://registry.npmjs.org/@types/anymatch/-/anymatch-1.3.0.tgz	2017-08-14T18:44:13.359Z
-@types/anymatch	1.3.1	TypeScript definitions for anymatch	MIT	https://github.com/DefinitelyTyped/DefinitelyTyped.git						336badc1beecb9dacc38bea2cf32adf627a8421a	https://registry.npmjs.org/@types/anymatch/-/anymatch-1.3.1.tgz	2019-02-13T16:25:22.722Z

@@ -1,2 +1,0 @@
-.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
-object.pick	0.1.1	Returns a filtered copy of an object with only the specified keys, exactly like `pick` from lo-dash / underscore.		git://github.com/jonschlinkert/object.pick.git	Jon Schlinkert		https://github.com/jonschlinkert	1.4.9		aff20a2eaac790890126cf1d2d45e8891eebccb4	https://registry.npmjs.org/object.pick/-/object.pick-0.1.1.tgz	2014-10-06T04:29:00.412Z

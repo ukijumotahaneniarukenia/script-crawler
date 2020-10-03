@@ -1,4 +1,0 @@
-.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
-gensync	0.1.0	Async-Await for the modern Node	ISC		oakfang			3.3.6	5.0.0	b0fdff1be1f3c3b786560c9dadfc1edb7e1f0e8c	https://registry.npmjs.org/gensync/-/gensync-0.1.0.tgz	2015-11-23T04:44:36.845Z
-gensync	1.0.0-beta.0	Allows users to use generators in order to write common functions that can be both sync or async.	MIT		Logan Smyth	loganfsmyth@gmail.com		5.6.0	9.4.0	da411523d08341b10f9f3ccd4d9aeece2d1c104b	https://registry.npmjs.org/gensync/-/gensync-1.0.0-beta.0.tgz	2018-05-07T00:19:39.584Z
-gensync	1.0.0-beta.1	Allows users to use generators in order to write common functions that can be both sync or async.	MIT		Logan Smyth	loganfsmyth@gmail.com		6.11.3	12.11.0	58f4361ff987e5ff6e1e7a210827aa371eaac269	https://registry.npmjs.org/gensync/-/gensync-1.0.0-beta.1.tgz	2019-09-29T03:21:10.461Z

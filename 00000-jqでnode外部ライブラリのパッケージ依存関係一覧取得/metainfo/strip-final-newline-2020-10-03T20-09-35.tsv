@@ -1,2 +1,0 @@
-.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
-strip-final-newline	2.0.0	Strip the final newline character from a string/buffer	MIT	git+https://github.com/sindresorhus/strip-final-newline.git	Sindre Sorhus	sindresorhus@gmail.com	sindresorhus.com	6.4.1	10.12.0	89b852fb2fcbe936f6f4b3187afb0a12c1ab58ad	https://registry.npmjs.org/strip-final-newline/-/strip-final-newline-2.0.0.tgz	2018-10-28T08:36:42.180Z

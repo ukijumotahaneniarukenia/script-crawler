@@ -1,2 +1,0 @@
-.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
-is-plain-object	0.1.0	Return `true` if the given `value` is an object created by the `Object` constructor.		git://github.com/jonschlinkert/is-plain-object.git	Jon Schlinkert		https://github.com/jonschlinkert	1.4.9		3ca7db022de72fd12007f1957beb59ea596b979c	https://registry.npmjs.org/is-plain-object/-/is-plain-object-0.1.0.tgz	2014-09-21T22:41:50.073Z

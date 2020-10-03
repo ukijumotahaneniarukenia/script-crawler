@@ -1,3 +1,0 @@
-.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
-svg-tags	0.0.0	List of standard SVG tags.		git://github.com/element-io/svg-tags.git	Athan Reines	kgryte@gmail.com		1.5.0-alpha-1		a56d9a685910daa8f055416d7e952c8918d557eb	https://registry.npmjs.org/svg-tags/-/svg-tags-0.0.0.tgz	2014-09-03T21:08:22.953Z
-svg-tags	1.0.0	List of standard SVG tags.		git://github.com/element-io/svg-tags.git	Athan Reines	kgryte@gmail.com		1.5.0-alpha-1		58f71cee3bd519b59d4b2a843b6c7de64ac04764	https://registry.npmjs.org/svg-tags/-/svg-tags-1.0.0.tgz	2014-09-03T21:08:56.633Z

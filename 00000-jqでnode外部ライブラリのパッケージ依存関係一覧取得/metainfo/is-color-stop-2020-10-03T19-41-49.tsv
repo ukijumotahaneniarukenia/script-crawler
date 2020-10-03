@@ -1,3 +1,0 @@
-.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
-is-color-stop	1.0.0	Check if a string is CSS color stop	MIT	git+https://github.com/pigcan/is-color-stop.git	pigcan	jiangjay818@gmail.com		2.14.12	4.2.4	a6e122bb44f5b2ea8af75891dbacb3e701948d34	https://registry.npmjs.org/is-color-stop/-/is-color-stop-1.0.0.tgz	2017-07-25T03:05:42.651Z
-is-color-stop	1.1.0	Check if a string is CSS color stop	MIT	git+https://github.com/pigcan/is-color-stop.git	pigcan	jiangjay818@gmail.com		2.14.12	4.2.4	cfff471aee4dd5c9e158598fbe12967b5cdad345	https://registry.npmjs.org/is-color-stop/-/is-color-stop-1.1.0.tgz	2017-07-25T07:01:44.239Z

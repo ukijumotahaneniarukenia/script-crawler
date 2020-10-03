@@ -1,3 +1,0 @@
-.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
-destroy	1.0.3	destroy a stream if possible	MIT	https://github.com/stream-utils/destroy	Jonathan Ong	me@jongleberry.com	http://jongleberry.com	1.4.21		b433b4724e71fd8551d9885174851c5fc377e2c9	https://registry.npmjs.org/destroy/-/destroy-1.0.3.tgz	2014-08-15T06:30:06.962Z
-destroy	1.0.4	destroy a stream if possible	MIT	https://github.com/stream-utils/destroy	Jonathan Ong	me@jongleberry.com	http://jongleberry.com	1.4.28		978857442c44749e4206613e37946205826abd80	https://registry.npmjs.org/destroy/-/destroy-1.0.4.tgz	2016-01-16T03:14:05.899Z

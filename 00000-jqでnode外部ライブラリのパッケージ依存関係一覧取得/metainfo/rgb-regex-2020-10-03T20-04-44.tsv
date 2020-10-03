@@ -1,3 +1,0 @@
-.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
-rgb-regex	1.0.0	Regex for RGB color strings.	MIT	https://github.com/regexps/rgb-regex.git	John Otander			2.1.18	0.10.35	8bea364f17226b8ccda61c3631c4e8f355eed2a5	https://registry.npmjs.org/rgb-regex/-/rgb-regex-1.0.0.tgz	2015-02-01T23:07:25.384Z
-rgb-regex	1.0.1	Regex for RGB color strings.	MIT	https://github.com/regexps/rgb-regex.git	John Otander			2.1.18	0.10.35	c0e0d6882df0e23be254a475e8edd41915feaeb1	https://registry.npmjs.org/rgb-regex/-/rgb-regex-1.0.1.tgz	2015-02-02T04:41:06.586Z

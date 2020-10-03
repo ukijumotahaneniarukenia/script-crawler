@@ -1,3 +1,0 @@
-.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
-hsl-regex	0.0.1	Regex for matching HSL colors.	MIT	https://github.com/regexps/hsl-regex.git	John Otander			2.1.18	0.10.35	caeff83efa2af9162ec7fd92425234908b061e78	https://registry.npmjs.org/hsl-regex/-/hsl-regex-0.0.1.tgz	2015-01-30T23:03:15.425Z
-hsl-regex	1.0.0	Regex for matching HSL colors.	MIT	https://github.com/regexps/hsl-regex.git	John Otander			2.1.18	0.10.35	d49330c789ed819e276a4c0d272dffa30b18fe6e	https://registry.npmjs.org/hsl-regex/-/hsl-regex-1.0.0.tgz	2015-01-30T23:49:33.498Z

@@ -1,3 +1,0 @@
-.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
-des.js	1.0.0	DES implementation	MIT	git+ssh://git@github.com/indutny/des.js.git	Fedor Indutny	fedor@indutny.com		2.13.3	3.2.0	c074d2e2aa6a8a9a07dbd61f9a15c2cd83ec8ecc	https://registry.npmjs.org/des.js/-/des.js-1.0.0.tgz	2015-09-07T03:01:39.276Z
-des.js	1.0.1	DES implementation	MIT	git+ssh://git@github.com/indutny/des.js.git	Fedor Indutny	fedor@indutny.com		6.12.1	12.11.0	5382142e1bdc53f85d86d53e5f4aa7deb91e0843	https://registry.npmjs.org/des.js/-/des.js-1.0.1.tgz	2019-11-12T18:14:18.241Z

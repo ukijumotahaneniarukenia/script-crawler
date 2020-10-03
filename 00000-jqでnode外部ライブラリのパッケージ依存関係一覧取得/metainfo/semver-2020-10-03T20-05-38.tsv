@@ -1,7 +1,0 @@
-.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
-semver	1.0.0	The semantic version parser used by npm.						0.3.0-beta	v0.4.0	11f18a0c08ed21c988fc2b0257f1951969816615	https://registry.npmjs.org/semver/-/semver-1.0.0.tgz	2011-02-12T00:20:26.037Z
-semver	1.0.1	The semantic version parser used by npm.		git://github.com/isaacs/node-semver.git				0.3.0-8	v0.5.0-pre	93b90b9a3e00c7a143f2e49f6e2b32fd72237cdb	https://registry.npmjs.org/semver/-/semver-1.0.1.tgz	2011-02-18T17:15:49.775Z
-semver	1.0.2	The semantic version parser used by npm.		git://github.com/isaacs/node-semver.git				1.0.0rc3	v0.5.0-pre	57e4e1460c0f1abc2c2c6273457abc04e309706c	https://registry.npmjs.org/semver/-/semver-1.0.2.tgz	2011-03-22T21:27:35.218Z
-semver	1.0.3	The semantic version parser used by npm.		git://github.com/isaacs/node-semver.git				1.0.1rc9	v0.5.0-pre	453f40adadf8ce23ff4eb937972c6a007d52ef0d	https://registry.npmjs.org/semver/-/semver-1.0.3.tgz	2011-04-19T23:29:13.670Z
-semver	1.0.4	The semantic version parser used by npm.		git://github.com/isaacs/node-semver.git				1.0.1rc9	v0.5.0-pre	41c0da40706d0defe763998281fc616a2a5d1e46	https://registry.npmjs.org/semver/-/semver-1.0.4.tgz	2011-04-21T07:32:11.512Z
-semver	1.0.5	The semantic version parser used by npm.		git://github.com/isaacs/node-semver.git				1.0.4	v0.4.8-pre	7abca9337d64408ec2d42ffd974858c04dca3bdb	https://registry.npmjs.org/semver/-/semver-1.0.5.tgz	2011-05-03T23:11:54.939Z

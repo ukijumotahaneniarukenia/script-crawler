@@ -1,2 +1,0 @@
-.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
-inherits	1.0.0	A tiny simple way to do classic inheritance in js		git://github.com/isaacs/inherits.git	Isaac Z. Schlueter	i@izs.me	http://blog.izs.me/	1.0.1rc6	v0.5.0-pre	38e1975285bf1f7ba9c84da102bb12771322ac48	https://registry.npmjs.org/inherits/-/inherits-1.0.0.tgz	2011-04-07T00:35:15.718Z
