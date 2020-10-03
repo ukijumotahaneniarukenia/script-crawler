@@ -1,0 +1,2 @@
+.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
+@babel/helper-skip-transparent-expression-wrappers	7.11.0	Helper which skips types and parentheses	MIT	git+https://github.com/babel/babel.git				6.14.7	14.6.0	eec162f112c2f58d3af0af125e3bb57665146729	https://registry.npmjs.org/@babel/helper-skip-transparent-expression-wrappers/-/helper-skip-transparent-expression-wrappers-7.11.0.tgz	2020-07-30T21:27:19.508Z

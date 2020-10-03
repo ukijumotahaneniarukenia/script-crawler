@@ -1,0 +1,41 @@
+CMD
+
+package-lock.jsonが存在しているディレクトリに移動
+
+移動後実行
+
+```
+$ npmdump-jq
+```
+
+CMD
+
+外部ライブラリのメタ情報jsonファイル一覧作成
+
+```
+$ cat package-lock.tsv | grep -Po 'https://registry.npmjs.org/.*?tgz'|awk 4|sort |uniq|ruby -F'-/' -anle 'puts $F[0]+"?json"'|sort|uniq>url-list.txt
+```
+
+CMD
+
+メタ情報jsonファイルのクロール
+
+バッググランドで実行
+
+907件を1時間20分ぐらい ランダムウェイト10秒
+
+```
+$ time bash crawl-package-meta-info-json.sh url-list.txt &
+
+real	78m37.788s
+user	1m18.937s
+sys	0m13.147s
+```
+
+CMD
+
+メタ情報TSVファイルの作成
+
+```
+$ time bash create-pacakage-meta-info-tsv.sh
+```
