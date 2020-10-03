@@ -1,0 +1,2 @@
+.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
+vue-client-only	2.0.0	Vue component to wrap non SSR friendly components	MIT	git+https://github.com/egoist/vue-client-only.git	egoist	0x142857@gmail.com		6.9.0	12.4.0	ddad8d675ee02c761a14229f0e440e219de1da1c	https://registry.npmjs.org/vue-client-only/-/vue-client-only-2.0.0.tgz	2019-06-25T07:01:48.879Z

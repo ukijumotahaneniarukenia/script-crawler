@@ -1,0 +1,2 @@
+.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
+read-cache	1.0.0	Reads and caches the entire contents of a file until it is modified	MIT	git+https://github.com/TrySound/read-cache.git	Bogdan Chadkin	trysound@yandex.ru		3.3.9	0.12.7	e664ef31161166c9751cdbe8dbcf86b5fb58f774	https://registry.npmjs.org/read-cache/-/read-cache-1.0.0.tgz	2016-01-11T01:53:14.064Z

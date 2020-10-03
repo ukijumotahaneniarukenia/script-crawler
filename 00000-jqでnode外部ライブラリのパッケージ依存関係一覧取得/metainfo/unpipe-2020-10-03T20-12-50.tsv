@@ -1,0 +1,2 @@
+.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
+unpipe	1.0.0	Unpipe a stream from all destinations	MIT	https://github.com/stream-utils/unpipe	Douglas Christopher Wilson	doug@somethingdoug.com		1.4.28		b2bf4ee8514aae6165b4817829d21b2ef49904ec	https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz	2015-06-14T20:30:19.934Z

@@ -1,0 +1,3 @@
+.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
+domain-browser	1.0.0	Node's domain for the web browser	MIT	http://github.com/bevry/domain-browser.git	Bevry Pty Ltd	us@bevry.me	http://bevry.me	1.3.11		cfaa17f91c1510c37833434a49020258d6309e73	https://registry.npmjs.org/domain-browser/-/domain-browser-1.0.0.tgz	2013-09-18T07:53:51.840Z
+domain-browser	1.0.1	Node's domain for the web browser	MIT	http://github.com/bevry/domain-browser.git	Bevry Pty Ltd	us@bevry.me	http://bevry.me	1.3.11		63dbfb46cbd30b99203df34cb8f6180bcb4d0630	https://registry.npmjs.org/domain-browser/-/domain-browser-1.0.1.tgz	2013-09-18T13:26:41.698Z

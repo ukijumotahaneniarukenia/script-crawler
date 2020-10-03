@@ -1,0 +1,2 @@
+.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
+mixin-deep	0.1.0	Deeply mix the properties of objects into the first object, while also mixing-in child objects.		git://github.com/jonschlinkert/mixin-deep.git	Jon Schlinkert		https://github.com/jonschlinkert	1.4.9		2cc75d77097f309e9d46ed931e5d4c038485f9a8	https://registry.npmjs.org/mixin-deep/-/mixin-deep-0.1.0.tgz	2014-09-22T15:35:27.479Z

@@ -1,0 +1,4 @@
+.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
+unquote	1.0.0	Remove wrapping quotes from a string.	MIT	https://github.com/lakenen/node-unquote.git	Cameron Lakenen	cameron@lakenen.com		1.4.20		d587a9883a7d0c7fb2989d05f44f38d72c32ad06	https://registry.npmjs.org/unquote/-/unquote-1.0.0.tgz	2014-07-22T17:58:24.073Z
+unquote	1.1.0	Remove wrapping quotes from a string.	MIT	https://github.com/lakenen/node-unquote.git	Cameron Lakenen	cameron@lakenen.com		1.4.28		98e1fc608b6b854c75afb1b95afc099ba69d942f	https://registry.npmjs.org/unquote/-/unquote-1.1.0.tgz	2015-03-18T20:12:41.709Z
+unquote	1.1.1	Remove wrapping quotes from a string.	MIT	git+https://github.com/lakenen/node-unquote.git	Cameron Lakenen	cameron@lakenen.com		4.2.0	7.10.0	8fded7324ec6e88a0ff8b905e7c098cdc086d544	https://registry.npmjs.org/unquote/-/unquote-1.1.1.tgz	2017-12-18T03:54:33.432Z

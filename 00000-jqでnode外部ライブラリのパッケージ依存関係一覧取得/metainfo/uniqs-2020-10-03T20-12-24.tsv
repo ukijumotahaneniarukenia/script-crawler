@@ -1,0 +1,3 @@
+.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
+uniqs	1.0.0	Creates a de-duplicated version of a given list	MIT	git://github.com/fgnass/uniqs.git	Felix Gnass	fgnass@gmail.com		1.4.9		140dcbd7c2e5ea83e46dc3ded92736bc43dc4f22	https://registry.npmjs.org/uniqs/-/uniqs-1.0.0.tgz	2014-06-01T22:05:39.648Z
+uniqs	2.0.0	Tiny utility to create unions and de-duplicated lists	MIT	git://github.com/fgnass/uniqs.git	Felix Gnass	fgnass@gmail.com		1.4.9		ffede4b36b25290696e6e165d4a59edb998e6b02	https://registry.npmjs.org/uniqs/-/uniqs-2.0.0.tgz	2014-06-03T08:28:57.628Z

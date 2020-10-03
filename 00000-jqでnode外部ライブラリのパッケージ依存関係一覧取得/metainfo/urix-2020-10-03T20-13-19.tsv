@@ -1,0 +1,2 @@
+.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
+urix	0.1.0	Makes Windows-style paths more unix and URI friendly.	MIT	git://github.com/lydell/urix	Simon Lydell			1.4.4		da937f7a62e21fec1fd18d49b35c2935067a6c72	https://registry.npmjs.org/urix/-/urix-0.1.0.tgz	2014-03-01T21:02:32.481Z

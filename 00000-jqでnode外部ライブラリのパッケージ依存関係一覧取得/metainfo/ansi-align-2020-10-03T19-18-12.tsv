@@ -1,0 +1,5 @@
+.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
+ansi-align	1.0.0	align-text with ANSI support for CLIs	ISC	git+https://github.com/nexdrew/ansi-align.git	nexdrew			3.8.8	5.11.0	49d9b2119fc11b00447020f8e00cc57fbe873ecc	https://registry.npmjs.org/ansi-align/-/ansi-align-1.0.0.tgz	2016-04-30T17:43:23.016Z
+ansi-align	1.1.0	align-text with ANSI support for CLIs	ISC	git+https://github.com/nexdrew/ansi-align.git	nexdrew			3.8.8	5.11.0	2f0c1658829739add5ebb15e6b0c6e3423f016ba	https://registry.npmjs.org/ansi-align/-/ansi-align-1.1.0.tgz	2016-06-06T20:14:39.942Z
+ansi-align	2.0.0	align-text with ANSI support for CLIs	ISC	git+https://github.com/nexdrew/ansi-align.git	nexdrew			4.2.0	7.9.0	c36aeccba563b89ceb556f3690f0b1d9e3547f7f	https://registry.npmjs.org/ansi-align/-/ansi-align-2.0.0.tgz	2017-05-01T21:14:57.101Z
+ansi-align	3.0.0	align-text with ANSI support for CLIs	ISC	git+https://github.com/nexdrew/ansi-align.git	nexdrew			6.5.0	11.4.0	b536b371cf687caaef236c18d3e21fe3797467cb	https://registry.npmjs.org/ansi-align/-/ansi-align-3.0.0.tgz	2018-12-17T15:54:43.480Z

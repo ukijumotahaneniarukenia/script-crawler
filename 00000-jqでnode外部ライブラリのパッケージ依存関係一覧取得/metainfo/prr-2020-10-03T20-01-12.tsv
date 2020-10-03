@@ -1,0 +1,4 @@
+.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
+prr	0.0.0	A better Object.defineProperty()	MIT	https://github.com/rvagg/prr.git				1.2.15		1a84b85908325501411853d0081ee3fa86e2926a	https://registry.npmjs.org/prr/-/prr-0.0.0.tgz	2013-04-01T17:21:30.886Z
+prr	1.0.0	A better Object.defineProperty()	MIT	https://github.com/rvagg/prr.git	Rod Vagg	rod@vagg.org	https://github.com/rvagg	1.4.14		1301fbed1f9f92414e988eda0c0afdb85ae9d402	https://registry.npmjs.org/prr/-/prr-1.0.0.tgz	2014-06-29T07:19:44.640Z
+prr	1.0.1	A better Object.defineProperty()	MIT	https://github.com/rvagg/prr.git	Rod Vagg	rod@vagg.org	https://github.com/rvagg	1.4.14		d3fc114ba06995a45ec6893f484ceb1d78f5f476	https://registry.npmjs.org/prr/-/prr-1.0.1.tgz	2014-07-22T06:50:49.598Z

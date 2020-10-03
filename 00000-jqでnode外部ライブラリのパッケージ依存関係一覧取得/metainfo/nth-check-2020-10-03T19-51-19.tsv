@@ -1,0 +1,4 @@
+.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
+nth-check	1.0.0	performant nth-check parser & compiler	BSD	https://github.com/fb55/nth-check	Felix Boehm	me@feedic.com		1.4.2		02fc1277aa2bf8e6083be456104d6a646101a49d	https://registry.npmjs.org/nth-check/-/nth-check-1.0.0.tgz	2014-02-15T15:06:22.622Z
+nth-check	1.0.1	performant nth-check parser & compiler	BSD	https://github.com/fb55/nth-check	Felix Boehm	me@feedic.com		2.6.1	1.5.1	9929acdf628fc2c41098deab82ac580cf149aae4	https://registry.npmjs.org/nth-check/-/nth-check-1.0.1.tgz	2015-03-12T12:59:56.470Z
+nth-check	1.0.2	performant nth-check parser & compiler	BSD-2-Clause	git+https://github.com/fb55/nth-check.git	Felix Boehm	me@feedic.com		6.4.1	10.11.0	b2bd295c37e3dd58a3bf0700376663ba4d9cf05c	https://registry.npmjs.org/nth-check/-/nth-check-1.0.2.tgz	2018-10-21T22:12:06.854Z

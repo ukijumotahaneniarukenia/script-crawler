@@ -1,0 +1,14 @@
+.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
+errno	0.0.1	libuv errno details exposed			@rvagg	rod@vagg.org		1.1.18	v0.6.16-pre	e137cb376994c57c623b6c4736ecddf1792e5840	https://registry.npmjs.org/errno/-/errno-0.0.1.tgz	2012-04-30T11:58:18.254Z
+errno	0.0.2	libuv errno details exposed			@rvagg	rod@vagg.org				b39d2dabbe4c7ffb3dd1c893cade4e1ac9adff6b	https://registry.npmjs.org/errno/-/errno-0.0.2.tgz	2012-08-14T02:29:36.553Z
+errno	0.0.3	libuv errno details exposed	MIT	https://github.com/rvagg/node-errno.git				1.1.59		7a8b1228cff3d9ae2d63ed0ad38ca6181547c0f1	https://registry.npmjs.org/errno/-/errno-0.0.3.tgz	2012-09-08T03:14:06.013Z
+errno	0.0.4	libuv errno details exposed	MIT	https://github.com/rvagg/node-errno.git				1.2.32		1a1d1944c1217b43263e06e5a9ba0a1742bc6c92	https://registry.npmjs.org/errno/-/errno-0.0.4.tgz	2013-06-29T04:45:44.019Z
+errno	0.0.5	libuv errno details exposed	MIT	https://github.com/rvagg/node-errno.git				1.2.32		6d5198004b7a8dd9862f607d00c5a76fda27d834	https://registry.npmjs.org/errno/-/errno-0.0.5.tgz	2013-07-07T09:46:56.244Z
+errno	0.1.0	libuv errno details exposed	MIT	https://github.com/rvagg/node-errno.git				1.3.8		f65eb3a27c47f1a9c325038f03f111d425ed1f77	https://registry.npmjs.org/errno/-/errno-0.1.0.tgz	2013-08-26T00:47:08.697Z
+errno	0.1.1	libuv errno details exposed	MIT	https://github.com/rvagg/node-errno.git				1.4.3		fda4aae52d07f67c741e50a5a50612786f9d0ed3	https://registry.npmjs.org/errno/-/errno-0.1.1.tgz	2014-03-12T00:43:38.114Z
+errno	0.1.2	libuv errno details exposed	MIT	https://github.com/rvagg/node-errno.git				2.7.1	1.5.2-nightly201503191514b82355	ec94dac3794a92cec9e1f08502b165933a805808	https://registry.npmjs.org/errno/-/errno-0.1.2.tgz	2015-03-21T06:16:24.911Z
+errno	0.1.3	libuv errno details exposed	MIT	git+https://github.com/rvagg/node-errno.git				2.11.3	2.3.2-nightly20150625dcbb9e1da6	f89c207cff1f776f590f7e32f4009f910934db5c	https://registry.npmjs.org/errno/-/errno-0.1.3.tgz	2015-06-29T01:47:02.365Z
+errno	0.1.4	libuv errno details exposed	MIT	https://github.com/rvagg/node-errno.git				2.13.3	3.0.0	b896e23a9e5e8ba33871fc996abd3635fc9a1c7d	https://registry.npmjs.org/errno/-/errno-0.1.4.tgz	2015-08-17T04:38:14.094Z
+errno	0.1.5	libuv errno details exposed	MIT	git+https://github.com/rvagg/node-errno.git				5.5.1	9.2.0	a563781a6052bc2c9ccd89e8cef0eb9506e0c321	https://registry.npmjs.org/errno/-/errno-0.1.5.tgz	2017-12-10T15:07:40.019Z
+errno	0.1.6	libuv errno details exposed	MIT	git+https://github.com/rvagg/node-errno.git				5.6.0	9.2.0	c386ce8a6283f14fc09563b71560908c9bf53026	https://registry.npmjs.org/errno/-/errno-0.1.6.tgz	2017-12-12T13:43:39.543Z
+errno	0.1.7	libuv errno details exposed	MIT	git+https://github.com/rvagg/node-errno.git				5.6.0	9.4.0	4684d71779ad39af177e3f007996f7c67c852618	https://registry.npmjs.org/errno/-/errno-0.1.7.tgz	2018-02-15T02:58:38.265Z

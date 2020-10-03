@@ -1,0 +1,5 @@
+.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
+hash-sum	1.0.0	Blazing fast unique hash generator	MIT	git://github.com/bevacqua/hash-sum.git				2.12.1	2.3.3	3962da20409fa10e54bd0520220f8b49354cc252	https://registry.npmjs.org/hash-sum/-/hash-sum-1.0.0.tgz	2015-07-14T17:58:18.022Z
+hash-sum	1.0.1	Blazing fast unique hash generator	MIT	git://github.com/bevacqua/hash-sum.git				2.12.1	2.3.3	079a48b041a69c2a5875990d36dda7451f2eada4	https://registry.npmjs.org/hash-sum/-/hash-sum-1.0.1.tgz	2015-07-14T18:36:26.404Z
+hash-sum	1.0.2	Blazing fast unique hash generator	MIT	git://github.com/bevacqua/hash-sum.git				2.12.1	2.3.3	33b40777754c6432573c120cc3808bbd10d47f04	https://registry.npmjs.org/hash-sum/-/hash-sum-1.0.2.tgz	2015-07-14T19:10:57.033Z
+hash-sum	2.0.0	Blazing fast unique hash generator	MIT	git://github.com/bevacqua/hash-sum.git				6.9.0	10.16.0	81d01bb5de8ea4a214ad5d6ead1b523460b0b45a	https://registry.npmjs.org/hash-sum/-/hash-sum-2.0.0.tgz	2019-06-28T21:26:48.120Z

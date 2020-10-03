@@ -1,0 +1,4 @@
+.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
+kind-of	0.1.0	Get the native type of a value.		git://github.com/jonschlinkert/kind-of.git	Jon Schlinkert		https://github.com/jonschlinkert	1.4.9		bfeec69c1bf15bb2995cb07af8e58ee36ff37c12	https://registry.npmjs.org/kind-of/-/kind-of-0.1.0.tgz	2014-09-26T08:08:38.913Z
+kind-of	0.1.1	Get the native type of a value.		git://github.com/jonschlinkert/kind-of.git	Jon Schlinkert		https://github.com/jonschlinkert	1.4.9		03095e1705ebc7e4db1f6d3e4127612fc7ea659b	https://registry.npmjs.org/kind-of/-/kind-of-0.1.1.tgz	2014-10-23T23:37:48.921Z
+kind-of	0.1.2	Get the native type of a value.		git://github.com/jonschlinkert/kind-of.git	Jon Schlinkert		https://github.com/jonschlinkert	1.4.9		07bd601cc9433f5d79bd5edd2031ed155f0604a4	https://registry.npmjs.org/kind-of/-/kind-of-0.1.2.tgz	2014-10-26T10:11:23.113Z

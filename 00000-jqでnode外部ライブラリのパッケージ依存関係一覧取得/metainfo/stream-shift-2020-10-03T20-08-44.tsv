@@ -1,0 +1,3 @@
+.name	.version	.description	.license	.repository.url	.author.name	.author.email	.author.url	._npmVersion	._nodeVersion	.dist.shasum	.dist.tarball	time
+stream-shift	1.0.0	Returns the next buffer/object in a stream's readable queue	MIT	git+https://github.com/mafintosh/stream-shift.git	Mathias Buus		@mafintosh	2.15.9	4.4.3	d5c752825e5367e786f78e18e445ea223a155952	https://registry.npmjs.org/stream-shift/-/stream-shift-1.0.0.tgz	2016-07-08T21:01:04.886Z
+stream-shift	1.0.1	Returns the next buffer/object in a stream's readable queue	MIT	git+https://github.com/mafintosh/stream-shift.git	Mathias Buus		@mafintosh	6.12.1	12.13.0	d7088281559ab2778424279b0877da3c392d5a3d	https://registry.npmjs.org/stream-shift/-/stream-shift-1.0.1.tgz	2019-12-12T10:29:44.264Z
