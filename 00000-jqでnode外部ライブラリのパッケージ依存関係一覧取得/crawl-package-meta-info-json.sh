@@ -46,7 +46,7 @@ cat $INPUT_FILE_NAME | \
 
     echo $url
 
-    OUTPUT_FILE_NAME=$(echo $url| sed -r 's;https://registry.npmjs.org/;;g' | sed -r 's;/\?;\.;g')
+    OUTPUT_FILE_NAME=$(echo $url| sed -r 's;https://registry.npmjs.org/;;g' | sed -r 's;/\?json;;g' | sed -r 's;/;-;g')
 
     curl -fsSL $url -o - | jq '' >$OUTPUT_DIR_NAME/$OUTPUT_FILE_NAME-$(date "+%Y-%m-%dT%H-%M-%S").json
 
