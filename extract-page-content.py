@@ -32,9 +32,11 @@ LINK_SUFFIX='.txt.target'
 OUTPUT_PREFIX = 'page-content-'
 OUTPUT_SUFFIX = '.tsv'
 
-COMMON_COLUMN_LIST_FILE_NAME = 'extract-column-list-common.json'
-SITE_COLUMN_LIST_PREFFIX='extract-column-list-site-'
-SITE_COLUMN_LIST_SUFFIX='.json'
+INPUT_DIR_NAME='extract-column-list'
+
+COMMON_COLUMN_LIST_FILE_NAME = INPUT_DIR_NAME + '/' + 'extract-column-list-common.json'
+SITE_COLUMN_LIST_PREFFIX = INPUT_DIR_NAME + '/' + 'extract-column-list-site-'
+SITE_COLUMN_LIST_SUFFIX = '.json'
 
 OFS = '\t'
 ORS = '\n'

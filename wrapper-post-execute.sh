@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+INPUT_DIR_NAME=extract-column-list
+
 #前回アクセスURLリストの作成
 cat base-file-name-list.txt | grep -Po '(?<=//).*?(?=/)' | ruby -F'\.' -anle 'puts $F.reverse.join("-")' | \
   while read base_name;do
@@ -8,9 +10,9 @@ cat base-file-name-list.txt | grep -Po '(?<=//).*?(?=/)' | ruby -F'\.' -anle 'pu
 
     COLUMN_CNT=
 
-    if [ -f extract-column-list-common.json -a -f extract-column-list-site-$base_name.json ];then
+    if [ -f $INPUT_DIR_NAME/extract-column-list-common.json -a -f $INPUT_DIR_NAME/extract-column-list-site-$base_name.json ];then
 
-      COLUMN_CNT=$(cat extract-column-list-common.json extract-column-list-site-$base_name.json | jq 'add' | jq -s '(.[0]|length)+((.[1]|length)*2)')
+      COLUMN_CNT=$(cat $INPUT_DIR_NAME/extract-column-list-common.json $INPUT_DIR_NAME/extract-column-list-site-$base_name.json | jq 'add' | jq -s '(.[0]|length)+((.[1]|length)*2)')
 
     fi
 
