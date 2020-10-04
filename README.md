@@ -1,19 +1,5 @@
 # script-crawler
 
-めも
-
-- タグ名が同一であるかにかかわらず、同一階層にあるすべてのタグリストに対して処理をする。その際、同一であれば番号を振っていく。
-
-- 訪れたことのあるノードは再訪問しないようにするロジックが必要（訪問済みのパス式リストをもちわまる）
-
-再訪問ロジックを組み込む前まではこれで対応できるがダサい
-
-```
-$ python3 list-up-xpath-mash-up.py test-ng.html | sort | uniq >a
-```
-
-存在チェックして結果リストに詰めるか詰めないかのロジックが必要
-
 得られたパスから対象ノード取得するには以下でいける文字コードをいい感じに。
 
 普段とイメージが異なるが、うまく行くのはこのパターンだった
@@ -23,7 +9,6 @@ $ python3 list-up-xpath-mash-up.py test-ng.html | sort | uniq >a
 ```
 $ cat test-ng.html| xmllint --html --xpath '/html/body/article/div/div/div[1]/div[1]/div/div/div[1]' - 2>/dev/null |iconv -f UTF-8 -t iso-8859-1
 ```
-
 
 XPATHで指定したDOMのポジション位置X座標とY座標を記憶しておき、相対位置付近をクリックして求めたXPATHをつかってテキストを抽出し、抽出パタンにマッチするかどうか判定する
 
