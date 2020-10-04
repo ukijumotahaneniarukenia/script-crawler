@@ -23,14 +23,15 @@ DEFAULT_WAIT_TIME_SECONDS=5
 SITE_NAME='SITE_NAME'
 SITE_URL='SITE_URL'
 
-CHECK_PREFFIX='page-content-'
+OUTPUT_DIR_NAME = 'page-content'
+CHECK_PREFFIX = OUTPUT_DIR_NAME + '/' + 'page-content-'
 CHECK_SUFFIX='-no-need-access-url.json'
 
 LINK_DIR_NAME = 'link'
 LINK_PREFFIX = LINK_DIR_NAME + '/' + 'link-'
 LINK_SUFFIX = '.txt.target'
 
-OUTPUT_PREFIX = 'page-content-'
+OUTPUT_PREFIX = OUTPUT_DIR_NAME + '/' + 'page-content-'
 OUTPUT_SUFFIX = '.tsv'
 
 INPUT_DIR_NAME='extract-column-list'
