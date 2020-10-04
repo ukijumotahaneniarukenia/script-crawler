@@ -1,6 +1,10 @@
 事前準備
 
+https://pypi.org/project/termcolor/
+
 ```
+pip3 install --user termcolor
+
 pip3 install --user requests
 
 pip3 install --user lxml
