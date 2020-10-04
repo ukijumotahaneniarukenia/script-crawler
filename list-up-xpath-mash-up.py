@@ -53,6 +53,8 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list, p
 
     print(xpath_list[-1])
 
+
+
     if etree.iselement(target_element) and not len(target_element.getchildren()) == 0:
 
         target_children_list = target_element.getchildren()
@@ -92,16 +94,26 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list, p
                 debug_log_red(prev_xpath + '/' + target_element_tag)
                 debug_log_red("xpath_list".ljust(30) + ':' + ','.join(xpath_list))
                 debug_log_red("prev_xpath_list".ljust(30) + ':' + ','.join(prev_xpath_list))
+                debug_log_red(len(same_hierarchy_list))
 
-                #解決策その１
-                if prev_xpath in prev_xpath_list :
+                #前回訪問済みの親ノードが存在する場合はスキップ
+                if (prev_xpath + '/' + target_element_tag) in xpath_list :
 
                     continue
 
-                #解決策その２
-                #if prev_xpath in prev_xpath_list and (prev_xpath + '/' + target_element_tag) in xpath_list :
+                #前回訪問済みのカレントノードが存在する場合はスキップ
+                is_exists = True
+                for chk_idx in range(0, len(same_hierarchy_list)) :
 
-                #    continue
+                    debug_log_red(prev_xpath + '/' + target_element_tag + '[' + str(chk_idx + 1) + ']')
+
+                    if not (prev_xpath + '/' + target_element_tag + '[' + str(chk_idx + 1) + ']') in xpath_list :
+
+                        is_exists = False
+
+                if is_exists :
+
+                    break
 
                 if len(same_hierarchy_list) > 1:
 
