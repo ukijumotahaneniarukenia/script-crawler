@@ -12,6 +12,17 @@
 $ python3 list-up-xpath-mash-up.py test-ng.html | sort | uniq >a
 ```
 
+得られたパスから対象ノード取得するには以下でいける文字コードをいい感じに。
+
+普段とイメージが異なるが、うまく行くのはこのパターンだった
+
+ラテン系に戻すと読めるようになる
+
+```
+$ cat test-ng.html| xmllint --html --xpath '/html/body/article/div/div/div[1]/div[1]/div/div/div[1]' - 2>/dev/null |iconv -f UTF-8 -t iso-8859-1
+```
+
+
 XPATHで指定したDOMのポジション位置X座標とY座標を記憶しておき、相対位置付近をクリックして求めたXPATHをつかってテキストを抽出し、抽出パタンにマッチするかどうか判定する
 
 相対位置は各抽出項目ごとに上下左右の距離を管理しておくと実現できると思う
