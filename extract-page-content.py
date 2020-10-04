@@ -32,8 +32,8 @@ LINK_SUFFIX='.txt.target'
 OUTPUT_PREFIX = 'page-content-'
 OUTPUT_SUFFIX = '.tsv'
 
-COMMON_COLUMN_LIST_FILE_NAME = 'extract-common-column-list.json'
-SITE_COLUMN_LIST_PREFFIX='extract-site-column-list-'
+COMMON_COLUMN_LIST_FILE_NAME = 'extract-column-list-common.json'
+SITE_COLUMN_LIST_PREFFIX='extract-column-list-site-'
 SITE_COLUMN_LIST_SUFFIX='.json'
 
 OFS = '\t'
