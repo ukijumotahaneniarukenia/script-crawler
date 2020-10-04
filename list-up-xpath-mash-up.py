@@ -94,11 +94,14 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list, p
                 # same_hierarchy_list = html.xpath(xpath_list[-1] + '/' + target_element_tag) #親の位置から見るためには直前を見てはだめ
                 same_hierarchy_list = html.xpath(prev_xpath + '/' + target_element_tag)
 
+                prev_same_hierarchy_children_list = html.xpath(prev_xpath)[0].getchildren()
+
                 debug_log_red(prev_xpath)
                 debug_log_red(prev_xpath + '/' + target_element_tag)
                 debug_log_red("xpath_list".ljust(30) + ':' + ','.join(xpath_list))
                 debug_log_red("prev_xpath_list".ljust(30) + ':' + ','.join(prev_xpath_list))
                 debug_log_red(len(same_hierarchy_list))
+                print(prev_same_hierarchy_children_list)
 
                 # 前回訪問済みの親ノードが存在する場合はスキップ
                 if (prev_xpath + '/' + target_element_tag) in xpath_list:

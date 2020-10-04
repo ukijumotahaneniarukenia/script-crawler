@@ -34,7 +34,7 @@ def wrapper(file_name, *debug_mode):
 
         html = lxml.html.fromstring(data)
 
-        result = html.xpath('/html/body/article/div/div/div[1]/div[1]/div/div')
+        result = html.xpath('/html/head')
 
         print(result)
 
