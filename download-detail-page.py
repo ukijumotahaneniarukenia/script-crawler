@@ -20,7 +20,8 @@ SCROLL_WAIT_TIME_SECONDS = 3
 
 SOURCE_FILE_NAME='list.json'
 
-OUTPUT_PREFIX = 'page-detail-'
+OUTPUT_DIR_NAME = 'page-detail'
+OUTPUT_PREFIX = OUTPUT_DIR_NAME + '/' + 'page-detail-'
 OUTPUT_SUFFIX = '.html'
 
 OFS = '\t'

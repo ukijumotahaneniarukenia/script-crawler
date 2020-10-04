@@ -23,22 +23,20 @@ DEFAULT_WAIT_TIME_SECONDS=5
 SITE_NAME='SITE_NAME'
 SITE_URL='SITE_URL'
 
+INPUT_DIR_NAME = 'link'
+INPUT_FILE_PREFIX = INPUT_DIR_NAME + '/' + 'link-'
+INPUT_FILE_SUFFIX = '.txt.target'
+
 OUTPUT_DIR_NAME = 'page-content'
-CHECK_PREFFIX = OUTPUT_DIR_NAME + '/' + 'page-content-'
+CHECK_PREFIX = OUTPUT_DIR_NAME + '/' + 'page-content-'
 CHECK_SUFFIX='-no-need-access-url.json'
-
-LINK_DIR_NAME = 'link'
-LINK_PREFFIX = LINK_DIR_NAME + '/' + 'link-'
-LINK_SUFFIX = '.txt.target'
-
 OUTPUT_PREFIX = OUTPUT_DIR_NAME + '/' + 'page-content-'
 OUTPUT_SUFFIX = '.tsv'
 
-INPUT_DIR_NAME='extract-column-list'
-
-COMMON_COLUMN_LIST_FILE_NAME = INPUT_DIR_NAME + '/' + 'extract-column-list-common.json'
-SITE_COLUMN_LIST_PREFFIX = INPUT_DIR_NAME + '/' + 'extract-column-list-site-'
-SITE_COLUMN_LIST_SUFFIX = '.json'
+EXTRACT_COLUMN_LIST_DEFINE_DIR_NAME='extract-column-list'
+EXTRACT_COLUMN_LIST_COMMON_FILE_NAME = EXTRACT_COLUMN_LIST_DEFINE_DIR_NAME + '/' + 'extract-column-list-common.json'
+EXTRACT_COLUMN_LIST_SITE_PREFIX = EXTRACT_COLUMN_LIST_DEFINE_DIR_NAME + '/' + 'extract-column-list-site-'
+EXTRACT_COLUMN_LIST_SITE_SUFFIX = '.json'
 
 OFS = '\t'
 ORS = '\n'
@@ -55,7 +53,7 @@ EXTRACT_IS_COMPLETED = '1'
 EXTRACT_IS_NOT_COMPLETED = '0'
 
 #取得項目リスト
-common_column_list_file = open(COMMON_COLUMN_LIST_FILE_NAME,'r')
+common_column_list_file = open(EXTRACT_COLUMN_LIST_COMMON_FILE_NAME,'r')
 
 common_column_list = json.load(common_column_list_file)
 
@@ -82,7 +80,7 @@ for crawler_target in crawler_target_list:
     site_url = crawler_target[SITE_URL]
     base_name = "-".join(re.findall(r'(?<=//).*?(?=/)', site_url.strip())[0].split(".")[::-1])
 
-    check_file_name = CHECK_PREFFIX + base_name + CHECK_SUFFIX
+    check_file_name = CHECK_PREFIX + base_name + CHECK_SUFFIX
     output_file_name = OUTPUT_PREFIX + base_name + OUTPUT_SUFFIX
 
     #前回分の出力結果ファイルが存在すれば削除
@@ -90,7 +88,7 @@ for crawler_target in crawler_target_list:
 
         os.remove(output_file_name)
 
-    link_file_name = LINK_PREFFIX + base_name + LINK_SUFFIX
+    link_file_name = INPUT_FILE_PREFIX + base_name + INPUT_FILE_SUFFIX
 
     if not os.path.exists(link_file_name):
 
@@ -141,7 +139,7 @@ for crawler_target in crawler_target_list:
             extract_list.append(EXTRACT_SITE_URL)
             extract_list.append(EXTRACT_BASE_NAME)
 
-            site_column_list_file = open(SITE_COLUMN_LIST_PREFFIX + base_name + SITE_COLUMN_LIST_SUFFIX,'r')
+            site_column_list_file = open(EXTRACT_COLUMN_LIST_SITE_PREFIX + base_name + EXTRACT_COLUMN_LIST_SITE_SUFFIX,'r')
 
             site_column_list = json.load(site_column_list_file)
 

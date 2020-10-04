@@ -12,7 +12,8 @@ import glob
 
 SOURCE_FILE_NAME='base-file-name-list.txt'
 
-INPUT_PREFIX = 'page-detail-'
+INPUT_DIR_NAME = 'page-detail'
+INPUT_PREFIX = INPUT_DIR_NAME + '/' + 'page-detail-'
 INPUT_SUFFIX = '.html'
 
 OUTPUT_DIR_NAME = 'link'
