@@ -25,7 +25,7 @@ CMD:  {filename} test.html 1
   sys.exit(0)
 
 def debug_log(msg):
-    if is_debug:
+    if IS_DEBUG:
         print(msg)
 
 def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
@@ -135,11 +135,11 @@ def wrapper(file_name, *debug_mode):
         # 元ネタは持ち回る必要がある
         NNN(html, doc, prev_target_element_tag, prev_xpath, xpath_list)
 
-is_debug = 0
+IS_DEBUG = 0
 
 def main():
 
-  global is_debug
+  global IS_DEBUG
 
   try:
 
@@ -161,7 +161,7 @@ def main():
 
                 usage()
 
-            is_debug = int(sys.argv[2])
+            IS_DEBUG = int(sys.argv[2])
 
         if len(sys.argv[1:]) == 1 :
 
@@ -171,7 +171,7 @@ def main():
 
             usage()
 
-        wrapper(input_file_name, is_debug)
+        wrapper(input_file_name, IS_DEBUG)
 
   except KeyboardInterrupt:
 
