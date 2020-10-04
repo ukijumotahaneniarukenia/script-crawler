@@ -52,6 +52,7 @@ def debug_log_yellow(msg):
 def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
 
     print(xpath_list[-1])
+    #print(prev_xpath)
 
     if etree.iselement(target_element) and not len(target_element.getchildren()) == 0:
 
@@ -88,9 +89,9 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
 
                 # ここに同一階層の同一タグを管理する
                 same_hierarchy_list = html.xpath(prev_xpath + '/' + target_element_tag)
-
+                #same_hierarchy_list = html.xpath(prev_xpath + '/' + target_element_tag)
                 debug_log_red(prev_xpath + '/' + target_element_tag)
-                debug_log_red(same_hierarchy_list)
+                debug_log_red(xpath_list[-1] + '/' + target_element_tag)
 
                 if len(same_hierarchy_list) > 1:
 
@@ -137,8 +138,8 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
 
                     xpath_list.append(current_xpath)
 
-                    NNN(html, html.xpath(current_xpath)[0], html.xpath(prev_xpath)[0].tag,
-                        current_xpath, xpath_list)
+                    #NNN(html, html.xpath(current_xpath)[0], html.xpath(prev_xpath)[0].tag,
+                    #    current_xpath, xpath_list)
 
 def wrapper(file_name, *debug_mode):
 
