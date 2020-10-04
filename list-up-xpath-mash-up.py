@@ -89,8 +89,6 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
                 # ここに同一階層の同一タグを管理する
                 same_hierarchy_list = html.xpath(xpath_list[-1] + '/' + target_element_tag)
 
-                # print('same_hierarchy_list :' + str(len(same_hierarchy_list)))
-
                 if len(same_hierarchy_list) > 1:
 
                     for idx in range(0, len(same_hierarchy_list)):
@@ -98,7 +96,6 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
                         current_xpath = prev_xpath + '/' + target_element_tag + '[' + str(idx + 1) + ']'
 
                         # ここで何を状態管理して変更するか考える
-                        debug_log_cyan('=' * 40 + "c" * 10 + '=' * 40)
                         debug_log_cyan("current_element".ljust(30) + ':' + html.xpath(current_xpath)[0].tag)
                         debug_log_cyan("prev_target_element_tag".ljust(30) + ':' + prev_target_element_tag)
                         debug_log_cyan("current_xpath".ljust(30) + ':' + current_xpath)
@@ -112,7 +109,7 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
 
                 elif len(same_hierarchy_list) == 1:
 
-                    debug_log_green('=' * 40 + "d" * 10 + '=' * 40)
+                    debug_log_green('=' * 40 + "c" * 10 + '=' * 40)
                     current_xpath = xpath_list[-1] + '/' + target_element_tag
 
                     debug_log_green("current_element".ljust(30) + ':' + html.xpath(current_xpath)[0].tag)
@@ -126,7 +123,7 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
                     NNN(html, html.xpath(current_xpath)[0], html.xpath(xpath_list[-1])[0].tag,
                         current_xpath, xpath_list)
                 else:
-                    debug_log_blue('=' * 40 + "e" * 10 + '=' * 40)
+                    debug_log_blue('=' * 40 + "d" * 10 + '=' * 40)
                     current_xpath = prev_xpath + '/' + target_element_tag
 
                     debug_log_blue("current_element".ljust(30) + ':' + html.xpath(current_xpath)[0].tag)
