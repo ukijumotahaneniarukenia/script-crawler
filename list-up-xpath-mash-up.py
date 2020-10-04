@@ -49,7 +49,7 @@ def debug_log_yellow(msg):
     if IS_DEBUG:
         print(colored(msg, 'yellow'))
 
-def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
+def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list, prev_xpath_list):
 
     print(xpath_list[-1])
 
@@ -69,6 +69,7 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
                 current_xpath = prev_xpath + '/' + target_element_tag
 
                 xpath_list.append(current_xpath)
+                prev_xpath_list.append(prev_xpath)
 
                 debug_log_magenta('=' * 40 + "a" * 10 + '=' * 40)
                 debug_log_magenta("current_element".ljust(30) + ':' + html.xpath(prev_xpath + '/' + target_element_tag)[0].tag)
@@ -76,9 +77,10 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
                 debug_log_magenta("current_xpath".ljust(30) + ':' + current_xpath)
                 debug_log_magenta("prev_xpath".ljust(30) + ':' + prev_xpath)
                 debug_log_magenta("xpath_list".ljust(30) + ':' + ','.join(xpath_list))
+                debug_log_magenta("prev_xpath_list".ljust(30) + ':' + ','.join(prev_xpath_list))
 
                 NNN(html, html.xpath(current_xpath)[0], html.xpath(prev_xpath)[0].tag,
-                    current_xpath, xpath_list)
+                    current_xpath, xpath_list, prev_xpath_list)
 
             else:
                 debug_log_red("２回目以降")
@@ -86,9 +88,20 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
                 #same_hierarchy_list = html.xpath(xpath_list[-1] + '/' + target_element_tag) #親の位置から見るためには直前を見てはだめ
                 same_hierarchy_list = html.xpath(prev_xpath + '/' + target_element_tag)
 
+                debug_log_red(prev_xpath)
                 debug_log_red(prev_xpath + '/' + target_element_tag)
-                debug_log_red(xpath_list[-1] + '/' + target_element_tag)
                 debug_log_red("xpath_list".ljust(30) + ':' + ','.join(xpath_list))
+                debug_log_red("prev_xpath_list".ljust(30) + ':' + ','.join(prev_xpath_list))
+
+                #解決策その１
+                if prev_xpath in prev_xpath_list :
+
+                    continue
+
+                #解決策その２
+                #if prev_xpath in prev_xpath_list and (prev_xpath + '/' + target_element_tag) in xpath_list :
+
+                #    continue
 
                 if len(same_hierarchy_list) > 1:
 
@@ -101,11 +114,13 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
                         debug_log_cyan("current_xpath".ljust(30) + ':' + current_xpath)
                         debug_log_cyan("prev_xpath".ljust(30) + ':' + prev_xpath)
                         debug_log_cyan("xpath_list".ljust(30) + ':' + ','.join(xpath_list))
+                        debug_log_cyan("prev_xpath_list".ljust(30) + ':' + ','.join(prev_xpath_list))
 
                         xpath_list.append(current_xpath)
+                        prev_xpath_list.append(prev_xpath)
 
                         NNN(html, html.xpath(current_xpath)[0], html.xpath(prev_xpath)[0].tag,
-                            current_xpath, xpath_list)
+                            current_xpath, xpath_list, prev_xpath_list)
 
                 elif len(same_hierarchy_list) == 1:
 
@@ -117,11 +132,13 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
                     debug_log_green("current_xpath".ljust(30) + ':' + current_xpath)
                     debug_log_green("prev_xpath".ljust(30) + ':' + prev_xpath)
                     debug_log_green("xpath_list".ljust(30) + ':' + ','.join(xpath_list))
+                    debug_log_green("prev_xpath_list".ljust(30) + ':' + ','.join(prev_xpath_list))
 
                     xpath_list.append(current_xpath)
+                    prev_xpath_list.append(prev_xpath)
 
                     NNN(html, html.xpath(current_xpath)[0], html.xpath(prev_xpath)[0].tag,
-                        current_xpath, xpath_list)
+                        current_xpath, xpath_list, prev_xpath_list)
 
                 else:
                     debug_log_blue('=' * 40 + "d" * 10 + '=' * 40)
@@ -132,8 +149,11 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list):
                     debug_log_blue("current_xpath".ljust(30) + ':' + current_xpath)
                     debug_log_blue("prev_xpath".ljust(30) + ':' + prev_xpath)
                     debug_log_blue("xpath_list".ljust(30) + ':' + ','.join(xpath_list))
+                    debug_log_blue("prev_xpath_list".ljust(30) + ':' + ','.join(prev_xpath_list))
 
                     xpath_list.append(current_xpath)
+                    prev_xpath_list.append(prev_xpath)
+
 
 def wrapper(file_name, *debug_mode):
 
@@ -146,12 +166,13 @@ def wrapper(file_name, *debug_mode):
         html = lxml.html.fromstring(data)
 
         xpath_list = list()
+        prev_xpath_list = list()
         prev_target_element_tag = doc.tag
         prev_xpath = '/' + prev_target_element_tag
         xpath_list.append(prev_xpath)
 
         # 元ネタは持ち回る必要がある
-        NNN(html, doc, prev_target_element_tag, prev_xpath, xpath_list)
+        NNN(html, doc, prev_target_element_tag, prev_xpath, xpath_list, prev_xpath_list)
 
 IS_DEBUG = 0
 
