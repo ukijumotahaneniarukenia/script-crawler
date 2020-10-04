@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-
 INPUT_DIR_NAME=extract-column-list
+OUTPUT_DIR_NAME=link
 
 #サイト別カラムリストの一覧の作成
 cat list.json | jq -cr '. as $in | $in | length as $cnt | [range(0;$cnt)]|foreach $in[.[]] as $item("";($item|(."SITE_URL"|gsub(".*//";"")|gsub("/.*";"")|split(".")|reverse|join("-")) + "\t" +($item|({"EXTRACT_COLUMN_LIST":(."EXTRACT_COLUMN_LIST"|keys)}|tojson))))'| while read base_name column_list;do echo $column_list > "$INPUT_DIR_NAME/extract-column-list-site-"$base_name".json";cat "$INPUT_DIR_NAME/extract-column-list-site-"$base_name".json"|jq '' |sponge "$INPUT_DIR_NAME/extract-column-list-site-"$base_name".json";done
@@ -42,10 +42,6 @@ cat base-file-name-list.txt | grep -Po '(?<=//).*?(?=/)' | ruby -F'\.' -anle 'pu
 
     echo $base_name
 
-    cp link-$base_name.txt link-$base_name.txt.target
-
-
-    #cat link-$base_name.txt.target | grep hogehogek
-
+    cp $OUTPUT_DIR_NAME/link-$base_name.txt $OUTPUT_DIR_NAME/link-$base_name.txt.target
 
   done

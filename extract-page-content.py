@@ -26,8 +26,9 @@ SITE_URL='SITE_URL'
 CHECK_PREFFIX='page-content-'
 CHECK_SUFFIX='-no-need-access-url.json'
 
-LINK_PREFFIX='link-'
-LINK_SUFFIX='.txt.target'
+LINK_DIR_NAME = 'link'
+LINK_PREFFIX = LINK_DIR_NAME + '/' + 'link-'
+LINK_SUFFIX = '.txt.target'
 
 OUTPUT_PREFIX = 'page-content-'
 OUTPUT_SUFFIX = '.tsv'

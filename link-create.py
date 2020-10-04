@@ -15,7 +15,8 @@ SOURCE_FILE_NAME='base-file-name-list.txt'
 INPUT_PREFIX = 'page-detail-'
 INPUT_SUFFIX = '.html'
 
-OUTPUT_PREFIX = 'link-'
+OUTPUT_DIR_NAME = 'link'
+OUTPUT_PREFIX = OUTPUT_DIR_NAME + '/' + 'link-'
 OUTPUT_SUFFIX = '.txt'
 ORS = '\n'
 
