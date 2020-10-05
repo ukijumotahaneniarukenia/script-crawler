@@ -1,4 +1,0 @@
-https://dev.to//finallynero/react-form-using-formik-material-ui-and-yup-2e8h
-https://dev.to//gabe_ragland/debouncing-with-react-hooks-jci
-https://dev.to//gethackteam/5-examples-of-react-applications-to-learn-from-275b
-https://dev.to//giteden/top-5-react-chart-libraries-for-2020-1amb

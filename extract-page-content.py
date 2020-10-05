@@ -90,9 +90,9 @@ for crawler_target in crawler_target_list:
     output_file_name = OUTPUT_DIR_NAME + '/' + base_name + '/' + OUTPUT_FILE_PREFIX + base_name + OUTPUT_FILE_SUFFIX
 
     #前回分の出力結果ファイルが存在すれば削除
-    if os.path.exists(output_file_name):
+    #if os.path.exists(output_file_name):
 
-        os.remove(output_file_name)
+    #    os.remove(output_file_name)
 
     link_file_name = INPUT_DIR_NAME + '/' + base_name + '/' + INPUT_FILE_PREFIX + base_name + INPUT_FILE_SUFFIX
 

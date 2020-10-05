@@ -47,45 +47,32 @@ OUT
 
 ```
 
-項目数が正しいデータ行のみ抽出
+
+前回アクセスURLリストの作成
+
+CMD
 
 ```
-$ cat page-content-to-dev.tsv | awk -v FS='\t' 'NF==8{for(i=1;i<=NF;i++){printf $i"\t"}printf "\n"}' | sed -r 's/\t$//' >page-content-to-dev.tsv.success.tsv
+$ time ./wrapper-post-execute.sh
 ```
 
-項目数が正しくないデータ行のみ抽出
+OUT
 
 ```
-$ cat page-content-to-dev.tsv | awk -v FS='\t' 'NF!=8{for(i=1;i<=NF;i++){printf $i"\t"}printf "\n"}' | sed -r 's/\t$//' >page-content-to-dev.tsv-fail.tsv
-```
 
-存在チェック用のURLリストを抽出
-
-前回成功時のURLに関してはアクセスしないロジックを組むために必要
-
-```
-$ cat page-content-to-dev.tsv.success.tsv | awk -v FS='\t' '$0=$1' | tail -n+2 | sort | uniq >page-content-to-dev.tsv-success-url.txt
-```
-
-前回失敗時のURLに関してはアクセスしないロジックを組むために必要
-
-
-```
-$ cat page-content-to-dev.tsv-fail.tsv | awk -v FS='\t' '$0=$1' | tail -n+2 | sort | uniq | grep -P 'https?' | sort | uniq >page-content-to-dev.tsv-fail-url.txt
-```
-
-上記２つのファイルをマージ
-
-
-```
-$ ls page-content-to-dev.tsv-fail-url.txt page-content-to-dev.tsv-success-url.txt | xargs cat | sort | uniq | jq -R '' | jq -s '' >page-content-to-dev-no-need-access-url.json
 ```
 
 ないよーん
 
 これが現れる場合はアプリで起動したブラウザ上でのXPATHを正しく指定できていないため
 
+あるいは指定したページに対するXPATHを正しく定義できていないため
+
 ユーザーが意図して起動する場合と少し異なる
+
+メンテが必要
+
+ここをうまくやりたい
 
 ```
 $ ./mock.py 'https://qiita.com/yamaru/items/527ca7d814534beca56a'
