@@ -91,39 +91,32 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list, p
             else:
                 debug_log_red("２回目以降")
 
-                # same_hierarchy_list = html.xpath(xpath_list[-1] + '/' + target_element_tag) #親の位置から見るためには直前を見てはだめ
-                same_hierarchy_list = html.xpath(prev_xpath + '/' + target_element_tag)
-
-                prev_same_hierarchy_children_list = html.xpath(prev_xpath)[0].getchildren()
+                #タグ名問わず、同一階層に存在している子ノードリストを取得
+                same_hierarchy_children_list = html.xpath(prev_xpath)[0].getchildren()
 
                 debug_log_red(prev_xpath)
                 debug_log_red(prev_xpath + '/' + target_element_tag)
                 debug_log_red("xpath_list".ljust(30) + ':' + ','.join(xpath_list))
                 debug_log_red("prev_xpath_list".ljust(30) + ':' + ','.join(prev_xpath_list))
-                debug_log_red(len(same_hierarchy_list))
-                print(prev_same_hierarchy_children_list)
 
-                # 前回訪問済みの親ノードが存在する場合はスキップ
-                if (prev_xpath + '/' + target_element_tag) in xpath_list:
-                    continue
+                for same_idx in range(0, len(same_hierarchy_children_list)):
 
-                # 前回訪問済みのカレントノードが存在する場合はスキップ
-                is_exists = True
-                for chk_idx in range(0, len(same_hierarchy_list)):
+                    debug_log_red(prev_xpath + '/' + same_hierarchy_children_list[same_idx].tag)
 
-                    debug_log_red(prev_xpath + '/' + target_element_tag + '[' + str(chk_idx + 1) + ']')
+                    #タグ名が同じで同一階層に存在している子ノードリストを取得
+                    same_tag_hierarchy_children_list = html.xpath(prev_xpath + '/' + same_hierarchy_children_list[same_idx].tag)
 
-                    if not (prev_xpath + '/' + target_element_tag + '[' + str(chk_idx + 1) + ']') in xpath_list:
-                        is_exists = False
+                    #同一のタグの出現回数を管理するために取得
+                    same_tag_hierarchy_children_list_cnt = len(same_tag_hierarchy_children_list)
 
-                if is_exists:
-                    break
-
-                if len(same_hierarchy_list) > 1:
-
-                    for idx in range(0, len(same_hierarchy_list)):
+                    if same_tag_hierarchy_children_list_cnt == 1 :
+                        #単一の場合
                         debug_log_cyan('=' * 40 + "b" * 10 + '=' * 40)
-                        current_xpath = prev_xpath + '/' + target_element_tag + '[' + str(idx + 1) + ']'
+                        current_xpath = prev_xpath + '/' + same_hierarchy_children_list[same_idx].tag
+
+                        # 前回訪問済みの場合はスキップ
+                        if current_xpath in xpath_list:
+                            continue
 
                         debug_log_cyan("current_element".ljust(30) + ':' + html.xpath(current_xpath)[0].tag)
                         debug_log_cyan("prev_target_element_tag".ljust(30) + ':' + prev_target_element_tag)
@@ -138,37 +131,30 @@ def NNN(html, target_element, prev_target_element_tag, prev_xpath, xpath_list, p
                         NNN(html, html.xpath(current_xpath)[0], html.xpath(prev_xpath)[0].tag,
                             current_xpath, xpath_list, prev_xpath_list)
 
-                elif len(same_hierarchy_list) == 1:
+                    else :
+                        #複数の場合
+                        for same_tag_idx in range(0, same_tag_hierarchy_children_list_cnt) :
 
-                    debug_log_green('=' * 40 + "c" * 10 + '=' * 40)
-                    current_xpath = prev_xpath + '/' + target_element_tag
+                            debug_log_cyan('=' * 40 + "c" * 10 + '=' * 40)
 
-                    debug_log_green("current_element".ljust(30) + ':' + html.xpath(current_xpath)[0].tag)
-                    debug_log_green("prev_target_element_tag".ljust(30) + ':' + prev_target_element_tag)
-                    debug_log_green("current_xpath".ljust(30) + ':' + current_xpath)
-                    debug_log_green("prev_xpath".ljust(30) + ':' + prev_xpath)
-                    debug_log_green("xpath_list".ljust(30) + ':' + ','.join(xpath_list))
-                    debug_log_green("prev_xpath_list".ljust(30) + ':' + ','.join(prev_xpath_list))
+                            current_xpath = prev_xpath + '/' + same_hierarchy_children_list[same_idx].tag + '[' + str(same_tag_idx + 1) + ']'
 
-                    xpath_list.append(current_xpath)
-                    prev_xpath_list.append(prev_xpath)
+                            # 前回訪問済みの場合はスキップ
+                            if current_xpath in xpath_list:
+                                continue
 
-                    NNN(html, html.xpath(current_xpath)[0], html.xpath(prev_xpath)[0].tag,
-                        current_xpath, xpath_list, prev_xpath_list)
+                            debug_log_cyan("current_element".ljust(30) + ':' + html.xpath(current_xpath)[0].tag)
+                            debug_log_cyan("prev_target_element_tag".ljust(30) + ':' + prev_target_element_tag)
+                            debug_log_cyan("current_xpath".ljust(30) + ':' + current_xpath)
+                            debug_log_cyan("prev_xpath".ljust(30) + ':' + prev_xpath)
+                            debug_log_cyan("xpath_list".ljust(30) + ':' + ','.join(xpath_list))
+                            debug_log_cyan("prev_xpath_list".ljust(30) + ':' + ','.join(prev_xpath_list))
 
-                else:
-                    debug_log_blue('=' * 40 + "d" * 10 + '=' * 40)
-                    current_xpath = prev_xpath + '/' + target_element_tag
+                            xpath_list.append(current_xpath)
+                            prev_xpath_list.append(prev_xpath)
 
-                    debug_log_blue("current_element".ljust(30) + ':' + html.xpath(current_xpath)[0].tag)
-                    debug_log_blue("prev_target_element_tag".ljust(30) + ':' + prev_target_element_tag)
-                    debug_log_blue("current_xpath".ljust(30) + ':' + current_xpath)
-                    debug_log_blue("prev_xpath".ljust(30) + ':' + prev_xpath)
-                    debug_log_blue("xpath_list".ljust(30) + ':' + ','.join(xpath_list))
-                    debug_log_blue("prev_xpath_list".ljust(30) + ':' + ','.join(prev_xpath_list))
-
-                    xpath_list.append(current_xpath)
-                    prev_xpath_list.append(prev_xpath)
+                            NNN(html, html.xpath(current_xpath)[0], html.xpath(prev_xpath)[0].tag,
+                                current_xpath, xpath_list, prev_xpath_list)
 
 
 def wrapper(file_name, *debug_mode):

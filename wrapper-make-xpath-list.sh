@@ -30,6 +30,3 @@ cat $BASE_FILE_NAME | grep -Po '(?<=//).*?(?=/)' | ruby -F'\.' -anle 'puts $F.re
       done
 
   done
-
-
-#cat -n test-big-tidy-xpath-list.txt | while read num xpath;do cat test-big-tidy.html | xmllint --html --xpath $xpath - 2>/dev/null | tidy -i - 2>/dev/null >test-big-tidy/test-big-tidy-$(printf "%05d" $num)-partial-dom.html;done
