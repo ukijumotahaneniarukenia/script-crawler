@@ -25,8 +25,8 @@ OUTPUT_DIR_NAME = 'page-detail'
 if not os.path.exists(OUTPUT_DIR_NAME) :
     os.makedirs(OUTPUT_DIR_NAME)
 
-OUTPUT_PREFIX = OUTPUT_DIR_NAME + '/' + 'page-detail-'
-OUTPUT_SUFFIX = '.html'
+OUTPUT_FILE_PREFIX = 'page-detail-'
+OUTPUT_FILE_SUFFIX = '.html'
 
 OFS = '\t'
 ORS = '\n'
@@ -58,12 +58,8 @@ for crawler_target in crawler_target_list:
     max_page_number = crawler_target[MAX_PAGE_NUMBER]
     base_name = "-".join(re.findall(r'(?<=//).*?(?=/)', site_url.strip())[0].split(".")[::-1])
 
-    output_file_name = OUTPUT_PREFIX + base_name + OUTPUT_SUFFIX
-
-    #前回分の出力結果ファイルが存在すれば削除
-    if os.path.exists(output_file_name):
-
-        os.remove(output_file_name)
+    if not os.path.exists(OUTPUT_DIR_NAME + '/' + base_name) :
+        os.makedirs(OUTPUT_DIR_NAME + '/' + base_name)
 
     driver = webdriver.Chrome(options=options)
 
@@ -100,7 +96,9 @@ for crawler_target in crawler_target_list:
 
                 domain_name = re.findall(r'(?<=//).*?(?=/)', site_url.strip())[0]
 
-                output_file_name = OUTPUT_PREFIX + (crawler_target_url + str(page_number)).strip().replace(domain_name,base_name).replace('/','-').replace('&','-').replace('?','-').replace('^','-').replace(':','-').replace('#','-').replace('=','-') + OUTPUT_SUFFIX
+                output_file_name = OUTPUT_DIR_NAME + '/' + base_name + '/' + OUTPUT_FILE_PREFIX + (crawler_target_url + str(page_number)).strip().replace(domain_name,base_name).replace('/','-').replace('&','-').replace('?','-').replace('^','-').replace(':','-').replace('#','-').replace('=','-') + OUTPUT_FILE_SUFFIX
+
+                print(output_file_name)
 
                 #前回分の出力結果ファイルが存在すれば削除
                 if os.path.exists(output_file_name):
@@ -145,7 +143,9 @@ for crawler_target in crawler_target_list:
 
                 domain_name = re.findall(r'(?<=//).*?(?=/)', site_url.strip())[0]
 
-                output_file_name = OUTPUT_PREFIX + crawler_target_url.strip().replace(domain_name,base_name).replace('/','-').replace('&','-').replace('?','-').replace('^','-').replace(':','-').replace('#','-').replace('=','-') + OUTPUT_SUFFIX
+                output_file_name = OUTPUT_DIR_NAME + '/' + base_name + '/' + OUTPUT_FILE_PREFIX + crawler_target_url.strip().replace(domain_name,base_name).replace('/','-').replace('&','-').replace('?','-').replace('^','-').replace(':','-').replace('#','-').replace('=','-') + OUTPUT_FILE_SUFFIX
+
+                print(output_file_name)
 
                 #前回分の出力結果ファイルが存在すれば削除
                 if os.path.exists(output_file_name):

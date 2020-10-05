@@ -1,0 +1,448 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>  regular expressions | The Effective Perler</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.effectiveperlprogramming.com/wp-content/themes/zbench/style.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.effectiveperlprogramming.com/wp-content/themes/zbench/local_style.css">
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://www.effectiveperlprogramming.com/feed/">
+	<link rel="pingback" href="https://www.effectiveperlprogramming.com/xmlrpc.php">
+			<link rel="dns-prefetch" href="//s.w.org">
+<link rel="alternate" type="application/rss+xml" title="The Effective Perler » regular expressions Category Feed" href="https://www.effectiveperlprogramming.com/category/book/chapters/regular-expressions/feed/">
+<link rel="stylesheet" id="wp-block-library-css" href="https://www.effectiveperlprogramming.com/wp-includes/css/dist/block-library/style.min.css?ver=5.3" type="text/css" media="all">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.effectiveperlprogramming.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.effectiveperlprogramming.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.3">
+	<link type="text/css" rel="stylesheet" href="/wp-content/plugins/syntax-highlighter-and-code-prettifier/styles/shCore.css">
+	<link type="text/css" rel="stylesheet" href="/wp-content/plugins/syntax-highlighter-and-code-prettifier/styles/shThemeDefault.css">
+	<script type="text/javascript" src="/wp-content/plugins/syntax-highlighter-and-code-prettifier/scripts/shCore.js"></script>
+	<script type="text/javascript" src="/wp-content/plugins/syntax-highlighter-and-code-prettifier/scripts/shBrushBash.js"></script>
+	<script type="text/javascript" src="/wp-content/plugins/syntax-highlighter-and-code-prettifier/scripts/shBrushCpp.js"></script>
+	<script type="text/javascript" src="/wp-content/plugins/syntax-highlighter-and-code-prettifier/scripts/shBrushCSharp.js"></script>
+	<script type="text/javascript" src="/wp-content/plugins/syntax-highlighter-and-code-prettifier/scripts/shBrushCss.js"></script>
+	<script type="text/javascript" src="/wp-content/plugins/syntax-highlighter-and-code-prettifier/scripts/shBrushDelphi.js"></script>
+	<script type="text/javascript" src="/wp-content/plugins/syntax-highlighter-and-code-prettifier/scripts/shBrushDiff.js"></script>
+	<script type="text/javascript" src="/wp-content/plugins/syntax-highlighter-and-code-prettifier/scripts/shBrushGroovy.js"></script>
+	<script type="text/javascript" src="/wp-content/plugins/syntax-highlighter-and-code-prettifier/scripts/shBrushJava.js"></script>
+	<script type="text/javascript" src="/wp-content/plugins/syntax-highlighter-and-code-prettifier/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="/wp-content/plugins/syntax-highlighter-and-code-prettifier/scripts/shBrushPerl.js"></script>
+	<script type="text/javascript" src="/wp-content/plugins/syntax-highlighter-and-code-prettifier/scripts/shBrushPhp.js"></script>
+	<script type="text/javascript" src="/wp-content/plugins/syntax-highlighter-and-code-prettifier/scripts/shBrushPlain.js"></script>
+	<script type="text/javascript" src="/wp-content/plugins/syntax-highlighter-and-code-prettifier/scripts/shBrushPython.js"></script>
+	<script type="text/javascript" src="/wp-content/plugins/syntax-highlighter-and-code-prettifier/scripts/shBrushRuby.js"></script>
+	<script type="text/javascript" src="/wp-content/plugins/syntax-highlighter-and-code-prettifier/scripts/shBrushScala.js"></script>
+	<script type="text/javascript" src="/wp-content/plugins/syntax-highlighter-and-code-prettifier/scripts/shBrushSql.js"></script>
+	<script type="text/javascript" src="/wp-content/plugins/syntax-highlighter-and-code-prettifier/scripts/shBrushVb.js"></script>
+	<script type="text/javascript" src="/wp-content/plugins/syntax-highlighter-and-code-prettifier/scripts/shBrushXml.js"></script>
+	<script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '/wp-content/plugins/syntax-highlighter-and-code-prettifier/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+	</head>
+<body>
+<div id="nav">
+			<div id="menus"><ul><li><a href="https://www.effectiveperlprogramming.com">Home</a></li><li class="page_item page-item-2"><a href="https://www.effectiveperlprogramming.com/about/">About</a></li>
+<li class="page_item page-item-222"><a href="https://www.effectiveperlprogramming.com/errata/">Errata</a></li>
+<li class="page_item page-item-574"><a href="https://www.effectiveperlprogramming.com/free-ebook/">Free eBook</a></li>
+<li class="page_item page-item-653"><a href="https://www.effectiveperlprogramming.com/item-wish-list-2/">Item Wish List</a></li>
+<li class="page_item page-item-692"><a href="https://www.effectiveperlprogramming.com/reviews/">Reviews</a></li>
+<li class="page_item page-item-603"><a href="https://www.effectiveperlprogramming.com/toc/">TOC</a></li>
+</ul></div>
+		<div id="search">
+		<form id="searchform" method="get" action="https://www.effectiveperlprogramming.com/">
+<input type="text" value="Search: type, hit enter" onfocus="if (!window.__cfRLUnblockHandlers) return false; if (this.value == 'Search: type, hit enter') {this.value = '';}" onblur="if (!window.__cfRLUnblockHandlers) return false; if (this.value == '') {this.value = 'Search: type, hit enter';}" size="35" maxlength="50" name="s" id="s">
+<input type="submit" id="searchsubmit" value="">
+</form>	</div>
+</div>
+<div id="wrapper">
+	<div id="header">
+		<h1><a href="https://www.effectiveperlprogramming.com">The Effective Perler</a></h1>
+		<h2>Effective Perl Programming – write better, more idiomatic Perl</h2>
+		<div id="rss"><a href="https://www.effectiveperlprogramming.com/feed/" rel="nofollow" title="RSS Feed">RSS Feed</a></div>
+					</div>
+<hr>
+<div id="content">
+	<div class="page-title">
+					<h1>Category Archives: <span>regular expressions</span></h1>
+			</div>
+
+		<div class="post" id="post-2479"><!-- post div -->
+		<h2 class="title"><a href="https://www.effectiveperlprogramming.com/2012/10/ignore-part-of-a-substitutions-match/">Ignore part of a substitution’s match</a></h2>
+		<div class="post-info-top">
+			<span class="post-info-date">Posted by brian d foy on October 26, 2012 </span>
+			<span class="gotocomments"><a href="https://www.effectiveperlprogramming.com/2012/10/ignore-part-of-a-substitutions-match/#respond">0 comments</a></span>
+		</div>
+		<div class="fixed"></div>
+		<div class="entry">
+			<img alt="" src="https://secure.gravatar.com/avatar/edd8638efe875601bfe394a8aea5b16d?s=80&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/edd8638efe875601bfe394a8aea5b16d?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80"> <p>Normally, a substitution replaces everything it matched, but v5.10 adds a feature that allows you to ignore part of the match. The \K excludes from $&amp; anything to its left. This feature has already made it into PCRE. It doesn’t have an official name, so I’ll call it the match reset operator because it resets […]</p>
+		</div><!-- END entry -->
+	</div><!-- END post -->
+		<div class="post" id="post-1479"><!-- post div -->
+		<h2 class="title"><a href="https://www.effectiveperlprogramming.com/2011/12/define-grammars-in-regular-expressions/">Define grammars in regular expressions</a></h2>
+		<div class="post-info-top">
+			<span class="post-info-date">Posted by brian d foy on December 18, 2011 </span>
+			<span class="gotocomments"><a href="https://www.effectiveperlprogramming.com/2011/12/define-grammars-in-regular-expressions/#comments">1 comment</a></span>
+		</div>
+		<div class="fixed"></div>
+		<div class="entry">
+			<img alt="" src="https://secure.gravatar.com/avatar/edd8638efe875601bfe394a8aea5b16d?s=80&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/edd8638efe875601bfe394a8aea5b16d?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80"> <p>[ This is the 100th Item we’ve shared with you in the two years this blog has been around. We deserve a holiday and we’re taking it, so read us next year! Happy Holidays.] Perl 5.10 added rudimentary grammar support in its regular expressions. You could define many subpatterns directly in your pattern, use them […]</p>
+		</div><!-- END entry -->
+	</div><!-- END post -->
+		<div class="post" id="post-1411"><!-- post div -->
+		<h2 class="title"><a href="https://www.effectiveperlprogramming.com/2011/10/use-lookarounds-to-split-to-avoid-special-cases/">Use lookarounds to split to avoid special cases</a></h2>
+		<div class="post-info-top">
+			<span class="post-info-date">Posted by brian d foy on October 16, 2011 </span>
+			<span class="gotocomments"><a href="https://www.effectiveperlprogramming.com/2011/10/use-lookarounds-to-split-to-avoid-special-cases/#respond">0 comments</a></span>
+		</div>
+		<div class="fixed"></div>
+		<div class="entry">
+			<img alt="" src="https://secure.gravatar.com/avatar/edd8638efe875601bfe394a8aea5b16d?s=80&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/edd8638efe875601bfe394a8aea5b16d?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80"> <p>There are some regular expression tricks that can help you deal with balanced delimiters in a string. The split command takes a pattern, removes the parts of a string that match that pattern, and give you a list of the parts of the string between those separators. Said another way, split works when the parts […]</p>
+		</div><!-- END entry -->
+	</div><!-- END post -->
+		<div class="post" id="post-1386"><!-- post div -->
+		<h2 class="title"><a href="https://www.effectiveperlprogramming.com/2011/09/use-lookarounds-to-avoid-special-cases-in-split/">Use lookarounds to eliminate special cases in split</a></h2>
+		<div class="post-info-top">
+			<span class="post-info-date">Posted by brian d foy on September 25, 2011 </span>
+			<span class="gotocomments"><a href="https://www.effectiveperlprogramming.com/2011/09/use-lookarounds-to-avoid-special-cases-in-split/#respond">0 comments</a></span>
+		</div>
+		<div class="fixed"></div>
+		<div class="entry">
+			<img alt="" src="https://secure.gravatar.com/avatar/edd8638efe875601bfe394a8aea5b16d?s=80&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/edd8638efe875601bfe394a8aea5b16d?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80"> <p>The split built-in takes a string and turns it into a list, discarding the separators that you specify as a pattern. This is easy when the separator is simple, but seems hard if the separator gets more tricky.</p>
+		</div><!-- END entry -->
+	</div><!-- END post -->
+		<div class="post" id="post-1063"><!-- post div -->
+		<h2 class="title"><a href="https://www.effectiveperlprogramming.com/2011/06/set-default-regular-expression-modifiers/">Set default regular expression modifiers</a></h2>
+		<div class="post-info-top">
+			<span class="post-info-date">Posted by brian d foy on June 19, 2011 </span>
+			<span class="gotocomments"><a href="https://www.effectiveperlprogramming.com/2011/06/set-default-regular-expression-modifiers/#respond">0 comments</a></span>
+		</div>
+		<div class="fixed"></div>
+		<div class="entry">
+			<img alt="" src="https://secure.gravatar.com/avatar/edd8638efe875601bfe394a8aea5b16d?s=80&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/edd8638efe875601bfe394a8aea5b16d?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80"> <p>Are you tired of adding the same modifiers to all of your regular expressions? For instance, if you might always add the /u modifier to turn on Unicode semantics on all of your patterns, including qr//, m//, and s///. Instead of remembering to do that to every pattern, the re that ships with Perl 5.14 […]</p>
+		</div><!-- END entry -->
+	</div><!-- END post -->
+		<div class="post" id="post-1980"><!-- post div -->
+		<h2 class="title"><a href="https://www.effectiveperlprogramming.com/2011/06/the-r-generic-line-ending/">The \R generic line ending</a></h2>
+		<div class="post-info-top">
+			<span class="post-info-date">Posted by brian d foy on June 5, 2011 </span>
+			<span class="gotocomments"><a href="https://www.effectiveperlprogramming.com/2011/06/the-r-generic-line-ending/#comments">1 comment</a></span>
+		</div>
+		<div class="fixed"></div>
+		<div class="entry">
+			<img alt="" src="https://secure.gravatar.com/avatar/edd8638efe875601bfe394a8aea5b16d?s=80&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/edd8638efe875601bfe394a8aea5b16d?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80"> <p>Perl v5.10 adds a regular expression shortcut \R that matches anything the Unicode specification thinks is a line ending. It looks similar to a character class shortcut but it’s not. It can match the sequence of carriage-return line-feed, but character classes don’t match sequence.</p>
+		</div><!-- END entry -->
+	</div><!-- END post -->
+		<div class="post" id="post-1002"><!-- post div -->
+		<h2 class="title"><a href="https://www.effectiveperlprogramming.com/2011/02/find-dates-with-regexpcommon/">Find dates with Regexp::Common</a></h2>
+		<div class="post-info-top">
+			<span class="post-info-date">Posted by brian d foy on February 16, 2011 </span>
+			<span class="gotocomments"><a href="https://www.effectiveperlprogramming.com/2011/02/find-dates-with-regexpcommon/#comments">1 comment</a></span>
+		</div>
+		<div class="fixed"></div>
+		<div class="entry">
+			<img alt="" src="https://secure.gravatar.com/avatar/edd8638efe875601bfe394a8aea5b16d?s=80&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/edd8638efe875601bfe394a8aea5b16d?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80"> <p>[This is a mid-week bonus item] Suppose you want to find some dates inside a big string. The problem with dates is that there are some many ways to write them, and even if you can come up with a pattern to get the structure right, can you handle the different locales and languages that […]</p>
+		</div><!-- END entry -->
+	</div><!-- END post -->
+		<div class="post" id="post-1003"><!-- post div -->
+		<h2 class="title"><a href="https://www.effectiveperlprogramming.com/2011/01/1003/">Use Regexp::Common to find locale-specific dates</a></h2>
+		<div class="post-info-top">
+			<span class="post-info-date">Posted by brian d foy on January 20, 2011 </span>
+			<span class="gotocomments"><a href="https://www.effectiveperlprogramming.com/2011/01/1003/#respond">0 comments</a></span>
+		</div>
+		<div class="fixed"></div>
+		<div class="entry">
+			<img alt="" src="https://secure.gravatar.com/avatar/edd8638efe875601bfe394a8aea5b16d?s=80&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/edd8638efe875601bfe394a8aea5b16d?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80"> <p>[This is a mid-week bonus item, and it’s a bit of a departure from much of what you have already seen on this blog. This is just some code that I had to write this week and I thought you’d like to see it.] I had to find some dates inside a big string, and […]</p>
+		</div><!-- END entry -->
+	</div><!-- END post -->
+		<div class="post" id="post-991"><!-- post div -->
+		<h2 class="title"><a href="https://www.effectiveperlprogramming.com/2011/01/know-your-character-classes/">Know your character classes under different semantics</a></h2>
+		<div class="post-info-top">
+			<span class="post-info-date">Posted by brian d foy on January 16, 2011 </span>
+			<span class="gotocomments"><a href="https://www.effectiveperlprogramming.com/2011/01/know-your-character-classes/#comments">3 comments</a></span>
+		</div>
+		<div class="fixed"></div>
+		<div class="entry">
+			<img alt="" src="https://secure.gravatar.com/avatar/edd8638efe875601bfe394a8aea5b16d?s=80&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/edd8638efe875601bfe394a8aea5b16d?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80"> <p>Now the Perl is Unicode aware (and, it’s been that way for a long time even if you haven’t been), you might have to be more careful in your regular expressions. Some of the character classes are much more inclusive than the ASCIIphile might imagine. In ASCIIland, character and byte semantics are the same thing. […]</p>
+		</div><!-- END entry -->
+	</div><!-- END post -->
+		<div class="post" id="post-972"><!-- post div -->
+		<h2 class="title"><a href="https://www.effectiveperlprogramming.com/2011/01/use-the-n-regex-character-class-to-get-not-a-newline/">Use the \N regex character class to get “not a newline”</a></h2>
+		<div class="post-info-top">
+			<span class="post-info-date">Posted by brian d foy on January 9, 2011 </span>
+			<span class="gotocomments"><a href="https://www.effectiveperlprogramming.com/2011/01/use-the-n-regex-character-class-to-get-not-a-newline/#comments">2 comments</a></span>
+		</div>
+		<div class="fixed"></div>
+		<div class="entry">
+			<img alt="" src="https://secure.gravatar.com/avatar/edd8638efe875601bfe394a8aea5b16d?s=80&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/edd8638efe875601bfe394a8aea5b16d?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80"> <p>Perl 5.12 introduced an experimental regex character class to stand in for every character except one, the newline. The \N character class is everything but the newline. In prior versions of Perl, this is the same thing as the . meta character. That is, it’s the same as long as someone doesn’t add the /s […]</p>
+		</div><!-- END entry -->
+	</div><!-- END post -->
+	<div id="pagination"><a href="https://www.effectiveperlprogramming.com/category/book/chapters/regular-expressions/page/2/">« Previous page</a> | <a href="https://www.effectiveperlprogramming.com/category/book/chapters/regular-expressions/page/4/">Next page »</a></div></div><!--content-->
+<div id="sidebar-border">
+<div id="sidebar">
+
+<ul><li id="text-5" class="widget widget_text">			<div class="textwidget"><div id="book_picture" align="center">
+<a href="https://amzn.to/2QtvIa2"><img src="/images/epp_second_edition.png" vspace="15px" border="0" alt="Effective Programming Perl book cover"></a>
+</div>
+
+<br>
+
+<div id="donate" align="center">
+
+<iframe src="//button.flattr.com/view/?uid=briandfoy&amp;button=compact&amp;url=https%3A%2F%2Fwww.effectiveperlprogramming.com%2Fcategory%2Fbook%2Fchapters%2Fregular-expressions%2Fpage%2F3%2F" title="Flattr" height="20" width="110" style="border-width: 0px;"></iframe><script async="" type="text/javascript" id="fbnufur">(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='//button.flattr.com/view/?uid=briandfoy&button=compact&url='+encodeURIComponent(document.URL);f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fbnufur');</script>
+
+<br>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="11077925">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+</div>
+
+<br></div>
+		</li></ul>		<ul><li id="recent-posts-3" class="widget widget_recent_entries">		<h3 class="widgettitle">Latest Items</h3>		<ul>
+											<li>
+					<a href="https://www.effectiveperlprogramming.com/2020/07/match-unicode-property-values-with-a-wildcard/">Match Unicode property values with a wildcard</a>
+									</li>
+											<li>
+					<a href="https://www.effectiveperlprogramming.com/2020/06/match-unicode-character-names-with-a-pattern/">Match Unicode character names with a pattern</a>
+									</li>
+											<li>
+					<a href="https://www.effectiveperlprogramming.com/2020/06/perl-7-is-coming/">Perl 7 is coming</a>
+									</li>
+											<li>
+					<a href="https://www.effectiveperlprogramming.com/2020/06/turn-off-indirect-object-notation/">Turn off indirect object notation</a>
+									</li>
+					</ul>
+		</li></ul><ul><li id="categories-3" class="widget widget_categories"><h3 class="widgettitle">Topics</h3><form action="https://www.effectiveperlprogramming.com" method="get"><label class="screen-reader-text" for="cat">Topics</label><select name="cat" id="cat" class="postform">
+	<option value="-1">Select Category</option>
+	<option class="level-0" value="3">administrative note&nbsp;&nbsp;(27)</option>
+	<option class="level-1" value="54">&nbsp;&nbsp;&nbsp;midweek bonus item&nbsp;&nbsp;(7)</option>
+	<option class="level-1" value="64">&nbsp;&nbsp;&nbsp;promotion&nbsp;&nbsp;(1)</option>
+	<option class="level-1" value="4">&nbsp;&nbsp;&nbsp;publishing&nbsp;&nbsp;(15)</option>
+	<option class="level-2" value="30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eBook&nbsp;&nbsp;(7)</option>
+	<option class="level-3" value="47">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ePub&nbsp;&nbsp;(2)</option>
+	<option class="level-3" value="48">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iPad&nbsp;&nbsp;(3)</option>
+	<option class="level-3" value="45">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kindle&nbsp;&nbsp;(4)</option>
+	<option class="level-3" value="46">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PDF&nbsp;&nbsp;(1)</option>
+	<option class="level-3" value="52">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Safari Books Online&nbsp;&nbsp;(2)</option>
+	<option class="level-2" value="29">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;translations&nbsp;&nbsp;(2)</option>
+	<option class="level-1" value="39">&nbsp;&nbsp;&nbsp;reader feedback&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="10">book&nbsp;&nbsp;(182)</option>
+	<option class="level-1" value="9">&nbsp;&nbsp;&nbsp;chapters&nbsp;&nbsp;(154)</option>
+	<option class="level-2" value="55">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cpan&nbsp;&nbsp;(3)</option>
+	<option class="level-2" value="23">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;databases&nbsp;&nbsp;(2)</option>
+	<option class="level-2" value="19">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;distributions&nbsp;&nbsp;(4)</option>
+	<option class="level-2" value="12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;files &amp; filehandles&nbsp;&nbsp;(6)</option>
+	<option class="level-2" value="51">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Idiomatic Perl&nbsp;&nbsp;(5)</option>
+	<option class="level-2" value="13">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;miscellany&nbsp;&nbsp;(30)</option>
+	<option class="level-2" value="31">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;references&nbsp;&nbsp;(8)</option>
+	<option class="level-2" value="20" selected="selected">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;regular expressions&nbsp;&nbsp;(37)</option>
+	<option class="level-2" value="8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subroutines&nbsp;&nbsp;(13)</option>
+	<option class="level-2" value="57">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;testing&nbsp;&nbsp;(6)</option>
+	<option class="level-2" value="11">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Basics of Perl&nbsp;&nbsp;(26)</option>
+	<option class="level-2" value="15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unicode&nbsp;&nbsp;(23)</option>
+	<option class="level-2" value="67">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;warnings&nbsp;&nbsp;(3)</option>
+	<option class="level-1" value="17">&nbsp;&nbsp;&nbsp;new chapters&nbsp;&nbsp;(38)</option>
+	<option class="level-2" value="61">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DateTime&nbsp;&nbsp;(2)</option>
+	<option class="level-2" value="26">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debugging&nbsp;&nbsp;(8)</option>
+	<option class="level-2" value="63">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;documentation&nbsp;&nbsp;(1)</option>
+	<option class="level-2" value="22">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;external interactions&nbsp;&nbsp;(1)</option>
+	<option class="level-2" value="40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;formats&nbsp;&nbsp;(1)</option>
+	<option class="level-2" value="24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;html&nbsp;&nbsp;(1)</option>
+	<option class="level-2" value="33">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;networking&nbsp;&nbsp;(1)</option>
+	<option class="level-2" value="44">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numbers&nbsp;&nbsp;(3)</option>
+	<option class="level-2" value="53">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;object-oriented programming&nbsp;&nbsp;(11)</option>
+	<option class="level-2" value="60">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pack&nbsp;&nbsp;(1)</option>
+	<option class="level-2" value="65">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PAUSE&nbsp;&nbsp;(1)</option>
+	<option class="level-2" value="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;performance&nbsp;&nbsp;(5)</option>
+	<option class="level-2" value="38">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Programming tips&nbsp;&nbsp;(3)</option>
+	<option class="level-2" value="85">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;security&nbsp;&nbsp;(1)</option>
+	<option class="level-2" value="18">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xml&nbsp;&nbsp;(2)</option>
+	<option class="level-1" value="32">&nbsp;&nbsp;&nbsp;table of contents&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="49">conferences&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="6">event announcement&nbsp;&nbsp;(5)</option>
+	<option class="level-1" value="37">&nbsp;&nbsp;&nbsp;book signing&nbsp;&nbsp;(1)</option>
+	<option class="level-1" value="7">&nbsp;&nbsp;&nbsp;classroom training&nbsp;&nbsp;(4)</option>
+	<option class="level-1" value="34">&nbsp;&nbsp;&nbsp;yapc&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="50">free stuff&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="14">git&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="59">item&nbsp;&nbsp;(104)</option>
+	<option class="level-0" value="5">perl&nbsp;&nbsp;(111)</option>
+	<option class="level-1" value="28">&nbsp;&nbsp;&nbsp;5.10&nbsp;&nbsp;(12)</option>
+	<option class="level-1" value="27">&nbsp;&nbsp;&nbsp;5.12&nbsp;&nbsp;(15)</option>
+	<option class="level-1" value="41">&nbsp;&nbsp;&nbsp;5.14&nbsp;&nbsp;(13)</option>
+	<option class="level-1" value="58">&nbsp;&nbsp;&nbsp;5.16&nbsp;&nbsp;(7)</option>
+	<option class="level-1" value="66">&nbsp;&nbsp;&nbsp;5.18&nbsp;&nbsp;(7)</option>
+	<option class="level-1" value="68">&nbsp;&nbsp;&nbsp;5.20&nbsp;&nbsp;(11)</option>
+	<option class="level-1" value="69">&nbsp;&nbsp;&nbsp;5.22&nbsp;&nbsp;(6)</option>
+	<option class="level-1" value="70">&nbsp;&nbsp;&nbsp;5.24&nbsp;&nbsp;(4)</option>
+	<option class="level-1" value="73">&nbsp;&nbsp;&nbsp;5.26&nbsp;&nbsp;(13)</option>
+	<option class="level-1" value="74">&nbsp;&nbsp;&nbsp;5.28&nbsp;&nbsp;(10)</option>
+	<option class="level-1" value="89">&nbsp;&nbsp;&nbsp;5.30&nbsp;&nbsp;(6)</option>
+	<option class="level-1" value="91">&nbsp;&nbsp;&nbsp;5.32&nbsp;&nbsp;(6)</option>
+	<option class="level-1" value="43">&nbsp;&nbsp;&nbsp;5.8&nbsp;&nbsp;(1)</option>
+	<option class="level-1" value="95">&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;(1)</option>
+	<option class="level-1" value="79">&nbsp;&nbsp;&nbsp;broken feature&nbsp;&nbsp;(5)</option>
+	<option class="level-1" value="86">&nbsp;&nbsp;&nbsp;experimental&nbsp;&nbsp;(2)</option>
+	<option class="level-1" value="92">&nbsp;&nbsp;&nbsp;fixed feature&nbsp;&nbsp;(2)</option>
+	<option class="level-1" value="42">&nbsp;&nbsp;&nbsp;new features&nbsp;&nbsp;(15)</option>
+	<option class="level-1" value="71">&nbsp;&nbsp;&nbsp;removed features&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="16">presentations&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="35">talks&nbsp;&nbsp;(2)</option>
+	<option class="level-1" value="36">&nbsp;&nbsp;&nbsp;slides available&nbsp;&nbsp;(2)</option>
+</select>
+</form>
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+	var dropdown = document.getElementById( "cat" );
+	function onCatChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
+			dropdown.parentNode.submit();
+		}
+	}
+	dropdown.onchange = onCatChange;
+})();
+/* ]]> */
+</script>
+
+			</li></ul><ul><li id="archives-3" class="widget widget_archive"><h3 class="widgettitle">Archives</h3>		<label class="screen-reader-text" for="archives-dropdown-3">Archives</label>
+		<select id="archives-dropdown-3" name="archive-dropdown">
+			
+			<option value="">Select Month</option>
+				<option value="https://www.effectiveperlprogramming.com/2020/07/"> July 2020 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2020/06/"> June 2020 &nbsp;(3)</option>
+	<option value="https://www.effectiveperlprogramming.com/2020/03/"> March 2020 &nbsp;(2)</option>
+	<option value="https://www.effectiveperlprogramming.com/2020/01/"> January 2020 &nbsp;(2)</option>
+	<option value="https://www.effectiveperlprogramming.com/2019/09/"> September 2019 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2019/07/"> July 2019 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2019/03/"> March 2019 &nbsp;(2)</option>
+	<option value="https://www.effectiveperlprogramming.com/2019/02/"> February 2019 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2018/12/"> December 2018 &nbsp;(2)</option>
+	<option value="https://www.effectiveperlprogramming.com/2018/10/"> October 2018 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2018/09/"> September 2018 &nbsp;(2)</option>
+	<option value="https://www.effectiveperlprogramming.com/2018/08/"> August 2018 &nbsp;(5)</option>
+	<option value="https://www.effectiveperlprogramming.com/2018/04/"> April 2018 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2018/01/"> January 2018 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2017/12/"> December 2017 &nbsp;(2)</option>
+	<option value="https://www.effectiveperlprogramming.com/2017/09/"> September 2017 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2017/08/"> August 2017 &nbsp;(3)</option>
+	<option value="https://www.effectiveperlprogramming.com/2017/04/"> April 2017 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2017/01/"> January 2017 &nbsp;(2)</option>
+	<option value="https://www.effectiveperlprogramming.com/2016/12/"> December 2016 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2016/06/"> June 2016 &nbsp;(3)</option>
+	<option value="https://www.effectiveperlprogramming.com/2016/04/"> April 2016 &nbsp;(2)</option>
+	<option value="https://www.effectiveperlprogramming.com/2016/03/"> March 2016 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2016/01/"> January 2016 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2015/11/"> November 2015 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2015/10/"> October 2015 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2015/08/"> August 2015 &nbsp;(3)</option>
+	<option value="https://www.effectiveperlprogramming.com/2015/07/"> July 2015 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2015/06/"> June 2015 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2015/05/"> May 2015 &nbsp;(2)</option>
+	<option value="https://www.effectiveperlprogramming.com/2015/04/"> April 2015 &nbsp;(2)</option>
+	<option value="https://www.effectiveperlprogramming.com/2015/02/"> February 2015 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2015/01/"> January 2015 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2014/12/"> December 2014 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2014/11/"> November 2014 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2014/10/"> October 2014 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2014/09/"> September 2014 &nbsp;(2)</option>
+	<option value="https://www.effectiveperlprogramming.com/2014/08/"> August 2014 &nbsp;(2)</option>
+	<option value="https://www.effectiveperlprogramming.com/2014/07/"> July 2014 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2014/06/"> June 2014 &nbsp;(3)</option>
+	<option value="https://www.effectiveperlprogramming.com/2013/08/"> August 2013 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2013/06/"> June 2013 &nbsp;(3)</option>
+	<option value="https://www.effectiveperlprogramming.com/2013/05/"> May 2013 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2012/10/"> October 2012 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2012/08/"> August 2012 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2012/07/"> July 2012 &nbsp;(2)</option>
+	<option value="https://www.effectiveperlprogramming.com/2012/04/"> April 2012 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2012/03/"> March 2012 &nbsp;(2)</option>
+	<option value="https://www.effectiveperlprogramming.com/2012/02/"> February 2012 &nbsp;(2)</option>
+	<option value="https://www.effectiveperlprogramming.com/2012/01/"> January 2012 &nbsp;(2)</option>
+	<option value="https://www.effectiveperlprogramming.com/2011/12/"> December 2011 &nbsp;(4)</option>
+	<option value="https://www.effectiveperlprogramming.com/2011/11/"> November 2011 &nbsp;(3)</option>
+	<option value="https://www.effectiveperlprogramming.com/2011/10/"> October 2011 &nbsp;(5)</option>
+	<option value="https://www.effectiveperlprogramming.com/2011/09/"> September 2011 &nbsp;(5)</option>
+	<option value="https://www.effectiveperlprogramming.com/2011/08/"> August 2011 &nbsp;(4)</option>
+	<option value="https://www.effectiveperlprogramming.com/2011/07/"> July 2011 &nbsp;(6)</option>
+	<option value="https://www.effectiveperlprogramming.com/2011/06/"> June 2011 &nbsp;(5)</option>
+	<option value="https://www.effectiveperlprogramming.com/2011/05/"> May 2011 &nbsp;(5)</option>
+	<option value="https://www.effectiveperlprogramming.com/2011/04/"> April 2011 &nbsp;(4)</option>
+	<option value="https://www.effectiveperlprogramming.com/2011/03/"> March 2011 &nbsp;(4)</option>
+	<option value="https://www.effectiveperlprogramming.com/2011/02/"> February 2011 &nbsp;(5)</option>
+	<option value="https://www.effectiveperlprogramming.com/2011/01/"> January 2011 &nbsp;(6)</option>
+	<option value="https://www.effectiveperlprogramming.com/2010/12/"> December 2010 &nbsp;(8)</option>
+	<option value="https://www.effectiveperlprogramming.com/2010/11/"> November 2010 &nbsp;(7)</option>
+	<option value="https://www.effectiveperlprogramming.com/2010/10/"> October 2010 &nbsp;(8)</option>
+	<option value="https://www.effectiveperlprogramming.com/2010/09/"> September 2010 &nbsp;(5)</option>
+	<option value="https://www.effectiveperlprogramming.com/2010/08/"> August 2010 &nbsp;(7)</option>
+	<option value="https://www.effectiveperlprogramming.com/2010/07/"> July 2010 &nbsp;(10)</option>
+	<option value="https://www.effectiveperlprogramming.com/2010/06/"> June 2010 &nbsp;(5)</option>
+	<option value="https://www.effectiveperlprogramming.com/2010/05/"> May 2010 &nbsp;(10)</option>
+	<option value="https://www.effectiveperlprogramming.com/2010/04/"> April 2010 &nbsp;(8)</option>
+	<option value="https://www.effectiveperlprogramming.com/2010/03/"> March 2010 &nbsp;(4)</option>
+	<option value="https://www.effectiveperlprogramming.com/2010/02/"> February 2010 &nbsp;(6)</option>
+	<option value="https://www.effectiveperlprogramming.com/2010/01/"> January 2010 &nbsp;(7)</option>
+	<option value="https://www.effectiveperlprogramming.com/2009/12/"> December 2009 &nbsp;(1)</option>
+	<option value="https://www.effectiveperlprogramming.com/2008/01/"> January 2008 &nbsp;(1)</option>
+
+		</select>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+	var dropdown = document.getElementById( "archives-dropdown-3" );
+	function onSelectChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value !== '' ) {
+			document.location.href = this.options[ this.selectedIndex ].value;
+		}
+	}
+	dropdown.onchange = onSelectChange;
+})();
+/* ]]> */
+</script>
+
+		</li></ul><ul><li id="text-6" class="widget widget_text"><h3 class="widgettitle">External Links</h3>			<div class="textwidget"><ul>
+<li><a href="https://www.amazon.com/gp/product/0321496949/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321496949&amp;linkCode=as2&amp;tag=hashbang09-20&amp;linkId=JLZLK3MHRS2VVEJW">Amazon.com</a></li>
+        <li><a href="https://www.pearsonhighered.com/educator/product/Effective-Perl-Programming-Ways-to-Write-Better-More-Idiomatic-Perl-2E/9780321496942.page">publisher catalog page</a></li>
+        <li><a href="https://www.informit.com/store/product.aspx?isbn=0321496949">InformIT page (book and PDF)</a></li>
+        <li><a href="https://my.safaribooksonline.com/9780321718303">Safari Books Online</a></li>
+        <li><a href="https://www.ebooks.com/ebooks/book_display.asp?IID=515079">eBooks (PDF and ePub)</a></li>
+<li><a href="https://www.defectiveperlprogramming.com/">Our evil twin</a></li>
+</ul></div>
+		</li></ul><ul><li id="text-3" class="widget widget_text">			<div class="textwidget"><div align="center">
+<script async="" type="text/javascript">
+var amzn_wdgt={widget:'Carousel'};
+amzn_wdgt.tag='hashbang09-20';
+amzn_wdgt.widgetType='ASINList';
+amzn_wdgt.title='Our Perl Books';
+amzn_wdgt.width='250';
+amzn_wdgt.ASIN='1449303587,1449393098,144939311X,0321496949,059600492,0596004923';
+amzn_wdgt.width='200';
+amzn_wdgt.height='600';
+</script>
+<script async="" type="text/javascript" src="https://wms.assoc-amazon.com/20070822/US/js/swfobject_1_5.js">
+</script>
+</div></div>
+		</li></ul><ul><li id="text-4" class="widget widget_text">			<div class="textwidget"></div>
+		</li></ul>
+
+
+
+</div>
+</div></div><!--wrapper-->
+<div class="fixed"></div>
+<div id="footer">
+	<div id="footer-inside">
+		<p>
+			Copyright&nbsp;©&nbsp;2020&nbsp;The Effective Perler			&nbsp;|&nbsp;Powered by <a href="https://wordpress.org/">WordPress</a> 
+			&nbsp;|&nbsp;Theme <a href="http://zww.me" title="designed by zwwooooo">zBench</a>
+			&nbsp;|&nbsp;Valid <a href="https://validator.w3.org/check?uri=referer" title="This page validates as XHTML 1.1 Transitional"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> and <a href="https://jigsaw.w3.org/css-validator/check/referer?profile=css3">CSS 3</a>
+		</p>
+		<span id="back-to-top">Δ <a href="#nav" rel="nofollow" title="Back to top">Top</a></span>
+	</div>
+</div><!--footer-->
+<script type="text/javascript" src="https://www.effectiveperlprogramming.com/wp-includes/js/wp-embed.min.js?ver=5.3"></script>
+
+</body></html>
