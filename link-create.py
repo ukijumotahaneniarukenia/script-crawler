@@ -13,12 +13,13 @@ import glob
 SOURCE_FILE_NAME='base-file-name-list.txt'
 
 INPUT_DIR_NAME = 'page-detail'
-INPUT_PREFIX = INPUT_DIR_NAME + '/' + 'page-detail-'
-INPUT_SUFFIX = '.html'
+INPUT_FILE_PREFIX = 'page-detail-'
+INPUT_FILE_SUFFIX = '.html'
 
 OUTPUT_DIR_NAME = 'link'
-OUTPUT_PREFIX = OUTPUT_DIR_NAME + '/' + 'link-'
-OUTPUT_SUFFIX = '.txt'
+OUTPUT_FILE_PREFIX = 'link-'
+OUTPUT_FILE_SUFFIX = '.txt'
+
 ORS = '\n'
 
 source_file = open(SOURCE_FILE_NAME,'r')
@@ -27,9 +28,12 @@ for site_url in source_file :
 
     base_name = "-".join(re.findall(r'(?<=//).*?(?=/)', site_url.strip())[0].split(".")[::-1])
 
-    input_file_pattern = INPUT_PREFIX + '*' + base_name + '*' + INPUT_SUFFIX
+    if not os.path.exists(OUTPUT_DIR_NAME + '/' + base_name) :
+        os.makedirs(OUTPUT_DIR_NAME + '/' + base_name)
 
-    output_file_name = OUTPUT_PREFIX + base_name + OUTPUT_SUFFIX
+    input_file_pattern = INPUT_DIR_NAME + '/' + base_name + '/' + INPUT_FILE_PREFIX + '*' + base_name + '*' + INPUT_FILE_SUFFIX
+
+    output_file_name = OUTPUT_DIR_NAME + '/' + base_name + '/' + OUTPUT_FILE_PREFIX + base_name + OUTPUT_FILE_SUFFIX
 
     input_file_name_list = glob.glob(input_file_pattern)
 

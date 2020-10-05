@@ -24,14 +24,16 @@ SITE_NAME='SITE_NAME'
 SITE_URL='SITE_URL'
 
 INPUT_DIR_NAME = 'link'
-INPUT_FILE_PREFIX = INPUT_DIR_NAME + '/' + 'link-'
+INPUT_FILE_PREFIX = 'link-'
 INPUT_FILE_SUFFIX = '.txt.target'
 
+CHECK_DIR_NAME = 'no-need-access-url'
+CHECK_FILE_PREFIX = 'no-need-access-url-'
+CHECK_FILE_SUFFIX='.json'
+
 OUTPUT_DIR_NAME = 'page-content'
-CHECK_PREFIX = OUTPUT_DIR_NAME + '/' + 'page-content-'
-CHECK_SUFFIX='-no-need-access-url.json'
-OUTPUT_PREFIX = OUTPUT_DIR_NAME + '/' + 'page-content-'
-OUTPUT_SUFFIX = '.tsv'
+OUTPUT_FILE_PREFIX = 'page-content-'
+OUTPUT_FILE_SUFFIX = '.tsv'
 
 EXTRACT_COLUMN_LIST_DEFINE_DIR_NAME='extract-column-list'
 EXTRACT_COLUMN_LIST_COMMON_FILE_NAME = EXTRACT_COLUMN_LIST_DEFINE_DIR_NAME + '/' + 'extract-column-list-common.json'
@@ -80,15 +82,19 @@ for crawler_target in crawler_target_list:
     site_url = crawler_target[SITE_URL]
     base_name = "-".join(re.findall(r'(?<=//).*?(?=/)', site_url.strip())[0].split(".")[::-1])
 
-    check_file_name = CHECK_PREFIX + base_name + CHECK_SUFFIX
-    output_file_name = OUTPUT_PREFIX + base_name + OUTPUT_SUFFIX
+    if not os.path.exists(OUTPUT_DIR_NAME + '/' + base_name) :
+        os.makedirs(OUTPUT_DIR_NAME + '/' + base_name)
+
+    check_file_name = CHECK_DIR_NAME + '/' + base_name + '/' + CHECK_FILE_PREFIX + base_name + CHECK_FILE_SUFFIX
+
+    output_file_name = OUTPUT_DIR_NAME + '/' + base_name + '/' + OUTPUT_FILE_PREFIX + base_name + OUTPUT_FILE_SUFFIX
 
     #前回分の出力結果ファイルが存在すれば削除
     if os.path.exists(output_file_name):
 
         os.remove(output_file_name)
 
-    link_file_name = INPUT_FILE_PREFIX + base_name + INPUT_FILE_SUFFIX
+    link_file_name = INPUT_DIR_NAME + '/' + base_name + '/' + INPUT_FILE_PREFIX + base_name + INPUT_FILE_SUFFIX
 
     if not os.path.exists(link_file_name):
 
@@ -109,6 +115,10 @@ for crawler_target in crawler_target_list:
             continue
 
         crawler_target_url = link_file_name_entry.strip()
+
+        if re.match(r'^(https?)',crawler_target_url) is None :
+
+            continue
 
         if os.path.exists(check_file_name):
         #前回分のチェックファイルが存在すれば実施
