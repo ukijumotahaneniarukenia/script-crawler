@@ -1,11 +1,21 @@
 #!/usr/bin/env bash
 
-BASE_FILE_NAME=base-file-name-list.txt
-INPUT_DIR_NAME=page-xpath-list
-INPUT_FILE_SUFFIX=txt
-OUTPUT_DIR_NAME=page-partial-dom
-OUTPUT_FILE_SUFFIX=html
+ZERO_PAD_DIGIT="%010d"
 
+COMMON_DIR_NAME_PREFIX=page
+BASE_FILE_NAME=base-file-name-list.txt
+
+SOURCE_DIR_NAME_SUFFIX=-detail
+SOURCE_DIR_NAME=$COMMON_DIR_NAME_PREFIX$SOURCE_DIR_NAME_SUFFIX
+SOURCE_FILE_SUFFIX=html
+
+INPUT_DIR_NAME_SUFFIX=-xpath-list
+INPUT_DIR_NAME=$COMMON_DIR_NAME_PREFIX$INPUT_DIR_NAME_SUFFIX
+INPUT_FILE_SUFFIX=txt
+
+OUTPUT_DIR_NAME_SUFFIX=-partial-dom
+OUTPUT_DIR_NAME=$COMMON_DIR_NAME_PREFIX$OUTPUT_DIR_NAME_SUFFIX
+OUTPUT_FILE_SUFFIX=html
 
 cat $BASE_FILE_NAME | grep -Po '(?<=//).*?(?=/)' | ruby -F'\.' -anle 'puts $F.reverse.join("-")' | \
 
@@ -19,18 +29,22 @@ cat $BASE_FILE_NAME | grep -Po '(?<=//).*?(?=/)' | ruby -F'\.' -anle 'puts $F.re
 
       while read INPUT_FILE_NAME;do
 
-        OUTPUT_FILE_NAME=$(echo $INPUT_FILE_NAME | sed "s/$INPUT_DIR_NAME/$OUTPUT_DIR_NAME/g" | sed "s;xpath-list;partial-dom;g" | sed "s;$INPUT_FILE_SUFFIX;$OUTPUT_FILE_SUFFIX;" | sed "s;$OUTPUT_DIR_NAME/;;")
 
-				echo $INPUT_FILE_NAME
+        TARGET_FILE_NAME=$(echo $INPUT_FILE_NAME | ruby -F'/' -anle 'puts $F[2]' | sed "s/$INPUT_DIR_NAME//g" | sed "s/$INPUT_DIR_NAME_SUFFIX.$INPUT_FILE_SUFFIX//g")
 
-				#cat -n $INPUT_FILE_NAME | \
+        SOURCE_FILE_NAME=$SOURCE_DIR_NAME/$base_name/$SOURCE_DIR_NAME$TARGET_FILE_NAME.$SOURCE_FILE_SUFFIX
 
-				#	while read num xpath;do
+        cat -n $INPUT_FILE_NAME | \
 
-				#		cat test-big-tidy.html | xmllint --html --xpath $xpath - 2>/dev/null | tidy -i - 2>/dev/null >test-big-tidy/test-big-tidy-$(printf "%05d" $num)-partial-dom.html;done
+          while read num xpath;do
+
+            OUTPUT_FILE_NAME=$OUTPUT_DIR_NAME/$base_name/$OUTPUT_DIR_NAME$TARGET_FILE_NAME-$(printf $ZERO_PAD_DIGIT $num).$OUTPUT_FILE_SUFFIX
+
+            cat $SOURCE_FILE_NAME | xmllint --html --xpath $xpath - 2>/dev/null | tidy -i - 2>/dev/null >$OUTPUT_FILE_NAME
+
+          done
+
 
       done
 
   done
-
-
