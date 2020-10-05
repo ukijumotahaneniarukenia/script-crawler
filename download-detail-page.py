@@ -21,6 +21,10 @@ SCROLL_WAIT_TIME_SECONDS = 3
 SOURCE_FILE_NAME='list.json'
 
 OUTPUT_DIR_NAME = 'page-detail'
+
+if not os.path.exists(OUTPUT_DIR_NAME) :
+    os.makedirs(OUTPUT_DIR_NAME)
+
 OUTPUT_PREFIX = OUTPUT_DIR_NAME + '/' + 'page-detail-'
 OUTPUT_SUFFIX = '.html'
 
