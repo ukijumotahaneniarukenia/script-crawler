@@ -14,42 +14,37 @@ pip3 install --user bs4
 pip3 install --user selenium
 ```
 
-サイト別カラムリストの一覧の作成
+
+ページダウンロードし、リンク作成
+
+CMD
 
 ```
-$ cat list.json | jq -cr '. as $in | $in | length as $cnt | [range(0;$cnt)]|foreach $in[.[]] as $item("";($item|(."SITE_URL"|gsub(".*//";"")|gsub("/.*";"")|split(".")|reverse|join("-")) + "\t" +($item|({"EXTRACT_COLUMN_LIST":(."EXTRACT_COLUMN_LIST"|keys)}|tojson))))'| while read base_name column_list;do echo $column_list > "extract-column-list-site-"$base_name".json";cat "extract-column-list-site-"$base_name".json"|jq '' |sponge "extract-column-list-site-"$base_name".json";done
+$ time ./wrapper-prev-execute.sh
 ```
 
-ベースファイル名リストの作成
+OUT
 
 ```
-$ cat list.json | jq -r 'map(."SITE_URL")|join("\n")'>base-file-name-list.txt
+real	3m3.840s
+user	0m8.204s
+sys	0m2.513s
 ```
 
-ベースファイル名リストの正規化
+コンテンツ抽出
+
+CMD
 
 
 ```
-$ cat base-file-name-list.txt | ruby -F'(?<=//)' -anle 'scheme=$F[0];domain=$F[1].split("/")[0]+"/";puts "#{scheme + domain}"' | sort | uniq | sponge base-file-name-list.txt
-```
-
-
-ページのダウンロード
-
-```
-$ time ./download-detail-page.py
-```
-
-リンクの作成
-
-```
-$ time ./link-create.py
+$ time ./wrapper-main-execute.sh
 ```
 
 
-取得項目の抽出
+OUT
+
 ```
-$ time ./extract-page-content.py
+
 ```
 
 項目数が正しいデータ行のみ抽出

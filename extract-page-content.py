@@ -74,7 +74,7 @@ crawler_target_list = json.load(source_file)
 options = webdriver.ChromeOptions()
 options.add_argument('/usr/local/src/chromedriver_linux64/chromedriver')
 options.add_argument('/usr/local/src/chrome-linux/chrome')
-#options.add_argument('--headless')
+options.add_argument('--headless')
 
 for crawler_target in crawler_target_list:
 
