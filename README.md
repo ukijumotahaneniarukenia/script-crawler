@@ -1,5 +1,12 @@
 # script-crawler
 
+これもいけることを発見した
+
+インデックスの場合はpositonsに変えないと行けぬが
+```
+$ xpath-gen-python test-middle-middle.xml 
+```
+
 xpathリストから各サイトのフォームレイアウト研究をやってもいい
 
 vueのタグのパタン生成に汎化できそう自動生成できそう
