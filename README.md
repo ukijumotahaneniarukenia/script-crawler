@@ -1,5 +1,10 @@
 # script-crawler
 
+http://www.cs.toronto.edu/~ryanjohn/teaching/cscc43-s12/lectures/c43-xpath-v04.pdf
+
+https://stackoverflow.com/questions/5643323/get-xpath-for-all-the-nodes
+
+
 これもいけることを発見した
 
 インデックスの場合はpositonsに変えないと行けぬが
