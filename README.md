@@ -1,5 +1,9 @@
 # script-crawler
 
+javascriptでもxpath一覧出力するコマンドを作成する
+
+https://developer.mozilla.org/ja/docs/Introduction_to_using_XPath_in_JavaScript
+
 http://www.cs.toronto.edu/~ryanjohn/teaching/cscc43-s12/lectures/c43-xpath-v04.pdf
 
 https://stackoverflow.com/questions/5643323/get-xpath-for-all-the-nodes
